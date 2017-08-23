@@ -1,0 +1,36 @@
+name: Przemysław Świderski's blog
+about: >
+    My name is Przemysław Świderski. Currently i am studying at Lodz University of Technology.
+    Hopefully, soon i will defend my master's thesis. I am also working as Java programmer.
+    In this blog i would like to write posts about different programming problems which i encountered and a little bit about my personal life and hobbies.
+
+master_repo: false
+url: "http://pszemo230.github.io"
+markdown: kramdown
+highlighter: rouge
+
+plugins_dir: ['jekyll-paginate', 'jekyll-gist']
+
+paginate: 3
+
+logo:             logo.png
+disqus_shortname:
+
+owner:
+  name:           Pszemo230
+  avatar:         ""
+  email:          "przemyslaw.swiderski7@gmail.com"
+  # Social networking links used in footer. Update and remove as you like.
+  twitter:
+  github:
+  stackexchange:
+  # For Google Authorship https://plus.google.com/authorship
+  google_plus:
+
+# Analytics and webmaster tools stuff goes here
+google_analytics:
+google_verify:
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:
+# Gems
+gems: [jekyll-paginate]
