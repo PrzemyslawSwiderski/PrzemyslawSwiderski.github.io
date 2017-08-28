@@ -26,7 +26,7 @@ Big advantage of using jekyll as blogging framework is that posts can be wrriten
 ![Github edit post page](../assets/githubEdit.PNG "Github post editing page")
 
 
-Moreover Github provides possibility to preview changes in "Preview changes".
+Moreover Github provides possibility to preview changes in "Preview changes" tab.
 
 
 ![Github preview changes](../assets/previewChanges.PNG "Github preview changes")
