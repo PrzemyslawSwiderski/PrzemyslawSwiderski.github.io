@@ -23,13 +23,13 @@ Using directly Jekyll package lets you build server with `jekyll b` or start a s
 Big advantage of using jekyll as blogging framework is that posts can be wrriten by using Markdown markup language. This allows to write, edit or delete posts directly from Github page:
 
 
-![Github edit post page](../assets/githubEdit.PNG "Github post editing page")
+![Github edit post page](https://github.com/Pszemo230/Pszemo230.github.io/blob/master/assets/githubEdit.PNG?raw=true "Github post editing page")
 
 
 Moreover Github provides possibility to preview changes in "Preview changes" tab.
 
 
-![Github preview changes](../assets/previewChanges.PNG "Github preview changes")
+![Github preview changes](https://github.com/Pszemo230/Pszemo230.github.io/blob/master/assets/previewChanges.PNG?raw=true "Github preview changes")
 
 
 Summarizing, using Github pages can be very helpful to host profile's blog page. Developers can start blog by using one of Jekyll's  open source templates and build page with a few shell commands. Managing blog is also easy because of Jekyll framework which is supporting Markdown language. Any changes done by blogger, can be easily added to page by commiting changes to profile page's repository. 
