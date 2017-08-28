@@ -15,7 +15,25 @@ Installing Ubuntu with quest additions, tools and shared folder took quite a bit
 Whole setup looks like this:
 
 - Windows as host system with Intelij IDE and shared folder with blog repo
-- Ubuntu guest on VirtualBox with Jekyll and other necessary tools
+- Ubuntu guest on VirtualBox with Jekyll and other necessary tools mentioned on Jekyll's [site](https://jekyllrb.com/docs/installation/)
 
-As mentioned before, this blog uses white-paper template cloned
-from this [repository](https://github.com/vinitkumar/white-paper).
+Jekyll installation was done by following quick-start guide posted on Jekyll's documentation [site](https://jekyllrb.com/docs/quickstart/). However, instead of using bundle tool to strat preview server, I used Jekyll yum package.
+Using directly Jekyll package lets you build server with `jekyll b` or start a server with `jekyll serve` shell command without the need of using bundle package.
+
+Big advantage of using jekyll as blogging framework is that posts can be wrriten by using Markdown markup language. This allows to write, edit or delete posts directly from Github page:
+
+
+![Github edit post page](assets/githubEdit.PNG "Github post editing page")
+
+
+Moreover Github provides possibility to preview changes in "Preview changes".
+
+
+![Github preview changes](assets/previewChanges.PNG "Github preview changes")
+
+
+Summarizing, using Github pages can be very helpful to host profile's blog page. Developers can start blog by using one of Jekyll's  open source templates and build page with a few shell commands. Managing blog is also easy because of Jekyll framework which is supporting Markdown language. Any changes done by blogger, can be easily added to page by commiting changes to profile page's repository. 
+
+
+As mentioned before, this blog was made by using white-paper template, cloned
+from [repository](https://github.com/vinitkumar/white-paper).
