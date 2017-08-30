@@ -47,7 +47,7 @@ In this project I used Intellij IDEA IDE which have great Lombok support afrter 
 It lets user to delombok annotations as showed below:
 
 
-![Lombok plugin options](https://github.com/Pszemo230/Pszemo230.github.io/blob/master/assets/delombok.PNG?raw=true "Lombok plugin options")
+![Lombok plugin options](https://github.com/Pszemo230/Pszemo230.github.io/blob/master/assets/delombok.png?raw=true "Lombok plugin options")
 
 
 After delombok UserWithCorrectHashCode class code looks like this:
