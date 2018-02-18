@@ -1,2 +1,2 @@
-# Pszemo230.github.io
+# PrzemyslawSwiderski.github.io
 My profile blog.
