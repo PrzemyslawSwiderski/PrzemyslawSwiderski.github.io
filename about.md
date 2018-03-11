@@ -1,6 +1,6 @@
 ---
 layout: default
-title: About Pszemo230
+title: About PrzemyslawSwiderski
 ---
 
 {{site.about}}
