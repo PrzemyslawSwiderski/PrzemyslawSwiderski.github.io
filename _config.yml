@@ -8,7 +8,7 @@ about: >
     In this blog i would like to write posts about different programming problems which i encountered and a little bit about my personal life and hobbies.
 
 master_repo: false
-url: "http://pszemo230.github.io"
+url: "http://PrzemyslawSwiderski.github.io"
 markdown: kramdown
 highlighter: rouge
 
@@ -20,7 +20,7 @@ logo:             logo.png
 disqus_shortname:
 
 owner:
-  name:           Pszemo230
+  name:           PrzemyslawSwiderski
   avatar:         ""
   email:          "przemyslaw.swiderski7@gmail.com"
   # Social networking links used in footer. Update and remove as you like.
