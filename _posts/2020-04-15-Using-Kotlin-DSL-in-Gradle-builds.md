@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Using Kotlin DSL in Gradle builds
-date: 2020-04-15T00:00:00.000+00:00
+date: 2020-04-15 00:00:00 +0000
 comments: true
-categories: articles
+categories: []
 
 ---
 In this post I would like to present my experience with Gradle and Kotlin DSL.
