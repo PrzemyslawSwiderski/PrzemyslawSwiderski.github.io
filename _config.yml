@@ -1,16 +1,16 @@
 name: Przemysław Świderski's blog
 about: >
-    ![Profile pic](assets/profilePic.PNG "It is me :)")
+  ![Profile pic](assets/profilePic.PNG "It is me :)")
 
 
-    My name is Przemysław Świderski.
-    I am working as Software Developer.
-    
-    
-    My LinkedIn [profile](https://www.linkedin.com/in/przemysław-świderski-12b296102).
-    
-    
-    In this blog I would like to write about different problems which I encountered during my programming experience.
+  My name is Przemysław Świderski.
+  I am working as Software Developer.
+
+
+  My LinkedIn [profile](https://www.linkedin.com/in/przemysław-świderski-12b296102).
+
+
+  In this blog I would like to write about different problems which I encountered during my programming experience.
 
 master_repo: false
 url: "http://PrzemyslawSwiderski.github.io"
@@ -22,16 +22,13 @@ plugins_dir: ['jekyll-paginate', 'jekyll-gist']
 paginate: 3
 
 logo:             logo.png
-disqus_shortname:
+disqus_shortname: PrzemyslawSwiderski
 
 owner:
   name:           PrzemyslawSwiderski
   avatar:         ""
   email:          "przemyslaw.swiderski7@gmail.com"
-  # Social networking links used in footer. Update and remove as you like.
-  linkedin: https://www.linkedin.com/in/przemysław-świderski-12b296102
-  github: https://github.com/PrzemyslawSwiderski
-  
+
 # Analytics and webmaster tools stuff goes here
 google_analytics:
 google_verify:
@@ -39,3 +36,4 @@ google_verify:
 bing_verify:
 # Gems
 gems: [jekyll-paginate]
+theme: jekyll-theme-midnight

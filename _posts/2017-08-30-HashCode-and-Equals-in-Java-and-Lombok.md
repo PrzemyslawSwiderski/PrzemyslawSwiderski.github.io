@@ -46,8 +46,7 @@ public class UserWithCorrectHashCode implements User{
 In this project I used Intellij IDEA IDE which have great Lombok support afrter installing Lombok [plugin](https://plugins.jetbrains.com/plugin/6317-lombok-plugin).
 It lets user to delombok annotations as showed below:
 
-
-![Lombok plugin options](https://github.com/Pszemo230/Pszemo230.github.io/blob/master/assets/delombok.png?raw=true "Lombok plugin options")
+![Lombok plugin options](/assets/2017-08-30-HashCode-and-Equals-in-Java-and-Lombok/delombok.png?raw=true "Lombok plugin options")
 
 
 After delombok UserWithCorrectHashCode class code looks like this:
@@ -166,13 +165,13 @@ Getting back to equals() and hashCode(), testing insertion was done with usage o
 In first case when User had correct hashCode(), inserting 20000 random Users objects produced following results:
 
 
-![Users with correct hashCode insert test](https://github.com/Pszemo230/Pszemo230.github.io/blob/master/assets/usersWithCorrectHashCodeInsertionTest.PNG?raw=true "Users with correct hashCode insert test")
+![Users with correct hashCode insert test](/assets/2017-08-30-HashCode-and-Equals-in-Java-and-Lombok/usersWithCorrectHashCodeInsertionTest.PNG?raw=true "Users with correct hashCode insert test")
 
 
 User with hashCode() method returning -1 results looked as follows:
 
 
-![Users with wrong hashCode insert test](https://github.com/Pszemo230/Pszemo230.github.io/blob/master/assets/usersWithWrongHashCodeInsertionTest.PNG?raw=true "Users with wrong hashCode insert test")
+![Users with wrong hashCode insert test](/assets/2017-08-30-HashCode-and-Equals-in-Java-and-Lombok/usersWithWrongHashCodeInsertionTest.PNG?raw=true "Users with wrong hashCode insert test")
 
 
 As presented above, wrong hashCode can drastically increase time needed to insert multiple Objects to hashmap. 
