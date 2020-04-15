@@ -17,12 +17,13 @@ url: "http://PrzemyslawSwiderski.github.io"
 markdown: kramdown
 highlighter: rouge
 
-plugins_dir: ['jekyll-paginate', 'jekyll-gist']
+plugins:
+  - "jekyll-paginate"
 
-paginate: 3
+paginate: 5 # How many items have to be displayed on page
 
 logo:             logo.png
-disqus_shortname: PrzemyslawSwiderski
+disqus_shortname: githubblog-8
 
 owner:
   name:           PrzemyslawSwiderski
@@ -36,4 +37,3 @@ google_verify:
 bing_verify:
 # Gems
 gems: [jekyll-paginate]
-theme: jekyll-theme-midnight
