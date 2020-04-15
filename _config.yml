@@ -3,9 +3,11 @@ about: >
     ![Profile pic](assets/profilePic.PNG "It is me :)")
 
 
-    My name is Przemysław Świderski. Currently i am studying at Lodz University of Technology.
-    Hopefully, soon i will defend my master's thesis. I am also working as Java programmer.
-    In this blog i would like to write posts about different programming problems which i encountered and a little bit about my personal life and hobbies.
+    My name is Przemysław Świderski.
+    I am working as Software Developer.
+    My LinkedIn [profile](https://www.linkedin.com/in/przemysław-świderski-12b296102).
+    
+    In this blog I would like to write about different problems which I encountered during my programming experience.
 
 master_repo: false
 url: "http://PrzemyslawSwiderski.github.io"
@@ -24,12 +26,9 @@ owner:
   avatar:         ""
   email:          "przemyslaw.swiderski7@gmail.com"
   # Social networking links used in footer. Update and remove as you like.
-  twitter:
-  github:
-  stackexchange:
-  # For Google Authorship https://plus.google.com/authorship
-  google_plus:
-
+  linkedin: https://www.linkedin.com/in/przemysław-świderski-12b296102
+  github: https://github.com/PrzemyslawSwiderski
+  
 # Analytics and webmaster tools stuff goes here
 google_analytics:
 google_verify:
