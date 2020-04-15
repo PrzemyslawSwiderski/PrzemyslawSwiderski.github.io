@@ -9,7 +9,7 @@ sections:
   create: all
 - type: jekyll-posts
   label: Posts
-  create: all
+  create: documents
 upload_dir: assets
 public_path: "/assets"
 front_matter_path: ''
