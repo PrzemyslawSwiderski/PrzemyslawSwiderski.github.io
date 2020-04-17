@@ -17,7 +17,7 @@ Gradle is a build tool which enables to compile Java projects, however developer
 
 Although Maven build system is still more popular, Gradle [gains popularity](https://www.jetbrains.com/lp/devecosystem-2019/java/).
 
-Since version 5.0 Gradle now supports Kotlin DSL (except Groovy) as build scripts.
+Since version 5.0 Gradle now supports Kotlin DSL (alongside Groovy) as build scripts.
 
 ## Sample project configuration
 
