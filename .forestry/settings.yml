@@ -11,7 +11,7 @@ sections:
   label: Posts
   create: documents
 upload_dir: assets/2020-04-15-Using-Kotlin-DSL-in-Gradle-builds
-public_path: "/assets"
+public_path: "/assets/2020-04-15-Using-Kotlin-DSL-in-Gradle-builds"
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
