@@ -95,10 +95,18 @@ Since Gradle builds is configured by code, it is possible to debug each task as 
 
 1. Put a breakpoint in any project's script
 
-![](/assets/scr1.JPG)
+![](/assets/scr1.JPG "Breakpoint in build script ")
+
+2. Run desired task in debug mode
+
+![](/assets/scr2.JPG "Task in debug mode")
+
+As it is presented in the screenshot above, it is now possible to watch variables or evaluate custom expressions which can be very beneficial when we would like to create custom task, watch some project properties or develop our own Gradle plugin.
 
 ## Summary
 
-Personally, I worked with older build tools such as Maven or Ant and in my opinion Gradle is a way better. In comparison to mentioned tools, Gradle can boost programmer's performance and simplify development related activities such as jar publishing, code inspections, new version release or even Kubernetes deployment.
+Personally, I worked with older build tools such as Maven or Ant and in my opinion Gradle is a way better. In comparison to mentioned tools, Gradle can boost programmer's performance and simplify development related activities such as jar publishing, code inspections, new version release or even Kubernetes deployment. 
 
 Writing scripts in Kotlin code instead of XML elements can also improve readability and maintainability of build config. Developers can print out some configuration variables or even debug Kotlin DSL code. Such flexibility was not possible in case of older build systems.
+
+Major drawback of using Gradle which comes to my mind, could be a build configuring time or Gradle Deamon start time in Intellij Idea IDE. It can sometimes exceeds 30 seconds and can be annoying. Nevertheless, it is a rare case and Jetbrains team is working actively to solve [problems](https://youtrack.jetbrains.com/issues?q=slow%20gradle). 
