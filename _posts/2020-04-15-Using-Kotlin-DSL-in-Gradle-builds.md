@@ -67,9 +67,10 @@ This way, there is no need to define versions if dependency is contained in rela
 
 ### Release Plugin
 
-In case of need to create new release of an app, there is a helpful [plugin](https://github.com/researchgate/gradle-release). It can automatically create tag and commits in Git repository and update version in `gradle.properties`. 
-Additional behavoir can be applied during release. Plugin creates two tasks: `afterReleaseBuild` and `beforeReleaseBuild`. These tasks can be attached by `dependsOn()` function to any other tasks, for example to publish Java lib to Maven repository or upload docker image to ECR docker registry. 
+In case of need to create new release of an app, there is a helpful [plugin](https://github.com/researchgate/gradle-release). It can automatically create tag and commits in Git repository and update version in `gradle.properties`.
+Additional behavoir can be applied during release. Plugin creates two tasks: `afterReleaseBuild` and `beforeReleaseBuild`. These tasks can be attached by `dependsOn()` function to any other tasks, for example to publish Java lib to Maven repository or upload docker image to ECR docker registry.
 Some other less complex action can also be added, like updating version in project's `README.md` file. It can be achieved by the following code in `build.gradle.kts`:
+
 ```kotlin
 (...)
     val updateReadmeVersion by registering {
@@ -85,9 +86,16 @@ Some other less complex action can also be added, like updating version in proje
     }
 (...)
 ```
+
 Note that we are creating new task named `updateReadmeVersion` which is using `File` class extension function `replaceString()` defined in `buildSrc/src/main/kotlin/FileUtis.kt` file. This new task is then attached to `afterReleaseBuild` by `dependsOn()` method. Because of that, when `afterReleaseBuild` is invoked, `updateReadmeVersion` task is executed before.
 
 ## Debugging
+
+Since Gradle builds is configured by code, it is possible to debug each task as normal Java process. In Intellij Idea IDE it can be done as follows:
+
+1. Put a breakpoint in any project's script
+
+![](/assets/scr1.JPG)
 
 ## Summary
 
