@@ -87,8 +87,6 @@ Some other less complex action can also be added, like updating version in proje
 ```
 Note that we are creating new task named `updateReadmeVersion` which is using `File` class extension function `replaceString()` defined in `buildSrc/src/main/kotlin/FileUtis.kt` file. This new task is then attached to `afterReleaseBuild` by `dependsOn()` method. Because of that, when `afterReleaseBuild` is invoked, `updateReadmeVersion` task is executed before.
 
-## Writing custom task
-
 ## Debugging
 
 ## Summary
