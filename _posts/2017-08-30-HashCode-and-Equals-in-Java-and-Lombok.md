@@ -1,13 +1,12 @@
 ---
 layout: post
-title: "HashCode() and equals() Java Object's methods with Lombok help"
+title: HashCode() and equals() Java Object's methods with Lombok help
 date: 2017-08-30
 comments: true
 category: articles
-excerpt_separator: <!--more-->
+excerpt_separator: "<!--more-->"
+
 ---
-
-
 In this post I would like to write about how bad wrong defined hashCode can affect HashMap performance.
 
 
@@ -43,7 +42,7 @@ public class UserWithCorrectHashCode implements User{
 }
 ```
 
-In this project I used Intellij IDEA IDE which have great Lombok support afrter installing Lombok [plugin](https://plugins.jetbrains.com/plugin/6317-lombok-plugin).
+In this project I used Intellij IDEA IDE which have great support after installing Lombok [plugin](https://plugins.jetbrains.com/plugin/6317-lombok-plugin).
 It lets user to delombok annotations as showed below:
 
 ![Lombok plugin options](/assets/2017-08-30-HashCode-and-Equals-in-Java-and-Lombok/delombok.png?raw=true "Lombok plugin options")
@@ -175,8 +174,4 @@ User with hashCode() method returning -1 results looked as follows:
 
 
 As presented above, wrong hashCode can drastically increase time needed to insert multiple Objects to hashmap. 
-Tests: mapHashCodeGetTest() for both classes also showed that if two equaly objects are returning same hashCode, it is not possibe to return one of them from hashMap.Even if we provide theoretically same object as key. 
-
-
-
-
+Tests: mapHashCodeGetTest() for both classes also showed that if two equaly objects are returning same hashCode, it is not possibe to return one of them from hashMap.Even if we provide theoretically same object as key.
