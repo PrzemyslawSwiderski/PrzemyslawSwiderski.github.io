@@ -9,7 +9,7 @@ Article about advantages of using Gradle with Kotlin DSL.
 
 ## Intro
 
-Gradle is a build tool is able to compile Java projects, however developers can also write custom tasks or perform additional complex actions by writing Gradle build scripts. Moreover, Gradle can also build [C++](https://guides.gradle.org/building-cpp-libraries/) or [Python](https://github.com/linkedin/pygradle) projects. Similar to Maven, it is also possible to apply external plugins which can for example push docker image to registry or create bootable Jar containing Spring app.
+Gradle is a build tool which is able to compile Java projects, however developers can also write custom tasks or perform additional complex actions by writing Gradle build scripts. Moreover, Gradle can also build [C++](https://guides.gradle.org/building-cpp-libraries/) or [Python](https://github.com/linkedin/pygradle) projects. Similar to Maven, it is also possible to apply external plugins which can for example push docker image to registry or create bootable Jar containing Spring app.
 
 Although Maven build system is still more popular, Gradle [gains popularity](https://www.jetbrains.com/lp/devecosystem-2019/java/).
 
