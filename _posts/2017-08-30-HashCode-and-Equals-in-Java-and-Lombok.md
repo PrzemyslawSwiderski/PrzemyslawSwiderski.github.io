@@ -3,7 +3,6 @@ layout: post
 title: HashCode() and equals() Java Object's methods with Lombok help
 date: 2017-08-30
 comments: true
-category: articles
 excerpt_separator: "<!--more-->"
 
 ---

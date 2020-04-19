@@ -3,7 +3,6 @@ layout: post
 title: "How I built this blog using Jekyll and white-paper template"
 date: 2017-08-28
 comments: true
-category: articles
 excerpt_separator: <!--more-->
 ---
 
