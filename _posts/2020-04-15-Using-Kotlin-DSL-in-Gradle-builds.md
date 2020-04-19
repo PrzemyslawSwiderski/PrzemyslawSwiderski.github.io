@@ -64,7 +64,7 @@ This way, there is no need to define versions if dependency is contained in rela
 ### Release Plugin
 
 In case of need to create new release of an app, there is a helpful [plugin](https://github.com/researchgate/gradle-release). It can automatically create tag and commits in Git repository and update version in `gradle.properties`.
-Additional behavoir can be applied during release. Plugin creates two tasks: `afterReleaseBuild` and `beforeReleaseBuild`. These tasks can be attached by `dependsOn()` function to any other tasks, for example to publish Java lib to Maven repository or upload docker image to ECR docker registry.
+Additional behavior can be applied during release. Plugin creates two tasks: `afterReleaseBuild` and `beforeReleaseBuild`. These tasks can be attached by `dependsOn()` function to any other tasks, for example to publish Java lib to Maven repository or upload docker image to ECR docker registry.
 Some other less complex action can also be added, like updating version in project's `README.md` file. It can be achieved by the following code in `build.gradle.kts`:
 
 ```kotlin
@@ -97,7 +97,7 @@ Since Gradle builds is configured by code, it is possible to debug each task as 
 
 ![](/assets/2020-04-15-Using-Kotlin-DSL-in-Gradle-builds/scr2.JPG "Task in debug mode")
 
-As it is presented in the screenshot above, it is now possible to watch variables or evaluate custom expressions which can be very beneficial when we would like to create custom task, watch some project properties or develop our own Gradle plugin.
+As it is presented in the screenshot above, it is now possible to watch variables or evaluate custom expressions which can be very beneficial when we would like to create a custom task, watch some project properties or develop our own Gradle plugin.
 
 ## Summary
 
@@ -105,4 +105,4 @@ Personally, I worked with older build tools such as Maven or Ant and in my opini
 
 Writing scripts in Kotlin code instead of XML elements can also improve readability and maintainability of build config. Developers can print out some configuration variables or even debug Kotlin DSL code. Such flexibility was not possible in case of older build systems.
 
-Major drawback of using Gradle which comes to my mind, could be a build configuring time or Gradle Deamon start time in Intellij Idea IDE. It can sometimes exceeds 30 seconds and can be annoying. Nevertheless, it is a rare case and Jetbrains team is working actively to solve [problems](https://youtrack.jetbrains.com/issues?q=slow%20gradle).
+Major drawback of using Gradle which comes to my mind, could be a build configuring time or Gradle Deamon start time in Intellij Idea IDE. It can sometimes exceed 30 seconds and can be annoying. Nevertheless, it is a rare case and Jetbrains team is working actively to solve [problems](https://youtrack.jetbrains.com/issues?q=slow%20gradle).
