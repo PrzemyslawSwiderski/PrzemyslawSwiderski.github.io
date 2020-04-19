@@ -13,7 +13,7 @@ about: >
   In this blog I would like to write about different problems which I encountered during my programming experience.
 
 master_repo: false
-url: "http://PrzemyslawSwiderski.github.io"
+url: "https://PrzemyslawSwiderski.github.io"
 markdown: kramdown
 highlighter: rouge
 
