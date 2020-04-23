@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using Kotlin DSL in Gradle builds
-date: 2020-04-15 20:00:00 +0000
+date: 2020-04-15T20:00:00.000+00:00
 comments: true
 
 ---
@@ -101,7 +101,7 @@ As it is presented in the screenshot above, it is now possible to watch variable
 
 ## Summary
 
-Personally, I worked with older build tools such as Maven or Ant and in my opinion Gradle is a way better. In comparison to mentioned tools, Gradle can boost programmer's performance and simplify development related activities such as jar publishing, code inspections, new version release or even Kubernetes deployment. 
+Personally, I worked with older build tools such as Maven or Ant and in my opinion Gradle is a way better. In comparison to mentioned tools, Gradle can boost programmer's performance and simplify development related activities such as jar publishing, code inspections, new version release or even Kubernetes deployment.
 
 Writing scripts in Kotlin code instead of XML elements can also improve readability and maintainability of build config. Developers can print out some configuration variables or even debug Kotlin DSL code. Such flexibility was not possible in case of older build systems.
 
