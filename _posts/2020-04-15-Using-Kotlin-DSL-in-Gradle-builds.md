@@ -90,12 +90,9 @@ Note that we are creating new task named `updateReadmeVersion` which is using `F
 Since Gradle builds is configured by code, it is possible to debug each task as normal Java process. In Intellij Idea IDE it can be done as follows:
 
 1. Put a breakpoint in any project's script
-
-![](/assets/2020-04-15-Using-Kotlin-DSL-in-Gradle-builds/scr1.JPG "Breakpoint in build script ")
-
+   ![](/assets/2020-04-15-Using-Kotlin-DSL-in-Gradle-builds/scr1.JPG "Breakpoint in build script ")
 2. Run desired task in debug mode
-
-![](/assets/2020-04-15-Using-Kotlin-DSL-in-Gradle-builds/scr2.JPG "Task in debug mode")
+   ![](/assets/2020-04-15-Using-Kotlin-DSL-in-Gradle-builds/scr2.JPG "Task in debug mode")
 
 As it is presented in the screenshot above, it is now possible to watch variables or evaluate custom expressions which can be very beneficial when we would like to create a custom task, watch some project properties or develop our own Gradle plugin.
 
