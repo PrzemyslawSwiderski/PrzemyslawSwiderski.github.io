@@ -92,6 +92,7 @@ Since Gradle builds is configured by code, it is possible to debug each task as 
 1. Put a breakpoint in any project's script
 
    ![](/assets/2020-04-15-Using-Kotlin-DSL-in-Gradle-builds/scr1.JPG "Breakpoint in build script ")
+   
 2. Run desired task in debug mode
 
    ![](/assets/2020-04-15-Using-Kotlin-DSL-in-Gradle-builds/scr2.JPG "Task in debug mode")
