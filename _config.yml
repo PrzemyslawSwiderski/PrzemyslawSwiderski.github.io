@@ -1,28 +1,52 @@
-name: Przemysław Świderski's blog
-about: >
-  ![Profile pic](assets/profilePic.PNG "It is me :)")
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you: 
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
 
-
-  My name is Przemysław Świderski.
-  I am working as Software Developer.
-
-
-  My LinkedIn [profile](https://www.linkedin.com/in/przemysław-świderski-12b296102).
-
-
-  In this blog I would like to write about different problems which I encountered during my programming experience.
-
-master_repo: false
+title: Przemysław Świderski's blog
+email: przemyslaw.swiderski7@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Blog about various software development problems.
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://PrzemyslawSwiderski.github.io"
-markdown: kramdown
-highlighter: rouge
+github_username:  PrzemyslawSwiderski
+repository: PrzemyslawSwiderski/PrzemyslawSwiderski.github.io.git
+
+# Build settings
+theme: minima
+minima:
+  social_links:
+    linkedin: https://www.linkedin.com/in/przemys%C5%82aw-%C5%9Bwiderski-12b296102/
+    github: https://github.com/PrzemyslawSwiderski
 
 plugins:
-  - "jekyll-paginate"
+  - jekyll-feed
 
-paginate: 5 # How many items have to be displayed on page
+# Exclude from processing.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+exclude:
+  - README.md
 
-logo:             logo.png
 disqus_shortname: githubblog-8
 
 owner:
@@ -30,10 +54,4 @@ owner:
   avatar:         ""
   email:          "przemyslaw.swiderski7@gmail.com"
 
-# Analytics and webmaster tools stuff goes here
-google_analytics:
-google_verify:
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:
-# Gems
-gems: [jekyll-paginate]
+show_excerpts: true
