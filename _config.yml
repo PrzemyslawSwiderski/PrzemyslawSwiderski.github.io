@@ -24,15 +24,19 @@ description: >- # this means to ignore newlines until "baseurl:"
   Blog about various software development problems.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://PrzemyslawSwiderski.github.io"
-github_username:  PrzemyslawSwiderski
 repository: PrzemyslawSwiderski/PrzemyslawSwiderski.github.io.git
+
+# Social
+github_username:  PrzemyslawSwiderski
+linkedin_username: przemysław-świderski-12b296102
+rss: RSS Feed
+
+disqus:
+  shortname: githubblog-8
+
 
 # Build settings
 theme: minima
-minima:
-  social_links:
-    linkedin: https://www.linkedin.com/in/przemys%C5%82aw-%C5%9Bwiderski-12b296102/
-    github: https://github.com/PrzemyslawSwiderski
 
 plugins:
   - jekyll-feed
@@ -46,8 +50,6 @@ plugins:
 #
 exclude:
   - README.md
-
-disqus_shortname: githubblog-8
 
 owner:
   name:           PrzemyslawSwiderski
