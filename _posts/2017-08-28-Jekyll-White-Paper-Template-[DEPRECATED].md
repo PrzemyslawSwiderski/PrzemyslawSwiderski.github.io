@@ -1,14 +1,17 @@
 ---
 layout: post
-title: How I built this blog using Jekyll and white-paper template
+title: How I built this blog using Jekyll and white-paper template [DEPRECATED]
 date: 2017-08-28
 comments: true
 excerpt_separator: "<!--more-->"
 
 ---
-In this article I would like to describe how did I bootstrapped this page.
+
+THIS POST IS DEPRECATED, CHECK [Jekyll Blog Update]({% post_url 2020-06-07-Jekyll-Blog-Update %}) TO SEE NEW APPROACH TO BOOTSTRAP JEKYLL BLOG.
 
 <!--more-->
+In this article I would like to describe how did I bootstrapped this page.
+
 Firstly, I had to install Ubuntu virtual machine, because Linux is being better supported by Jekyll.
 Installing Ubuntu with quest additions, tools and shared folder took quite a bit of time.
 Whole setup looks like this:
