@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+    <base href="/" />
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body id="target">
+<div id="root">Now loading...</div>
+<script src="pswidersk-page.js"></script>
+<script>
+    (async function() {
+        if (CSS['paintWorklet'] === undefined) {
+            await import('https://unpkg.com/css-paint-polyfill');
+        }
+
+        CSS.paintWorklet.addModule('https://unpkg.com/css-houdini-voronoi/dist/worklet.js');
+    })()
+</script>
+</body>
+</html>
