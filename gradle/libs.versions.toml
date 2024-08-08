@@ -1,0 +1,26 @@
+[versions]
+kotlin = "2.0.0"
+kotlin-wrappers = "1.0.0-pre.783"
+kotlinx-serialization = "1.7.1"
+kotlinx-datetime = "0.6.0"
+markdown = "0.7.3"
+kaml = "0.61.0"
+npm-bootstrap = "5.3.3"
+npm-loader-yaml = "0.8.1"
+
+[libraries]
+kotlin-wrappers = { module = "org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom", version.ref = "kotlin-wrappers" }
+markdown-jvm = { module = "org.jetbrains:markdown-jvm", version.ref = "markdown" }
+kaml-jvm = { module = "com.charleskorn.kaml:kaml-jvm", version.ref = "kaml" }
+
+[libraries.kotlinx-serialization-json]
+module = "org.jetbrains.kotlinx:kotlinx-serialization-json"
+version.ref = "kotlinx-serialization"
+
+[libraries.kotlinx-datetime]
+module = "org.jetbrains.kotlinx:kotlinx-datetime"
+version.ref = "kotlinx-datetime"
+
+[plugins]
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

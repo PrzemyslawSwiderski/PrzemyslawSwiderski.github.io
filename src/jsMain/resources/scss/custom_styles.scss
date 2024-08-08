@@ -1,0 +1,32 @@
+$prim: $cyan-900;
+$prim-light: $cyan-800;
+$logo-color: #55AAFF;
+
+.navbar {
+    background-color: $prim;
+    border-bottom-style: solid;
+    border-bottom-color: $logo-color;
+    @include font-size(2rem);
+}
+
+body {
+    @include font-size(1.5rem);
+}
+
+.outlet {
+    padding-top: 2rem;
+}
+
+.voronoi {
+
+    --voronoi-number-of-cells: 50;
+    --voronoi-margin: 1%;
+    --voronoi-line-color: #{$prim-light};
+    --voronoi-line-width: 1;
+    --voronoi-dot-size: 0;
+    --voronoi-cell-colors: #{$prim};
+    --voronoi-seed: 643421;
+    background-image: paint(voronoi);
+    height: 100vh;
+
+}
