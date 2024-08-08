@@ -1,3 +1,6 @@
+import org.jetbrains.kotlin.gradle.targets.js.yarn.YarnPlugin
+import org.jetbrains.kotlin.gradle.targets.js.yarn.YarnRootExtension
+
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.kotlin.serialization)
@@ -5,6 +8,12 @@ plugins {
 
 repositories {
     mavenCentral()
+}
+
+plugins.withType<YarnPlugin> {
+    configure<YarnRootExtension> {
+        yarnLockAutoReplace = true
+    }
 }
 
 kotlin {
