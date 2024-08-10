@@ -1,7 +1,6 @@
 package app.pages
 
 import app.model.HtmlMetadata
-import app.utils.withClasses
 import js.objects.jso
 import react.FC
 import react.Props
@@ -13,7 +12,6 @@ external interface PostEntryProps : Props {
 
 val PostEntry = FC<PostEntryProps> { props ->
     div {
-        withClasses("container")
         dangerouslySetInnerHTML = jso {
             __html = props.postEntry.content
         }

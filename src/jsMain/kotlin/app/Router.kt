@@ -25,7 +25,6 @@ val Router = createBrowserRouter(
                 ),
                 RouteObject(
                     path = "posts",
-//                    Component = Posts,
                     children = postEntries.map { entry ->
                         RouteObject(
                             path = entry.mdFileMetadata.id,
