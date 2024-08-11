@@ -1,2 +1,0 @@
-"use strict";(this.webpackChunkpswidersk_page=this.webpackChunkpswidersk_page||[]).push([[1195],{1195:(t,s,e)=>{e.r(s),e.d(s,{default:()=>p});const p=[{id:"first-post",title:"My First Post",date:"2024-08-07",path:"./posts/first-post/content.html"},{id:"second-post",title:"The Second Post",date:"2024-08-09",path:"./posts/second-post/content.html"}]}}]);
-//# sourceMappingURL=1195.js.map

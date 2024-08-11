@@ -1,1 +1,0 @@
-"use strict";(this.webpackChunkpswidersk_page=this.webpackChunkpswidersk_page||[]).push([[7142],{7142:t=>{t.exports="export default [{id:'first-post',title:'My First Post',date:'2024-08-07',path:'./posts/first-post/content.html'},{id:'second-post',title:'The Second Post',date:'2024-08-09',path:'./posts/second-post/content.html'}];"}}]);
