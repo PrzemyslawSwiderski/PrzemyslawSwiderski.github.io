@@ -20,21 +20,21 @@ val Router = createBrowserRouter(
                     Component = About,
                 ),
                 RouteObject(
-                    path = "posts",
-                    children = state.posts.map { entry ->
-                        RouteObject(
-                            path = entry.mdFileMetadata.id,
-                            element = InnerHtml.create {
-                                data = entry
-                            },
-                        )
-                    }.toTypedArray() + RouteObject(index = true, Component = Posts)
-                ),
-                RouteObject(
                     path = "*",
                     Component = About,
+                ),
+                RouteObject(
+                    path = "posts",
+                    Component = Posts,
+                ),
+            ) + state.posts.map { entry ->
+                RouteObject(
+                    path = "posts/" + entry.id,
+                    element = InnerHtml.create {
+                        data = entry
+                    },
                 )
-            )
+            }.toTypedArray()
         )
     )
 )

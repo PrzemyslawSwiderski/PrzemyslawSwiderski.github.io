@@ -7,7 +7,7 @@ import kotlinx.datetime.todayIn
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class MdFileMetadata(
+data class MdMetadata(
     val id: String = "ID",
     val title: String = "TITLE_MISSING",
     val date: LocalDate = Clock.System.todayIn(TimeZone.UTC),

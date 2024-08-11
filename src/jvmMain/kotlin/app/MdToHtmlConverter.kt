@@ -1,6 +1,6 @@
 package app
 
-import app.model.MdFileMetadata
+import app.model.MdMetadata
 import com.charleskorn.kaml.Yaml
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
@@ -43,7 +43,7 @@ private fun saveHtml(file: File, outputDir: File) {
 private fun extractMetadataPart(fileTxt: String) =
     fileTxt.substringAfter(METADATA_SEPARATOR).substringBefore(METADATA_SEPARATOR, "")
 
-private fun addMetadata(file: File, metadataList: MutableList<MdFileMetadata>) {
+private fun addMetadata(file: File, metadataList: MutableList<MdMetadata>) {
     val parent = file.parentFile
     val fileTxt = file.readText()
     val yamlString = extractMetadataPart(fileTxt)
@@ -57,16 +57,16 @@ private fun addMetadata(file: File, metadataList: MutableList<MdFileMetadata>) {
     )
 }
 
-private fun tryToParse(yamlString: String): MdFileMetadata {
+private fun tryToParse(yamlString: String): MdMetadata {
     try {
-        return Yaml.default.decodeFromString<MdFileMetadata>(yamlString)
+        return Yaml.default.decodeFromString<MdMetadata>(yamlString)
     } catch (ex: Exception) {
         println("Exception during YAML parsing: ${ex.message}")
-        return MdFileMetadata()
+        return MdMetadata()
     }
 }
 
-private fun saveMetadata(metadataList: MutableList<MdFileMetadata>, outputDir: File) {
+private fun saveMetadata(metadataList: MutableList<MdMetadata>, outputDir: File) {
     println("Metadata: $metadataList")
     val ymlTxt = Yaml.default.encodeToString(metadataList)
     outputDir.resolve(INPUT_DIR).resolve("markdown-metadata.yaml").writeText(ymlTxt)
@@ -75,7 +75,7 @@ private fun saveMetadata(metadataList: MutableList<MdFileMetadata>, outputDir: F
 fun main() {
     val inputDir = File(INPUT_DIR)
     val outputDir = File(OUTPUT_DIR)
-    val metadataList = mutableListOf<MdFileMetadata>()
+    val metadataList = mutableListOf<MdMetadata>()
 
     inputDir.walk().forEach { file ->
         println("current file: $file")

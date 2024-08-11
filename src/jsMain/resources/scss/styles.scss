@@ -1,20 +1,14 @@
-//
-// Bring in Bootstrap
-//
-
-// Option 1
-//
-// Import all of Bootstrap's CSS
-
-// @import "bootstrap/scss/bootstrap";
-
-// Option 2
-//
 // Place variable overrides first, then import just the styles you need. Note that some stylesheets are required no matter what.
 
 $enable-dark-mode: true;
 $primary: #051b11;
 $secondary: #0f5132;
+
+@import "./voronoi.scss";
+
+//
+// Bring in Bootstrap
+//
 
 // Include functions first
 @import "bootstrap/scss/functions";

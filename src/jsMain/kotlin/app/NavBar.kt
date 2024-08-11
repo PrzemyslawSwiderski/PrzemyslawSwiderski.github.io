@@ -17,7 +17,7 @@ val NavBar = FC {
                 asNavItem()
                 NavLink {
                     withClasses("nav-link")
-                    to = "/about"
+                    to = "/"
                     +"About"
                 }
             }

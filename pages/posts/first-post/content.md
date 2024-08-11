@@ -32,4 +32,4 @@ print("Hello World from Kotlin :D")
 
 <br/>
 
-![Catto](/pages/posts/first-post/catto.webp "Catto")
+<img class="animated-gif" src="/pages/posts/first-post/giphy.gif"></img>
