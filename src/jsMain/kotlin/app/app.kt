@@ -1,6 +1,6 @@
 package app
 
-import app.services.initPosts
+import app.state.initState
 import react.Fragment
 import react.create
 import react.dom.client.createRoot
@@ -12,11 +12,11 @@ import web.dom.document
 external val styles: dynamic
 
 suspend fun main() {
-    initPosts()
+    styles
+    initState()
     val container = document.getElementById("root") ?: error("Couldn't find root container!")
     createRoot(container).render(
         Fragment.create {
-            styles
             RouterProvider {
                 router = Router
             }

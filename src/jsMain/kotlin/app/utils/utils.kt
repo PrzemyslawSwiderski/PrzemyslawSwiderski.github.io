@@ -9,7 +9,6 @@ fun PropsWithClassName.withClasses(value: String) {
     } else {
         this.className = ClassName(this.className.unsafeCast<String>() + " " + value)
     }
-    console.log(this)
 }
 
 fun PropsWithClassName.asRow() {
@@ -17,7 +16,7 @@ fun PropsWithClassName.asRow() {
 }
 
 fun PropsWithClassName.asCol() {
-    withClasses("col")
+    withClasses("col m-3")
 }
 
 fun PropsWithClassName.asNavItem() {

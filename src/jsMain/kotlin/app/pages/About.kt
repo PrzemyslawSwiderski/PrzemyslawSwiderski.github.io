@@ -1,10 +1,11 @@
 package app.pages
 
+import app.state.about
+import app.state.state
 import react.FC
-import react.dom.html.ReactHTML.p
 
 val About = FC {
-    p {
-        +"About"
+    InnerHtml.invoke {
+        data = state.about
     }
 }

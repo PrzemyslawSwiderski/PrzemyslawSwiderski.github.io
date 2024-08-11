@@ -62,17 +62,17 @@ kotlin {
 tasks {
 
     val generateHtmlFiles by registering(JavaExec::class) {
-        val postsDir = "posts"
+        val inputDir = "pages"
         group = "run"
         mainClass = "app.MdToHtmlConverterKt"
         val jvmRuntimeClasspath by configurations
         classpath = layout.buildDirectory.files("classes/kotlin/jvm/main") + jvmRuntimeClasspath
         val outputPath = layout.buildDirectory.file("processedResources/js/main").get().asFile.absolutePath
         environment = mapOf(
-            "INPUT_DIR" to postsDir,
+            "INPUT_DIR" to inputDir,
             "OUTPUT_DIR" to outputPath
         )
-        inputs.dir(postsDir)
+        inputs.dir(inputDir)
         outputs.dir(outputPath)
         dependsOn("compileKotlinJvm")
     }

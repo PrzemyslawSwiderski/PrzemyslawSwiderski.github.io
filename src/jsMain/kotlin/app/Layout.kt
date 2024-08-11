@@ -16,7 +16,6 @@ val Layout = FC {
             asRow()
             div {
                 asCol()
-                withClasses("offset-1")
                 Outlet()
             }
         }

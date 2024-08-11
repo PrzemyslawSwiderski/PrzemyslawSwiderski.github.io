@@ -1,22 +1,37 @@
-$prim: $cyan-900;
-$prim-light: $cyan-800;
+#root {
+    @include font-size(1.7rem);
+    --voronoi-number-of-cells: 50;
+    --voronoi-margin: 1%;
+    --voronoi-line-color: #{$secondary};
+    --voronoi-line-width: 1;
+    --voronoi-dot-size: 0;
+    --voronoi-cell-colors: #{$primary};
+    --voronoi-seed: 643421;
+    min-height: 100vh;
+    background-image: paint(voronoi);
+    background-size: cover;
+}
+
+.blurred-bg {
+    backdrop-filter: blur(4px);
+    border-radius: 1em;
+    border: 2px solid $secondary;
+}
 
 .navbar {
     @include font-size(2rem);
-    backdrop-filter: blur(4px);
-    margin-bottom: 1.2em;
+    padding-left: 1em;
+    @extend .blurred-bg;
+    @extend .m-2;
+    @extend .mt-0;
 }
 
-#root {
-    @include font-size(1.7rem);
+.container {
+    @extend .blurred-bg;
+}
 
-    --voronoi-number-of-cells: 50;
-    --voronoi-margin: 1%;
-    --voronoi-line-color: #{$prim-light};
-    --voronoi-line-width: 1;
-    --voronoi-dot-size: 0;
-    --voronoi-cell-colors: #{$prim};
-    --voronoi-seed: 643421;
-    background-image: paint(voronoi);
-    height: 100vh;
+blockquote {
+    @include font-size(2.0rem);
+    @extend .blockquote;
+    text-align: center;
 }
