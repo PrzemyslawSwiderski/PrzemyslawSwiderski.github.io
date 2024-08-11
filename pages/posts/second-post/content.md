@@ -1,6 +1,6 @@
 ---
 title: "The Second Post"
-date: 2024-08-09
+created: 2024-08-09
 ---
 
 ### UNDER CONSTRUCTION 🏗️

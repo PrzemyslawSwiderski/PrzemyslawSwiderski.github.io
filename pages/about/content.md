@@ -1,6 +1,6 @@
 ---
 title: "About"
-date: 2024-08-10
+created: 2024-08-10
 ---
 
 <img src="/pages/about/me.png" alt="me" width="200" />

@@ -22,10 +22,10 @@ kotlin {
         browser {
             commonWebpackConfig {
                 cssSupport {
-                    enabled.set(true)
+                    enabled = true
                 }
                 scssSupport {
-                    enabled.set(true)
+                    enabled = true
                 }
             }
         }

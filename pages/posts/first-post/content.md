@@ -1,9 +1,11 @@
 ---
 title: "My First Post"
-date: 2024-08-07
+created: 2024-08-07
 ---
 
-## Hi there!!! This is my first post. 😄
+## Hi there!!! This is my first post on my new blog. 
+
+### It is mainly to check Markdown processing so can be a little messy 😄.
 
 <br/>
 

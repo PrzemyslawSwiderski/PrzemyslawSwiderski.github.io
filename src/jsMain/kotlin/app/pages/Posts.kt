@@ -12,12 +12,12 @@ import react.dom.html.ReactHTML.div
 import react.router.dom.Link
 
 val Posts = FC {
-    state.posts.sortedByDescending { it.date }.forEach { entry ->
+    state.posts.sortedByDescending { it.created }.forEach { entry ->
         div {
             asRow()
             div {
                 asCol()
-                +entry.date.format(LocalDate.Formats.ISO)
+                +entry.created.format(LocalDate.Formats.ISO)
             }
             Link {
                 asCol()
