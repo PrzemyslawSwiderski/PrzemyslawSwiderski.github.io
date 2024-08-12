@@ -3,7 +3,7 @@ title: "About"
 created: 2024-08-10
 ---
 
-<img src="/pages/about/me.png" alt="me" width="200" />
+<img class="responsive-img" src="/pages/about/me.png" alt="me" />
 
 <br/>
 <br/>

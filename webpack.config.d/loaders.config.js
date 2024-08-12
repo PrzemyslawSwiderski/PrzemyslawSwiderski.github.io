@@ -1,9 +1,8 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const devMode = process.env.NODE_ENV !== "production";
 
-config.plugins.push(new MiniCssExtractPlugin());
-
-//config.entry.main.push(require('path').resolve(__dirname, "kotlin\\scss\\styles.scss"));
+config.plugins.push(new MiniCssExtractPlugin({
+        chunkFilename: "main.css",
+}));
 
 config.module.rules.push(
         {
@@ -14,13 +13,13 @@ config.module.rules.push(
                 test: /\.ya?ml$/,
                 use: 'yaml-loader',
         },
-//        {
-//                test: /\.(sa|sc|c)ss$/,
-//                use: [
-//                        MiniCssExtractPlugin.loader,
-//                        "css-loader",
-//                        "postcss-loader",
-//                        "sass-loader",
-//                ],
-//        },
+        {
+                test: /\.(scss|sass)$/,
+                use: [
+                        MiniCssExtractPlugin.loader,
+                        "css-loader",
+                        "sass-loader",
+                ],
+                include: [require('path').resolve(__dirname, "kotlin\\scss\\styles.scss")],
+        },
 );

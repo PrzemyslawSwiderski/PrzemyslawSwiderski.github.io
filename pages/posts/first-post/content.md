@@ -41,4 +41,4 @@ private fun tryToParse(yamlString: String): MdMetadata {
 
 <br/>
 
-<img class="animated-gif" src="/pages/posts/first-post/giphy.gif"></img>
+<img class="responsive-img" src="/pages/posts/first-post/giphy.gif"></img>
