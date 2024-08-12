@@ -20,6 +20,8 @@ config.module.rules.push(
                         "css-loader",
                         "sass-loader",
                 ],
-                include: [require('path').resolve(__dirname, "kotlin\\scss\\styles.scss")],
+                include: [require('path').resolve(__dirname, "kotlin/scss/styles.scss")],
         },
 );
+
+config.stats = 'verbose';

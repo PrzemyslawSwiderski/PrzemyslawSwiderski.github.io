@@ -19,7 +19,11 @@ plugins.withType<YarnPlugin> {
 kotlin {
     jvm()
     js {
-        browser()
+        browser {
+            commonWebpackConfig {
+
+            }
+        }
     }.binaries.executable()
 
     sourceSets {
