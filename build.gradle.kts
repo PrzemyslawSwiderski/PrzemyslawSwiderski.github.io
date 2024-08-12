@@ -54,6 +54,7 @@ kotlin {
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-react-router-dom")
                 implementation(npm("bootstrap", libs.versions.npm.bootstrap.get()))
                 implementation(devNpm("yaml-loader", libs.versions.npm.loader.yaml.get()))
+                implementation(devNpm("mini-css-extract-plugin", libs.versions.npm.minicss.get()))
             }
         }
     }
