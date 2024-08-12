@@ -20,6 +20,9 @@ val InnerHtml = FC<InnerHtmlProps> { props ->
         importAsync<dynamic>(props.data.path + "?raw")
             .then { content = it.default.unsafeCast<String>() }
             .await()
+        importAsync<Prism>("./js/prism.js")
+            .then { it.highlightAll() }
+            .await()
     }
 
     div {
@@ -27,4 +30,8 @@ val InnerHtml = FC<InnerHtmlProps> { props ->
             __html = content.orEmpty()
         }
     }
+}
+
+external class Prism {
+    fun highlightAll()
 }

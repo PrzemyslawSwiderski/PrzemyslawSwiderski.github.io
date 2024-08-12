@@ -16,9 +16,16 @@ created: 2024-08-07
 ### and sample Kotlin code 😉
 
 ```kotlin
-
 print("Hello World from Kotlin :D")
 
+private fun tryToParse(yamlString: String): MdMetadata {
+    try {
+        return Yaml.default.decodeFromString<MdMetadata>(yamlString)
+    } catch (ex: Exception) {
+        println("Exception during YAML parsing: ${ex.message}")
+        return MdMetadata()
+    }
+}
 ```
 
 <br/>

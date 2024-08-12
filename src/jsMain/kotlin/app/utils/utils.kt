@@ -16,7 +16,7 @@ fun PropsWithClassName.asRow() {
 }
 
 fun PropsWithClassName.asCol() {
-    withClasses("col m-3")
+    withClasses("col my-3 mx-2")
 }
 
 fun PropsWithClassName.asNavItem() {
