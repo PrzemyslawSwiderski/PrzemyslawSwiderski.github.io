@@ -67,9 +67,11 @@ private fun tryToParse(yamlString: String): MdMetadata {
 }
 
 private fun saveMetadata(metadataList: MutableList<MdMetadata>, outputDir: File) {
-    println("Metadata: $metadataList")
     val ymlTxt = Yaml.default.encodeToString(metadataList)
-    outputDir.resolve(INPUT_DIR).resolve("markdown-metadata.yaml").writeText(ymlTxt)
+    val metadataFile = outputDir.resolve(INPUT_DIR).resolve("markdown-metadata.yaml")
+    println("YAML Metadata file $metadataFile:")
+    println(ymlTxt)
+    metadataFile.writeText(ymlTxt)
 }
 
 fun main() {
@@ -78,13 +80,11 @@ fun main() {
     val metadataList = mutableListOf<MdMetadata>()
 
     inputDir.walk().forEach { file ->
-        println("current file: $file")
         if (file.isFile && !file.isMarkdown()) {
             val targetFile = outputDir.resolve(file)
             file.copyTo(targetFile, overwrite = true)
         }
         if (file.isMarkdown()) {
-            println("converting md file: $file to html")
             // MD -> HTML conversion
             saveHtml(file, outputDir)
             // Read and save metadata
