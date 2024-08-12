@@ -23,5 +23,3 @@ config.module.rules.push(
                 include: [require('path').resolve(__dirname, "kotlin/scss/styles.scss")],
         },
 );
-
-config.stats = 'verbose';
