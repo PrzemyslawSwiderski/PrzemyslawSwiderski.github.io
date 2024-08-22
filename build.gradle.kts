@@ -53,6 +53,7 @@ kotlin {
                 implementation(devNpm("sass-loader", libs.versions.npm.loader.sass.get()))
                 implementation(devNpm("sass", libs.versions.npm.sass.get()))
                 implementation(devNpm("mini-css-extract-plugin", libs.versions.npm.minicss.get()))
+                implementation(devNpm("share-buttons", libs.versions.npm.sharebuttons.get()))
             }
         }
     }

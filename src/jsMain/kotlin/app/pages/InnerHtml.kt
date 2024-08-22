@@ -1,11 +1,13 @@
 package app.pages
 
+import app.ShareButtons
 import app.model.MdMetadata
 import js.import.importAsync
 import js.objects.jso
 import react.FC
 import react.Props
 import react.dom.html.ReactHTML.div
+import react.dom.html.ReactHTML.hr
 import react.useEffect
 import react.useState
 
@@ -30,6 +32,8 @@ val InnerHtml = FC<InnerHtmlProps> { props ->
             __html = content.orEmpty()
         }
     }
+    hr {}
+    ShareButtons {}
 }
 
 external class Prism {
