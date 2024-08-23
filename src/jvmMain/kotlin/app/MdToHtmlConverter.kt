@@ -12,6 +12,8 @@ import java.io.File
 private const val METADATA_SEPARATOR = "---"
 private const val CONTENT_HTML_FILE = "content.html"
 
+private val TAG_RENDERER = CustomTagRenderer()
+
 private val INPUT_DIR by System.getenv()
 private val OUTPUT_DIR by System.getenv()
 
@@ -22,7 +24,7 @@ private fun generateHtml(mdString: String): String {
     val flavour = GFMFlavourDescriptor()
     val parsedTree = MarkdownParser(flavour).buildMarkdownTreeFromString(normalizedString)
     return HtmlGenerator(normalizedString, parsedTree, flavour)
-        .generateHtml()
+        .generateHtml(TAG_RENDERER)
         .removePrefix("<body>")
         .removeSuffix("</body>")
 }
