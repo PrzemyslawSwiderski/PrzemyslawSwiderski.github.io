@@ -4,6 +4,8 @@ import app.ShareButtons
 import app.model.MdMetadata
 import js.import.importAsync
 import js.objects.jso
+import kotlinx.browser.document
+import kotlinx.browser.window
 import react.FC
 import react.Props
 import react.dom.html.ReactHTML.div
@@ -25,6 +27,7 @@ val InnerHtml = FC<InnerHtmlProps> { props ->
         importAsync<Prism>("./js/prism.js")
             .then { it.highlightAll() }
             .await()
+        scrollToAnchor()
     }
 
     div {
@@ -34,6 +37,11 @@ val InnerHtml = FC<InnerHtmlProps> { props ->
     }
     hr {}
     ShareButtons {}
+}
+
+private fun scrollToAnchor() {
+    val anchor = window.location.hash.substringAfter("#")
+    document.getElementById(anchor)?.scrollIntoView()
 }
 
 external class Prism {
