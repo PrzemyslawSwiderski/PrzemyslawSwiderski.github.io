@@ -33,7 +33,11 @@ blockquote {
     display: block;
 }
 
+a {
+    text-decoration: none;
+}
+
 .anchor-link {
     text-decoration: none;
-    font-size: 1.0rem;
+    color: var(--bs-heading-color);
 }
