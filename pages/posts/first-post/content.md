@@ -9,11 +9,11 @@ created: 2024-08-07
 
 <br/>
 
-### With some fancy GitHub logo 👉 ![GitHub](/pages/posts/first-post/github-logo.svg "GitHub")
+### With some fancy GitHub logo ![GitHub](/pages/posts/first-post/github-logo.svg "GitHub")
 
 <br/>
 
-### and sample Kotlin code 😉
+### Sample Kotlin code
 
 ```kotlin
 print("Hello World from Kotlin :D")
@@ -30,7 +30,7 @@ private fun tryToParse(yamlString: String): MdMetadata {
 
 <br/>
 
-### random list as well
+### List
 
 * item 1
 * item 2
