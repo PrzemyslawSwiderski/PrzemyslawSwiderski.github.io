@@ -1,3 +1,3 @@
 # PrzemyslawSwiderski.github.io
 
-My profile web page.
+This is my blog 😸
