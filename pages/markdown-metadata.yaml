@@ -10,3 +10,7 @@
   title: "My First Test Post"
   created: "2024-08-07"
   path: "./pages/posts/first-post/content.html"
+- id: "sdk-import-plugin-update"
+  title: "SDK-Import 2024.2+ update"
+  created: "2024-09-10"
+  path: "./pages/posts/sdk-import-plugin-update/content.html"
