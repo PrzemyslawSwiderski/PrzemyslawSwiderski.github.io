@@ -10,7 +10,7 @@ import react.router.dom.NavLink
 
 val NavBar = FC {
     nav {
-        withClasses("navbar navbar-expand-sm")
+        withClasses("navbar navbar-expand-sm blurred-bg mx-2 mt-0 mb-2")
         ul {
             withClasses("navbar-nav")
             li {

@@ -11,7 +11,7 @@ import react.router.Outlet
 val Layout = FC {
     NavBar()
     div {
-        withClasses("container")
+        withClasses("container blurred-bg")
         div {
             asRow()
             div {

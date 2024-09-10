@@ -2,6 +2,7 @@ package app.pages
 
 import app.ShareButtons
 import app.model.MdMetadata
+import app.utils.withClasses
 import js.import.importAsync
 import js.objects.jso
 import kotlinx.browser.document
@@ -31,6 +32,7 @@ val InnerHtml = FC<InnerHtmlProps> { props ->
     }
 
     div {
+        withClasses("mb-5")
         dangerouslySetInnerHTML = jso {
             __html = content.orEmpty()
         }

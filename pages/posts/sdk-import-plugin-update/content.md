@@ -14,7 +14,7 @@ The changes can be viewed in this [PR](https://github.com/PrzemyslawSwiderski/sd
 
 In this post I will try to describe how I did it.
 
-## [Updating to IntelliJ Platform Gradle Plugin](/posts/sdk-import-plugin-update#intellij-plugin-update)
+# [Updating to IntelliJ Platform Gradle Plugin](/posts/sdk-import-plugin-update#intellij-plugin-update)
 
 As noted
 in [this](https://blog.jetbrains.com/platform/2024/07/intellij-platform-gradle-plugin-2-0/#the-importance-of-updating)
@@ -27,7 +27,7 @@ provided about how to do that.
 
 Nevertheless, I faced some issues while doing it.
 
-### [Kover](/posts/sdk-import-plugin-update#kover)
+## [Kover](/posts/sdk-import-plugin-update#kover)
 
 After changing gradle plugin references in `build.gradle.kts` to `IntelliJ Platform Gradle Plugin` the tests started to
 failing with the following message:
@@ -50,7 +50,7 @@ kover {
 }
 ```
 
-### [Junit 5 problem](/posts/sdk-import-plugin-update#junit-5)
+## [Junit 5 problem](/posts/sdk-import-plugin-update#junit-5)
 
 As described
 in [link](https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin-faq.html#junit5-test-framework-refers-to-junit4)
@@ -58,12 +58,12 @@ when using `testFramework(TestFrameworkType.JUnit5)` the tests are failing becau
 I fixed it in my project by adding `testImplementation("org.junit.vintage:junit-vintage-engine:${libs.versions.junit}")`
 to the dependencies section.
 
-### [Missing `runPluginVerifier` task](/posts/sdk-import-plugin-update#verifier)
+## [Missing `runPluginVerifier` task](/posts/sdk-import-plugin-update#verifier)
 
 The new plugin uses `verifyPlugin` instead so I had to update `.github/workflows/build.yml` file to run the build
 successfully.
 
-### [Gradle build file autocompletion](/posts/sdk-import-plugin-update#autocompletion)
+## [Gradle build file autocompletion](/posts/sdk-import-plugin-update#autocompletion)
 
 One issue I struggled to fix were so-called red lines in gradle build files (`build.gradle.kts`):
 
@@ -76,7 +76,7 @@ Even though Gradle tasks are executed successfully it was pretty annoying that I
 What finally resolved the issue 🤩 was removal of `.idea`, `build` and `.intellijPlatform`
 directories and restarting the whole project.
 
-### [IntelliJ Platform Gradle Plugin update summary](/posts/sdk-import-plugin-update#plugin-summary)
+## [IntelliJ Platform Gradle Plugin update summary](/posts/sdk-import-plugin-update#plugin-summary)
 
 Overall the migration went pretty smooth.
 Migration [guide](https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin-migration.html) was
@@ -87,7 +87,7 @@ Hopefully the temporary fixes I
 mentioned ([Junit 5](/posts/sdk-import-plugin-update#junit-5), [Kover](/posts/sdk-import-plugin-update#kover)) will not
 be necessary in the next plugin version and redundant code can be removed.
 
-## [Code changes](/posts/sdk-import-plugin-update#code-changes)
+# [Code changes](/posts/sdk-import-plugin-update#code-changes)
 
 The source code of the plugin itself was not needed to be adjusted.
 However, the testing framework had some breaking changes in the new `2024.2` version.

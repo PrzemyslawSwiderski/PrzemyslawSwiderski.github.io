@@ -11,14 +11,6 @@
 .navbar {
     @include font-size($nav-font-size);
     padding-left: 1em;
-    @extend .blurred-bg;
-    @extend .mx-2;
-    @extend .mt-0;
-    @extend .mb-2;
-}
-
-.container {
-    @extend .blurred-bg;
 }
 
 blockquote {
@@ -28,7 +20,7 @@ blockquote {
 }
 
 .responsive-img {
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
     display: block;
 }
