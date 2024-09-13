@@ -3,6 +3,7 @@ package app.pages
 import app.ShareButtons
 import app.model.MdMetadata
 import app.utils.withClasses
+import js.import.Module
 import js.import.importAsync
 import js.objects.jso
 import kotlinx.browser.document
@@ -25,8 +26,8 @@ val InnerHtml = FC<InnerHtmlProps> { props ->
         importAsync<dynamic>(props.data.path + "?raw")
             .then { content = it.default.unsafeCast<String>() }
             .await()
-        importAsync<Prism>("./js/prism.js")
-            .then { it.highlightAll() }
+        importAsync<Module<HighlightJS>>("highlight.js")
+            .then { it.default.highlightAll() }
             .await()
         scrollToAnchor()
     }
@@ -46,6 +47,6 @@ private fun scrollToAnchor() {
     document.getElementById(anchor)?.scrollIntoView()
 }
 
-external class Prism {
+external class HighlightJS {
     fun highlightAll()
 }

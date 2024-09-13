@@ -50,7 +50,7 @@ produces `markdown-metadata.yaml` which is later used for the post's entries gen
 
 To run the script the `generateHtmlFiles` task was added. It can be executed solely in a standard way by running:
 
-```commandline
+```sh
 ./gradlew generateHtmlFiles
 ```
 
@@ -93,7 +93,7 @@ val NavBar = FC {
 
 which matches the following Typescript code:
 
-```html
+```tsx
 import React from "react";
 
 const NavBar: React.FC = () => {

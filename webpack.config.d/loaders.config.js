@@ -7,11 +7,11 @@ config.plugins.push(new MiniCssExtractPlugin({
 config.module.rules.push(
         {
                 resourceQuery: /raw/,
-                type: 'asset/source',
+                type: "asset/source",
         },
         {
                 test: /\.ya?ml$/,
-                use: 'yaml-loader',
+                use: "yaml-loader",
         },
         {
                 test: /\.(scss|sass)$/,
@@ -20,6 +20,6 @@ config.module.rules.push(
                         "css-loader",
                         "sass-loader",
                 ],
-                include: [require('path').resolve(__dirname, "kotlin/scss/styles.scss")],
+                include: [require("path").resolve(__dirname, "kotlin/scss/styles.scss")],
         },
 );
