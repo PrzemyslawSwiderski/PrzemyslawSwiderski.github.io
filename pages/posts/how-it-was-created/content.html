@@ -13,7 +13,7 @@ It can be invoked by simply calling:</p><ul><li><p><code>./gradlew build</code> 
 <a href="https://github.com/PrzemyslawSwiderski/PrzemyslawSwiderski.github.io/blob/master/src/jvmMain/kotlin/app/MdToHtmlConverter.kt"><code>MdToHtmlConverter.kt</code></a>
 was added. It processes the input catalog and produces the output to the specified directory.
 Apart from converting the <code>.md</code> files to HTML ones, it copies other files like images and
-produces <code>markdown-metadata.yaml</code> which is later used for the post's entries generation and routes mapping.</p><p>To run the script the <code>generateHtmlFiles</code> task was added. It can be executed solely in a standard way by running:</p><pre><code class="language-commandline">./gradlew generateHtmlFiles
+produces <code>markdown-metadata.yaml</code> which is later used for the post's entries generation and routes mapping.</p><p>To run the script the <code>generateHtmlFiles</code> task was added. It can be executed solely in a standard way by running:</p><pre><code class="language-sh">./gradlew generateHtmlFiles
 </code></pre><h1><a href="/posts/how-it-was-created#frontend" class="anchor-link" id="frontend">Frontend</a></h1><h3><a href="/posts/how-it-was-created#kotlinjs" class="anchor-link" id="kotlinjs">Kotlin/JS</a></h3><p>For the frontend I am using <a href="https://kotlinlang.org/docs/js-overview.html">Kotlin/JS</a>.
 I have to admit that initially it was not easy to get familiar with how it is compiled to a JavaScript.
 After understanding <code>external</code>, <code>dynamic</code> concepts and how to import regular JS modules, the development process became
@@ -40,7 +40,7 @@ val NavBar = FC {
                 }
             }
             (...)
-</code></pre><p>which matches the following Typescript code:</p><pre><code class="language-html">import React from &quot;react&quot;;
+</code></pre><p>which matches the following Typescript code:</p><pre><code class="language-tsx">import React from &quot;react&quot;;
 
 const NavBar: React.FC = () =&gt; {
 return (

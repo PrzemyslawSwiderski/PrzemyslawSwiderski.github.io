@@ -57,10 +57,11 @@
 // Utilities
 @import "bootstrap/scss/utilities/api";
 
+// Highlight.js
+@import "highlight.js/scss/stackoverflow-dark";
 
 //
 // Custom styles
 //
 
 @import "./custom_styles.scss";
-@import "./prism.scss";
