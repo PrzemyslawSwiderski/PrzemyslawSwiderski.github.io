@@ -3,7 +3,7 @@
   created: "2024-08-10"
   path: "./pages/about/content.html"
 - id: "how-it-was-created"
-  title: "How this blog was created"
+  title: "How was this blog created"
   created: "2024-08-13"
   path: "./pages/posts/how-it-was-created/content.html"
 - id: "github-search"
