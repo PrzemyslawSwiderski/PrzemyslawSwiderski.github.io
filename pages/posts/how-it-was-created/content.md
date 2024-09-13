@@ -1,5 +1,5 @@
 ---
-title: "How this blog was created"
+title: "How was this blog created"
 created: 2024-08-13
 ---
 
