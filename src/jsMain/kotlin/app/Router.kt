@@ -1,8 +1,8 @@
 package app
 
 import app.pages.About
-import app.pages.InnerHtml
 import app.pages.Posts
+import app.pages.SinglePost
 import app.state.posts
 import app.state.state
 import react.create
@@ -30,7 +30,7 @@ val Router = createBrowserRouter(
             ) + state.posts.map { entry ->
                 RouteObject(
                     path = "posts/" + entry.id,
-                    element = InnerHtml.create {
+                    element = SinglePost.create {
                         data = entry
                     },
                 )
