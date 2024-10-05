@@ -18,7 +18,7 @@ class Voronoi(points: Collection<Point>) {
 
     init {
         val queue = PriorityQueue<Event?>()
-        points.stream().map<SiteEvent?> { point: Point -> SiteEvent(point) }.forEach(queue::offer)
+        points.map { point: Point -> SiteEvent(point) }.forEach(queue::offer)
         points.forEach { newSite: Point -> graph.addSite(newSite) }
 
         val beachLine = BeachLine()

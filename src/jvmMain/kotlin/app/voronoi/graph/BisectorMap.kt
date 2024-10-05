@@ -14,20 +14,7 @@ class BisectorMap {
         return data[Bisector(a, b)]
     }
 
-    override fun equals(o: Any?): Boolean {
-        if (this === o) return true
-        if (o == null || javaClass != o.javaClass) return false
-
-        val that = o as BisectorMap
-
-        return data.size == that.data.size && data.keys.all { it in that.data.keys }
-    }
-
-    override fun hashCode(): Int {
-        return data.hashCode()
-    }
-
-    fun stream(): Sequence<Edge> {
+    fun edges(): Sequence<Edge> {
         return data.values.asSequence()
     }
 

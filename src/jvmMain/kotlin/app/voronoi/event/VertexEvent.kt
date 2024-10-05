@@ -1,13 +1,11 @@
 package app.voronoi.event
 
-import app.voronoi.Math
 import app.voronoi.beachline.BeachLine
 import app.voronoi.beachline.LeafBeachNode
 import app.voronoi.graph.Edge
 import app.voronoi.graph.Graph
 import app.voronoi.graph.Point
 import app.voronoi.graph.Vertex
-import kotlin.math.sqrt
 
 class VertexEvent private constructor(
     private val l: LeafBeachNode,
@@ -24,20 +22,18 @@ class VertexEvent private constructor(
     }
 
     override fun handle(eventQueue: MutableCollection<Event?>, beachLine: BeachLine, graph: Graph) {
-        if (graph.getSitePoints().none { circle.contains(it) }) {
-            c.remove()
-            c.getSubscribers().forEach { eventQueue.remove(it) }
+        c.remove()
+        eventQueue.removeAll(c.getSubscribers())
 
-            val v = Vertex(circle.center)
-            graph.getEdgeBetweenSites(l.site, c.site)?.addVertex(v)
-            graph.getEdgeBetweenSites(r.site, c.site)?.addVertex(v)
-            val e = Edge(l.site, r.site)
-            graph.addEdge(e)
-            e.addVertex(v)
+        val v = Vertex(circle.center)
+        graph.getEdgeBetweenSites(l.site, c.site)!!.addVertex(v)
+        graph.getEdgeBetweenSites(r.site, c.site)!!.addVertex(v)
+        val e = Edge(l.site, r.site)
+        graph.addEdge(e)
+        e.addVertex(v)
 
-            l.addCircleEvents { eventQueue.add(it) }
-            r.addCircleEvents { eventQueue.add(it) }
-        }
+        l.addCircleEvents { eventQueue.add(it) }
+        r.addCircleEvents { eventQueue.add(it) }
     }
 
     private class Circle(l: Point, c: Point, r: Point) {
@@ -58,15 +54,7 @@ class VertexEvent private constructor(
                 Point(Double.Companion.NaN, Double.Companion.NaN)
             }
         }
-        val radius: Double = sqrt(Math.sq(c.x - center.x) + Math.sq(c.y - center.y))
-
-        fun isValid(): Boolean {
-            return radius.isFinite()
-        }
-
-        fun contains(p: Point): Boolean {
-            return sqrt(Math.sq(p.x - center.x) + Math.sq(p.y - center.y)) < (radius - Math.EPSILON)
-        }
+        val radius: Double = c.dist(center)
 
         companion object {
             private fun computeCenter(l: Point, c: Point, r: Point): Point {
@@ -93,9 +81,7 @@ class VertexEvent private constructor(
             val convergence = (ap.y - bp.y) * (bp.x - cp.x) - (bp.y - cp.y) * (ap.x - bp.x)
             if (convergence > 0) {
                 val circle = Circle(ap, bp, cp)
-                if (circle.isValid()) {
-                    return VertexEvent(l, c, r, circle)
-                }
+                return VertexEvent(l, c, r, circle)
             }
             return null
         }

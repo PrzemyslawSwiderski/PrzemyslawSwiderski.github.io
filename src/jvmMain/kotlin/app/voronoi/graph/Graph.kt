@@ -1,11 +1,10 @@
 package app.voronoi.graph
 
-import java.util.Collections
 import java.util.HashSet
 
 class Graph {
-    private val edges = BisectorMap()
     private val sites = HashSet<Point>()
+    private val edges = BisectorMap()
 
     fun addEdge(e: Edge) {
         edges.put(e.site1, e.site2, e)
@@ -19,11 +18,11 @@ class Graph {
         sites.add(newSite)
     }
 
-    fun getSitePoints(): Set<Point> {
-        return Collections.unmodifiableSet(sites)
+    fun sitePoints(): Set<Point> {
+        return sites
     }
 
-    fun edgeStream(): Sequence<Edge> {
-        return edges.stream()
+    fun edges(): Sequence<Edge> {
+        return edges.edges()
     }
 }

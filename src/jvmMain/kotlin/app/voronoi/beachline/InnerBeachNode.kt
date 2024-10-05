@@ -55,11 +55,11 @@ class InnerBeachNode(var leftChild: BeachNode? = null, var rightChild: BeachNode
 
     fun insertLeftChild(leftChild: BeachNode?) {
         this.leftChild = leftChild
-        leftChild?.setParent(this)
+        leftChild?.parent = this
     }
 
     fun insertRightChild(rightChild: BeachNode?) {
         this.rightChild = rightChild
-        rightChild?.setParent(this)
+        rightChild?.parent = this
     }
 }

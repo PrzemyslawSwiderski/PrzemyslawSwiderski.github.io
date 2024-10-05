@@ -3,7 +3,6 @@ package app.voronoi.beachline
 import app.voronoi.event.Event
 import app.voronoi.event.VertexEvent
 import app.voronoi.graph.Point
-import java.util.Collections
 import java.util.LinkedList
 import java.util.function.Consumer
 
@@ -30,15 +29,16 @@ class LeafBeachNode internal constructor(val site: Point) : BeachNode() {
                 replaceBy(InnerBeachNode(copy(), InnerBeachNode(newLeaf, copy())))
             }
         }
-        setParent(null) // Disconnect this node from the tree
+        parent = null // Disconnect this node from the tree
         return InsertionResult(this, newLeaf)
     }
 
     fun remove() {
-        val parent = getParent()
-        val sibling: BeachNode? = if (parent!!.leftChild === this) parent.rightChild else parent.leftChild
-        parent.replaceBy(sibling)
-        setParent(null) // Disconnect this node from the tree
+        parent?.also {
+            val sibling: BeachNode? = if (it.leftChild === this) it.rightChild else it.leftChild
+            it.replaceBy(sibling)
+        }
+        parent = null // Disconnect this node from the tree
     }
 
     override fun getLeftmostLeaf(): LeafBeachNode {
@@ -50,15 +50,15 @@ class LeafBeachNode internal constructor(val site: Point) : BeachNode() {
     }
 
     fun getLeftNeighbor(): LeafBeachNode? {
-        var current = getParent()
+        var current = parent
         var child: BeachNode? = this
         if (current != null) {
-            while (current!!.getParent() != null) {
+            while (current!!.parent != null) {
                 if (current.rightChild === child) {
-                    return current.leftChild?.getRightmostLeaf()
+                    return current.leftChild!!.getRightmostLeaf()
                 } else {
                     child = current
-                    current = current.getParent()
+                    current = current.parent
                 }
             }
         }
@@ -66,15 +66,15 @@ class LeafBeachNode internal constructor(val site: Point) : BeachNode() {
     }
 
     fun getRightNeighbor(): LeafBeachNode? {
-        var current = getParent()
+        var current = parent
         var child: BeachNode? = this
         if (current != null) {
-            while (current!!.getParent() != null) {
+            while (current!!.parent != null) {
                 if (current.leftChild === child) {
-                    return current.rightChild?.getLeftmostLeaf()
+                    return current.rightChild!!.getLeftmostLeaf()
                 } else {
                     child = current
-                    current = current.getParent()
+                    current = current.parent
                 }
             }
         }
@@ -99,7 +99,7 @@ class LeafBeachNode internal constructor(val site: Point) : BeachNode() {
     }
 
     fun getSubscribers(): MutableList<VertexEvent?> {
-        return Collections.unmodifiableList<VertexEvent?>(subscribedEvents)
+        return subscribedEvents
     }
 
     companion object {

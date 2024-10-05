@@ -4,6 +4,7 @@ import app.voronoi.graph.Point
 
 
 class BeachLine {
+
     private val rootContainer = InnerBeachNode()
 
     fun insertArc(newSite: Point): InsertionResult {

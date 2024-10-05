@@ -4,7 +4,8 @@ import app.voronoi.graph.Point
 
 
 abstract class BeachNode {
-    private var parent: InnerBeachNode? = null
+
+    var parent: InnerBeachNode? = null
 
     abstract fun insertArc(newSite: Point): InsertionResult
 
@@ -13,21 +14,13 @@ abstract class BeachNode {
     abstract fun getRightmostLeaf(): LeafBeachNode?
 
     fun replaceBy(n: BeachNode?) {
-        if (getParent() != null) {
-            val parent = getParent()!!
-            if (parent.leftChild === this) {
-                parent.insertLeftChild(n)
+        parent?.also {
+            if (it.leftChild === this) {
+                it.insertLeftChild(n)
             } else {
-                parent.insertRightChild(n)
+                it.insertRightChild(n)
             }
         }
     }
 
-    fun getParent(): InnerBeachNode? {
-        return parent
-    }
-
-    fun setParent(parent: InnerBeachNode?) {
-        this.parent = parent
-    }
 }
