@@ -39,6 +39,7 @@ kotlin {
             dependencies {
                 implementation(libs.kaml.jvm)
                 implementation(libs.markdown.jvm)
+                implementation(libs.jfree.svg)
             }
         }
 
@@ -62,14 +63,16 @@ kotlin {
 }
 
 tasks {
+    val jvmRuntimeClasspath by configurations
+    val kotlinClasspath = layout.buildDirectory.files("classes/kotlin/jvm/main") + jvmRuntimeClasspath
+    val jsResourcesPath = layout.buildDirectory.file("processedResources/js/main")
 
     val generateHtmlFiles by registering(JavaExec::class) {
         val inputDir = "pages"
         group = "run"
         mainClass = "app.MdToHtmlConverterKt"
-        val jvmRuntimeClasspath by configurations
-        classpath = layout.buildDirectory.files("classes/kotlin/jvm/main") + jvmRuntimeClasspath
-        val outputPath = layout.buildDirectory.file("processedResources/js/main").get().asFile.absolutePath
+        classpath = kotlinClasspath
+        val outputPath = jsResourcesPath.get().asFile.absolutePath
         environment = mapOf(
             "INPUT_DIR" to inputDir,
             "OUTPUT_DIR" to outputPath
@@ -79,8 +82,20 @@ tasks {
         dependsOn("compileKotlinJvm")
     }
 
+    val generateVoronoi by registering(JavaExec::class) {
+        group = "run"
+        mainClass = "app.VoronoiGeneratorKt"
+        classpath = kotlinClasspath
+        val outputPath = jsResourcesPath.get().asFile.absolutePath
+        environment = mapOf(
+            "OUTPUT_DIR" to outputPath
+        )
+        outputs.dir(outputPath)
+        dependsOn("compileKotlinJvm")
+    }
+
     named("jsProcessResources") {
-        dependsOn(generateHtmlFiles)
+        dependsOn(generateHtmlFiles, generateVoronoi)
     }
 
 }

@@ -1,12 +1,6 @@
 #root {
-    --voronoi-number-of-cells: 150;
-    --voronoi-margin: 1%;
-    --voronoi-line-color: #{$secondary};
-    --voronoi-line-width: 1;
-    --voronoi-dot-size: 0;
-    --voronoi-cell-colors: #{$primary};
-    --voronoi-seed: 643421;
     min-height: 100vh;
-    background-image: paint(voronoi);
+    background-image: url('../voronoi.svg');
+    background-color: #{$primary};
     background-size: cover;
 }
