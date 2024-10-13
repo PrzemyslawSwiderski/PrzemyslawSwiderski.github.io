@@ -3,7 +3,7 @@ title: "AWS Cloud Day Warsaw"
 created: 2024-09-19
 ---
 
-<img class="responsive-img" src="/pages/posts/cloud-day/AWS-cloud-day.png" alt="Search Results"></img>
+![Warsaw](AWS-cloud-day.png)
 
 {toc.placeholder}
 

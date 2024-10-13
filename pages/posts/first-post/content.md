@@ -5,13 +5,13 @@ created: 2024-08-07
 
 {toc.placeholder}
 
-## Hi there!!! This is my first post on my new blog. 
+## Hi there!!! This is my first post on my new blog.
 
 ### It is mainly to check Markdown processing so can be a little messy 😄.
 
 <br/>
 
-### With some fancy GitHub logo ![GitHub](/pages/posts/first-post/github-logo.svg "GitHub")
+### With some fancy GitHub logo ![GitHub](github-logo.svg "GitHub")
 
 <br/>
 
@@ -43,4 +43,4 @@ private fun tryToParse(yamlString: String): MdMetadata {
 
 <br/>
 
-<img class="responsive-img" src="/pages/posts/first-post/giphy.gif"></img>
+![Img](giphy.gif)

@@ -26,7 +26,7 @@ class MdCompositeProcessorTest {
             
             Subsection 2a txt
             
-            #### Subsection 2b
+            #### Subsection 2b #?$!
             
             Subsection 2b txt
             
@@ -47,7 +47,7 @@ class MdCompositeProcessorTest {
               - [ Subsection 1](/sample/Path#subsection-1)
               - [ Subsection 2](/sample/Path#subsection-2)
                 - [ Subsection 2a](/sample/Path#subsection-2a)
-                  - [ Subsection 2b](/sample/Path#subsection-2b)
+                  - [ Subsection 2b #?$!](/sample/Path#subsection-2b-)
                     - [ CI/CD [some link](https://google.com)](/sample/Path#cicd-some-linkhttpsgooglecom)
             - [ Other section](/sample/Path#other-section)
               - [ Subsection other 2](/sample/Path#subsection-other-2)
@@ -66,7 +66,7 @@ class MdCompositeProcessorTest {
             
             Subsection 2a txt
             
-            #### Subsection 2b <a id="subsection-2b" href="/sample/Path#subsection-2b" class="anchor-link">🔗</a>
+            #### Subsection 2b #?$! <a id="subsection-2b-" href="/sample/Path#subsection-2b-" class="anchor-link">🔗</a>
             
             Subsection 2b txt
             

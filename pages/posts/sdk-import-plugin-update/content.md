@@ -69,7 +69,7 @@ successfully.
 
 One issue I struggled to fix were so-called red lines in gradle build files (`build.gradle.kts`):
 
-<img class="responsive-img" src="/pages/posts/sdk-import-plugin-update/red-lines-gradle.png" alt="Red lines in build script"></img>
+![Red lines in build script](red-lines-gradle.png)
 
 It seems like IDE could not resolve some Kotlin dependencies and autocompletion IntelliJ feature was not working because
 of that.

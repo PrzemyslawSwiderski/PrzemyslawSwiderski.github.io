@@ -3,12 +3,12 @@ title: "About"
 created: 2024-08-10
 ---
 
-<img class="responsive-img me-img rounded-5 float-end p-4" src="/pages/about/me.png" alt="me" />
+<img class="markdown-img me-img rounded-5 float-end p-4" src="me.png" alt="me" />
 
 ## Something about me
 
 My name is Przemysław Świderski.
-The shortened form is Przemek [🔊](/pages/about/Przemek.mp3).
+The shortened form is Przemek [🔊](Przemek.mp3).
 I am from Poland and this is my blog 👋.
 
 I have been writing some codes for a living since about 2016.

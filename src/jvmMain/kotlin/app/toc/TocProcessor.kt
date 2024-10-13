@@ -25,7 +25,7 @@ object TocProcessor : MdProcessor {
 
                     val headerName = outPutLine.substring(count)
                     val headerId = Utils.normalize(headerName)
-                    val headerPath = "$location#$headerId"
+                    val headerPath = "/$location#$headerId"
                     rootModels.add(ModifyModel(count, headerName, headerPath))
                     outPutLine =
                         "$outPutLine <a id=\"$headerId\" href=\"$headerPath\" class=\"anchor-link\">\uD83D\uDD17</a>"
@@ -40,17 +40,7 @@ object TocProcessor : MdProcessor {
     }
 
 
-    private fun getNestLevel(string: String): Int {
-        var count = 0
-        for (i in 0 until string.length) {
-            if (string[i] == DEFAULT_HEADER_CHAR) {
-                ++count
-            } else {
-                break
-            }
-        }
-        return count
-    }
+    private fun getNestLevel(string: String): Int = string.takeWhile { it == DEFAULT_HEADER_CHAR }.count()
 
     const val TOC_PLACEHOLDER = "{toc.placeholder}"
     const val LINE_SEP = "\n"

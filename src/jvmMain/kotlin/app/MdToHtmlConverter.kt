@@ -1,6 +1,8 @@
 package app
 
 import app.model.MdMetadata
+import app.postprocess.HtmlCompositeProcessor
+import app.postprocess.HtmlProcessorDto
 import app.preprocess.MdCompositeProcessor
 import app.preprocess.MdProcessorDto
 import com.charleskorn.kaml.Yaml
@@ -26,10 +28,8 @@ private fun generateHtml(mdString: String, location: String): String {
     val processedString = MdCompositeProcessor.process(MdProcessorDto(mdString, location))
     val parsedTree = MarkdownParser(FLAVOUR).buildMarkdownTreeFromString(processedString)
     return HtmlGenerator(processedString, parsedTree, FLAVOUR)
-        .also { it }
-        .generateHtml()
-        .removePrefix("<body>")
-        .removeSuffix("</body>")
+        .generateHtml(CustomTagRenderer)
+        .let { HtmlCompositeProcessor.process(HtmlProcessorDto(it, location)) }
 }
 
 private fun extractMarkdownPart(fileTxt: String) =

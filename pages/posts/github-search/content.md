@@ -8,7 +8,7 @@ GitHub has this cool feature that lets the developer search the code by some cri
 If we for example, type `path:build.gradle.kts AND "commonWebpackConfig"` into the search bar,
 there will be sample usages in public repositories listed:
 
-<img class="responsive-img" src="/pages/posts/github-search/sample-search-results.png" alt="Search Results"></img>
+![Search Results](sample-search-results.png)
 
 > Please note that only the default branches like `main` or `master` are indexed for the results.
 

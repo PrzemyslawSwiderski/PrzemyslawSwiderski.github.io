@@ -155,7 +155,7 @@ source files changes.
 
 Changes are visible in few seconds:
 
-<img class="responsive-img" src="/pages/posts/how-it-was-created/live-changes.gif" alt="Live reload"></img>
+![Live reload](live-changes.gif)
 
 As it can be seen in the `jsRun` task's logs, changes done in `content.md` file triggered rebuilding because the
 whole `pages` catalog was specified as the input of `generateHtmlFiles` task in
@@ -184,7 +184,7 @@ action.
 
 Cool thing is that you can edit MD files directly from GitHub site:
 
-<img class="responsive-img" src="/pages/posts/how-it-was-created/github-edit.png" alt="Edit MD file directly"></img>
+![Edit MD file directly](github-edit.png)
 
 and see the changes in a few minutes after
 commiting the changes to master.
