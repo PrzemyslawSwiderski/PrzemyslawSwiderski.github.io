@@ -1,8 +1,8 @@
-<h1>Intro</h1><p>This post is more like a notebook for setting up the home lab server.</p><h1>Networking</h1><h2>Firewall</h2><h3>Setting correct default zone</h3><p>When listing all zones:</p><pre><code class="language-shell">firewall-cmd --list-all-zones
+<ul><li><a href="posts/homelab#intro"> Intro</a></li><li><a href="posts/homelab#networking"> Networking</a><ul><li><a href="posts/homelab#firewall"> Firewall</a><ul><li><a href="posts/homelab#setting-correct-default-zone"> Setting correct default zone</a></li><li><a href="posts/homelab#allowing-denied-logs-to-appear-in-journalctl"> Allowing denied logs to appear in <code>journalctl</code></a></li><li><a href="posts/homelab#adding-wireguard-service-to-allow-vpn-connection"> Adding Wireguard service to allow VPN connection</a></li><li><a href="posts/homelab#adding-etcwireguardwg0conf-config-file"> Adding <code>/etc/wireguard/wg0.conf</code> config file</a></li></ul></li></ul></li><li><a href="posts/homelab#docker"> Docker</a></li></ul><h1>Intro <a id="intro" href="posts/homelab#intro" class="anchor-link">🔗</a></h1><p>This post is more like a notebook for setting up the home lab server.</p><h1>Networking <a id="networking" href="posts/homelab#networking" class="anchor-link">🔗</a></h1><h2>Firewall <a id="firewall" href="posts/homelab#firewall" class="anchor-link">🔗</a></h2><h3>Setting correct default zone <a id="setting-correct-default-zone" href="posts/homelab#setting-correct-default-zone" class="anchor-link">🔗</a></h3><p>When listing all zones:</p><pre><code class="language-shell">firewall-cmd --list-all-zones
 </code></pre><p>the <code>public</code> default zone is not connected to <code>enp2s0</code> in <code>firewall-cmd</code> so it is useful to change it to a correct 
 (<code>FedoraServer</code>) one:</p><pre><code class="language-shell">firewall-cmd --set-default-zone=FedoraServer
-</code></pre><h3>Allowing denied logs to appear in <code>journalctl</code></h3><ul><li><p>Change line <code>LogDenied=off</code> to <code>LogDenied=all</code> in <code>vi /etc/firewalld/firewalld.conf</code> file.</p></li><li><p>Restart service: <code>systemctl restart firewalld</code></p></li><li><p>View rejected request logs (last 20 records): <code>journalctl --lines=20 --grep='REJECT'</code> or in follow mode:
-  <code>journalctl -f --grep='REJECT'</code></p></li></ul><h3>Adding Wireguard service to allow VPN connection</h3><pre><code class="language-shell">firewall-cmd --add-service=wireguard
+</code></pre><h3>Allowing denied logs to appear in <code>journalctl</code> <a id="allowing-denied-logs-to-appear-in-journalctl" href="posts/homelab#allowing-denied-logs-to-appear-in-journalctl" class="anchor-link">🔗</a></h3><ul><li><p>Change line <code>LogDenied=off</code> to <code>LogDenied=all</code> in <code>vi /etc/firewalld/firewalld.conf</code> file.</p></li><li><p>Restart service: <code>systemctl restart firewalld</code></p></li><li><p>View rejected request logs (last 20 records): <code>journalctl --lines=20 --grep='REJECT'</code> or in follow mode:
+  <code>journalctl -f --grep='REJECT'</code></p></li></ul><h3>Adding Wireguard service to allow VPN connection <a id="adding-wireguard-service-to-allow-vpn-connection" href="posts/homelab#adding-wireguard-service-to-allow-vpn-connection" class="anchor-link">🔗</a></h3><pre><code class="language-shell">firewall-cmd --add-service=wireguard
 </code></pre><p>Add other conf options, so that it will look like:</p><pre><code class="language-text">FedoraServer (default, active)
   target: default
   ingress-priority: 0
@@ -36,7 +36,7 @@ home (active)
   source-ports: 
   icmp-blocks: 
   rich rules: 
-</code></pre><h3>Adding <code>/etc/wireguard/wg0.conf</code> config file</h3><ul><li>Save the following content</li></ul><pre><code class="language-shell">[Interface]
+</code></pre><h3>Adding <code>/etc/wireguard/wg0.conf</code> config file <a id="adding-etcwireguardwg0conf-config-file" href="posts/homelab#adding-etcwireguardwg0conf-config-file" class="anchor-link">🔗</a></h3><ul><li>Save the following content</li></ul><pre><code class="language-shell">[Interface]
 Address = 10.0.0.1/24
 PrivateKey = &lt;home_lab_private_key&gt;
 ListenPort = 51820
@@ -64,5 +64,5 @@ PublicKey = &lt;home_lab_public_key&gt;
 AllowedIPs = 0.0.0.0/1, 128.0.0.0/1
 Endpoint = homelab.pswidersk.com:51820
 
-</code></pre><h1>Docker</h1><p>Exporting existing containers to compose format:</p><pre><code class="language-shell">docker run --rm -v /var/run/docker.sock:/var/run/docker.sock ghcr.io/red5d/docker-autocompose $(docker ps -aq) &gt; compose.yaml
+</code></pre><h1>Docker <a id="docker" href="posts/homelab#docker" class="anchor-link">🔗</a></h1><p>Exporting existing containers to compose format:</p><pre><code class="language-shell">docker run --rm -v /var/run/docker.sock:/var/run/docker.sock ghcr.io/red5d/docker-autocompose $(docker ps -aq) &gt; compose.yaml
 </code></pre>
