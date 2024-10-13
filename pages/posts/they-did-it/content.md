@@ -6,7 +6,7 @@ created: 2024-10-13
 
 **Today SpaceX did the major breakthrough and caught the rocket in flight!**
 
-<video src="chopsticks-working.mp4" class="object-fit-scale" controls autoplay>Chopsticks working!</video>
+<video src="chopsticks-working.mp4" class="markdown-img" controls autoplay>Chopsticks working!</video>
 
 Not only did they safely recover the first stage, but they also managed to make
 the Starship even more resilient compared to the previous flight.
@@ -14,7 +14,7 @@ the Starship even more resilient compared to the previous flight.
 Even more impressive was that with the help of Starlink, they were able to capture
 live images of Starship breaking through the atmosphere:
 
-<video src="plasma-glowing.mp4" class="object-fit-scale" controls>Beautiful plasma glows</video>
+<video src="plasma-glowing.mp4" class="markdown-img" controls>Beautiful plasma glows</video>
 
 This is a major step in making space more affordable.
 
