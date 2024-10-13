@@ -3,6 +3,8 @@ title: "My First Test Post"
 created: 2024-08-07
 ---
 
+{toc.placeholder}
+
 ## Hi there!!! This is my first post on my new blog. 
 
 ### It is mainly to check Markdown processing so can be a little messy 😄.

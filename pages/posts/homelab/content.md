@@ -3,6 +3,8 @@ title: "Home Lab"
 created: 2024-10-04
 ---
 
+{toc.placeholder}
+
 # Intro
 
 This post is more like a notebook for setting up the home lab server.

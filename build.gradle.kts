@@ -43,6 +43,12 @@ kotlin {
             }
         }
 
+        jvmTest {
+            dependencies {
+                implementation(kotlin("test"))
+            }
+        }
+
         jsMain {
             dependencies {
                 implementation(dependencies.platform(libs.kotlin.wrappers))

@@ -1,6 +1,8 @@
 package app
 
 import app.model.MdMetadata
+import app.preprocess.MdCompositeProcessor
+import app.preprocess.MdProcessorDto
 import com.charleskorn.kaml.Yaml
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
@@ -12,19 +14,20 @@ import java.io.File
 private const val METADATA_SEPARATOR = "---"
 private const val CONTENT_HTML_FILE = "content.html"
 
-private val TAG_RENDERER = CustomTagRenderer()
+private val FLAVOUR = GFMFlavourDescriptor()
 
 private val INPUT_DIR by System.getenv()
 private val OUTPUT_DIR by System.getenv()
 
 private fun File.isMarkdown(): Boolean = this.extension == "md"
 
-private fun generateHtml(mdString: String): String {
-    val normalizedString = mdString.replace("\r\n", "\n")
-    val flavour = GFMFlavourDescriptor()
-    val parsedTree = MarkdownParser(flavour).buildMarkdownTreeFromString(normalizedString)
-    return HtmlGenerator(normalizedString, parsedTree, flavour)
-        .generateHtml(TAG_RENDERER)
+
+private fun generateHtml(mdString: String, location: String): String {
+    val processedString = MdCompositeProcessor.process(MdProcessorDto(mdString, location))
+    val parsedTree = MarkdownParser(FLAVOUR).buildMarkdownTreeFromString(processedString)
+    return HtmlGenerator(processedString, parsedTree, FLAVOUR)
+        .also { it }
+        .generateHtml()
         .removePrefix("<body>")
         .removeSuffix("</body>")
 }
@@ -32,10 +35,10 @@ private fun generateHtml(mdString: String): String {
 private fun extractMarkdownPart(fileTxt: String) =
     fileTxt.substringAfter(METADATA_SEPARATOR).substringAfter(METADATA_SEPARATOR)
 
-private fun saveHtml(file: File, outputDir: File) {
+private fun saveHtml(file: File, outputDir: File, metadata: MdMetadata) {
     val fileTxt = file.readText()
     val mdString = extractMarkdownPart(fileTxt)
-    val htmlString = generateHtml(mdString)
+    val htmlString = generateHtml(mdString, metadata.location)
     val targetDir = outputDir.resolve(file.parentFile)
     targetDir.mkdirs()
     val htmlFile = targetDir.resolve(CONTENT_HTML_FILE)
@@ -45,17 +48,18 @@ private fun saveHtml(file: File, outputDir: File) {
 private fun extractMetadataPart(fileTxt: String) =
     fileTxt.substringAfter(METADATA_SEPARATOR).substringBefore(METADATA_SEPARATOR, "")
 
-private fun addMetadata(file: File, metadataList: MutableList<MdMetadata>) {
+
+private fun generateMetadata(file: File): MdMetadata {
     val parent = file.parentFile
     val fileTxt = file.readText()
     val yamlString = extractMetadataPart(fileTxt)
     val fileMetadata = tryToParse(yamlString)
     val path = File("./").resolve(parent).resolve(CONTENT_HTML_FILE).invariantSeparatorsPath
-    metadataList.add(
-        fileMetadata.copy(
-            id = parent.name,
-            path = path
-        )
+    val location = parent.invariantSeparatorsPath.substringAfter("/")
+    return fileMetadata.copy(
+        id = parent.name,
+        path = path,
+        location = location
     )
 }
 
@@ -87,10 +91,11 @@ fun main() {
             file.copyTo(targetFile, overwrite = true)
         }
         if (file.isMarkdown()) {
+            val metadata = generateMetadata(file)
             // MD -> HTML conversion
-            saveHtml(file, outputDir)
+            saveHtml(file, outputDir, metadata)
             // Read and save metadata
-            addMetadata(file, metadataList)
+            metadataList.add(metadata)
         }
     }
 

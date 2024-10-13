@@ -5,6 +5,8 @@ created: 2024-09-19
 
 <img class="responsive-img" src="/pages/posts/cloud-day/AWS-cloud-day.png" alt="Search Results"></img>
 
+{toc.placeholder}
+
 # Intro
 
 On September 18th I went to the **[AWS Cloud Day Warsaw](https://aws.amazon.com/events/cloud-days/warsaw/)**.  
