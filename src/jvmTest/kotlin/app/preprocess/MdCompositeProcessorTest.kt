@@ -8,7 +8,7 @@ class MdCompositeProcessorTest {
     @Test
     fun testProcess() {
         // given
-        val testLocation = "/sample/Path"
+        val testLocation = "sample/Path"
         val testInputMd = """
             {toc.placeholder}
             
