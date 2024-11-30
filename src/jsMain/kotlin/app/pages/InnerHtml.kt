@@ -27,7 +27,12 @@ val InnerHtml = FC<InnerHtmlProps> { props ->
             .then { content = it.default.unsafeCast<String>() }
             .await()
         importAsync<Module<HighlightJS>>("highlight.js")
-            .then { it.default.highlightAll() }
+            .then {
+                val copyPlugin = CopyButtonPlugin()
+                copyPlugin.autohide = true
+                it.default.addPlugin(copyPlugin)
+                it.default.highlightAll()
+            }
             .await()
         scrollToAnchor()
     }
@@ -49,4 +54,11 @@ private fun scrollToAnchor() {
 
 external class HighlightJS {
     fun highlightAll()
+    fun addPlugin(plugin: dynamic)
+}
+
+@JsModule("highlightjs-copy")
+@JsNonModule
+external class CopyButtonPlugin() {
+    var autohide: Boolean
 }

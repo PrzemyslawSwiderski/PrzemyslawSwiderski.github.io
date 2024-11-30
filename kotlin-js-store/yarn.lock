@@ -1450,6 +1450,11 @@ highlight.js@11.10.0:
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-11.10.0.tgz#6e3600dc4b33d6dc23d5bd94fbf72405f5892b92"
   integrity sha512-SYVnVFswQER+zu1laSya563s+F8VDGt7o35d4utbamowvUNLLMovFqwCLSocpZTz3MgaSRA1IbqRWZv97dtErQ==
 
+highlightjs-copy@1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/highlightjs-copy/-/highlightjs-copy-1.0.6.tgz#060b15f08b25907fef5f07bc076bfdff358d4edf"
+  integrity sha512-UaHIlJ4rkk5R4OVDnpgxevIuYdHggN5sPgs3E/2FKLxypvzAQVTOZl66hm8cEnhrEoLHTGkQymLtfJ/efyv24Q==
+
 hpack.js@^2.1.6:
   version "2.1.6"
   resolved "https://registry.yarnpkg.com/hpack.js/-/hpack.js-2.1.6.tgz#87774c0949e513f42e84575b3c45681fade2a0b2"

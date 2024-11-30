@@ -63,6 +63,7 @@ kotlin {
                 implementation(devNpm("mini-css-extract-plugin", libs.versions.npm.minicss.get()))
                 implementation(devNpm("share-buttons", libs.versions.npm.sharebuttons.get()))
                 implementation(devNpm("highlight.js", libs.versions.npm.highlightjs.get()))
+                implementation(devNpm("highlightjs-copy", libs.versions.npm.highlightjsCopyPlugin.get()))
             }
         }
     }
