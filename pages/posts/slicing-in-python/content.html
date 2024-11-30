@@ -1,0 +1,60 @@
+<h2>About <a id="about" href="/posts/slicing-in-python#about" class="anchor-link">🔗</a></h2><p>Python's slicing is tricky and I always forget how to use it after a while 😊.</p><p>I asked ChatGPT to provide a consolidated guide with notes and examples for easy reference.</p><h2>Content <a id="content" href="/posts/slicing-in-python#content" class="anchor-link">🔗</a></h2><h3>Basic Slicing Syntax <a id="basic-slicing-syntax" href="/posts/slicing-in-python#basic-slicing-syntax" class="anchor-link">🔗</a></h3><p>The general form of slicing is:</p><pre><code class="language-python">sequence[start:stop:step]
+</code></pre><ul><li><strong><code>start</code></strong>: The index where the slice begins (inclusive).</li><li><strong><code>stop</code></strong>: The index where the slice ends (exclusive).</li><li><strong><code>step</code></strong>: The step size or interval between indices. It defaults to <code>1</code> if not specified.</li></ul><hr /><h3>Key Points <a id="key-points" href="/posts/slicing-in-python#key-points" class="anchor-link">🔗</a></h3><h4>1. Default Values: <a id="1-default-values" href="/posts/slicing-in-python#1-default-values" class="anchor-link">🔗</a></h4><ul><li>If <strong><code>start</code></strong> is omitted, it defaults to <code>0</code> (start of the sequence).</li><li>If <strong><code>stop</code></strong> is omitted, it defaults to the length of the sequence (end of the sequence).</li><li>If <strong><code>step</code></strong> is omitted, it defaults to <code>1</code> (move to the next element).</li></ul><p><strong>Example:</strong></p><pre><code class="language-python">lst = [0, 1, 2, 3, 4, 5]
+print(lst[:3])  # [0, 1, 2] (equivalent to lst[0:3])
+print(lst[2:])  # [2, 3, 4, 5] (equivalent to lst[2:len(lst)])
+print(lst[::2])  # [0, 2, 4] (every 2nd element)
+</code></pre><h4>2. Negative Indices: <a id="2-negative-indices" href="/posts/slicing-in-python#2-negative-indices" class="anchor-link">🔗</a></h4><p>You can use negative indices to count from the end of the sequence:</p><ul><li><code>-1</code> refers to the last element,</li><li><code>-2</code> refers to the second-to-last element, and so on.</li></ul><p><strong>Example:</strong></p><pre><code class="language-python">lst = [0, 1, 2, 3, 4, 5]
+print(lst[-1])  # 5 (last element)
+print(lst[-3:])  # [3, 4, 5] (slice from the third-to-last element to the end)
+print(lst[:-2])  # [0, 1, 2, 3] (slice up to the second-to-last element)
+</code></pre><h4>3. Negative Step (<code>[::-1]</code>): <a id="3-negative-step--1" href="/posts/slicing-in-python#3-negative-step--1" class="anchor-link">🔗</a></h4><p>A negative step reverses the direction of slicing:</p><ul><li><code>[::-1]</code> reverses the entire sequence.</li><li><code>start</code> and <code>stop</code> positions adjust accordingly when the step is negative.</li></ul><p><strong>Example:</strong></p><pre><code class="language-python">lst = [0, 1, 2, 3, 4, 5]
+print(lst[::-1])  # [5, 4, 3, 2, 1, 0] (entire sequence reversed)
+print(lst[4:1:-1])  # [4, 3, 2] (reverse slice from index 4 to index 2)
+</code></pre><h4>4. Out-of-Bounds Indices: <a id="4-out-of-bounds-indices" href="/posts/slicing-in-python#4-out-of-bounds-indices" class="anchor-link">🔗</a></h4><p>If <strong><code>start</code></strong> or <strong><code>stop</code></strong> indices are out of the range of the sequence, Python will gracefully handle it without
+raising an error. It adjusts to the sequence's length.</p><p><strong>Example:</strong></p><pre><code class="language-python">lst = [0, 1, 2, 3]
+print(lst[:10])  # [0, 1, 2, 3] (stop index exceeds length, no error)
+print(lst[-10:])  # [0, 1, 2, 3] (start index is less than 0, adjusts to 0)
+</code></pre><h4>5. Combining Features: <a id="5-combining-features" href="/posts/slicing-in-python#5-combining-features" class="anchor-link">🔗</a></h4><p>You can mix positive and negative indices and steps to create complex slices.</p><p><strong>Example:</strong></p><pre><code class="language-python">lst = [0, 1, 2, 3, 4, 5]
+print(lst[5:1:-1])  # [5, 4, 3, 2] (reverse slice from index 5 to index 2)
+print(lst[:-3:-1])  # [5, 4] (reverse slice starting at the end, stopping before -3)
+</code></pre><hr /><h3>Practical Use Cases of Slicing <a id="practical-use-cases-of-slicing" href="/posts/slicing-in-python#practical-use-cases-of-slicing" class="anchor-link">🔗</a></h3><h4>Reversing a Sequence: <a id="reversing-a-sequence" href="/posts/slicing-in-python#reversing-a-sequence" class="anchor-link">🔗</a></h4><pre><code class="language-python">lst = [1, 2, 3, 4]
+print(lst[::-1])  # [4, 3, 2, 1]
+</code></pre><h4>Extracting Odd or Even Indexed Elements: <a id="extracting-odd-or-even-indexed-elements" href="/posts/slicing-in-python#extracting-odd-or-even-indexed-elements" class="anchor-link">🔗</a></h4><pre><code class="language-python">lst = [10, 20, 30, 40, 50]
+print(lst[::2])  # [10, 30, 50] (even-indexed elements)
+print(lst[1::2])  # [20, 40] (odd-indexed elements)
+</code></pre><h4>Custom Ranges: <a id="custom-ranges" href="/posts/slicing-in-python#custom-ranges" class="anchor-link">🔗</a></h4><pre><code class="language-python">lst = [0, 1, 2, 3, 4, 5, 6, 7]
+print(lst[2:6])  # [2, 3, 4, 5] (from index 2 to 5)
+print(lst[::3])  # [0, 3, 6] (every 3rd element)
+</code></pre><h4>Complex Manipulation: <a id="complex-manipulation" href="/posts/slicing-in-python#complex-manipulation" class="anchor-link">🔗</a></h4><pre><code class="language-python">lst = [0, 1, 2, 3, 4, 5]
+print(lst[-1:1:-2])  # [5, 3] (start from the end, step backward by 2)
+</code></pre><hr /><p>By mastering slicing, you can write concise, elegant Python code for many common tasks.</p><h3>Combining slices <a id="combining-slices" href="/posts/slicing-in-python#combining-slices" class="anchor-link">🔗</a></h3><p>You can <strong>combine (or join)</strong> slicing operations to achieve more complex results, but slicing itself does not provide an
+explicit &quot;joining&quot; mechanism. However, you can apply one slice operation to the result of another slice. This
+effectively &quot;chains&quot; the slicing.</p><p>Here’s how it works:</p><hr /><h3>Joining Slices: Example <a id="joining-slices-example" href="/posts/slicing-in-python#joining-slices-example" class="anchor-link">🔗</a></h3><p>When you apply slicing sequentially, the first slicing operation creates a new sequence, and the second slicing operates
+on that result.</p><pre><code class="language-python">lst = [0, 1, 2, 3, 4, 5, 6]
+
+# First slice extracts a sublist
+sublist = lst[1:5]  # [1, 2, 3, 4]
+
+# Second slice operates on the sublist
+result = sublist[::2]  # [1, 3]
+print(result)  # Output: [1, 3]
+
+# Or directly combine
+result = lst[1:5][::2]  # [1, 3]
+print(result)  # Output: [1, 3]
+</code></pre><hr /><h3>Important Notes <a id="important-notes" href="/posts/slicing-in-python#important-notes" class="anchor-link">🔗</a></h3><ol><li><p><strong>Intermediate Sequence</strong>: Each slicing creates a new sequence. The second slicing operates on the new sequence, not
+   the original.</p><ul><li><code>lst[1:5]</code> creates <code>[1, 2, 3, 4]</code>.</li><li>Then <code>[::2]</code> operates on <code>[1, 2, 3, 4]</code>.</li></ul></li><li><p><strong>Efficiency</strong>: While combining slices is syntactically valid, performing multiple slicing operations can be less
+   efficient for large sequences because intermediate sequences are created.</p></li></ol><hr /><h3>Alternative: Combine Slicing Logic <a id="alternative-combine-slicing-logic" href="/posts/slicing-in-python#alternative-combine-slicing-logic" class="anchor-link">🔗</a></h3><p>If possible, calculate the combined slicing logic to avoid intermediate steps.</p><p><strong>Example:</strong></p><pre><code class="language-python">lst = [0, 1, 2, 3, 4, 5, 6]
+# Combining logic
+result = lst[1:5:2]  # [1, 3]
+print(result)  # Output: [1, 3]
+</code></pre><ul><li>The combined slice <code>[1:5:2]</code> skips the intermediate sublist, extracting elements directly from the original list.</li></ul><hr /><h3>When Joining Is Practical <a id="when-joining-is-practical" href="/posts/slicing-in-python#when-joining-is-practical" class="anchor-link">🔗</a></h3><ol><li><p><strong>Sequential Slicing</strong>:
+   Useful when intermediate results need to be reused or understood independently.</p><pre><code class="language-python">lst = [0, 1, 2, 3, 4, 5]
+sublist = lst[2:5]      # [2, 3, 4]
+result = sublist[::-1]  # [4, 3, 2]
+print(result)           # Output: [4, 3, 2]
+</code></pre></li><li><p><strong>Direct Slicing</strong>:
+   Preferable when the final result can be directly extracted:</p><pre><code class="language-python">lst = [0, 1, 2, 3, 4, 5]
+result = lst[4:1:-1]  # [4, 3, 2]
+print(result)         # Output: [4, 3, 2]
+</code></pre></li></ol><hr /><h3>Summary <a id="summary" href="/posts/slicing-in-python#summary" class="anchor-link">🔗</a></h3><ul><li>You can join slicing by applying slices sequentially (e.g., <code>lst[a:b][c:d]</code>).</li><li>When possible, combine slicing logic into a single operation to improve efficiency (e.g., <code>lst[a:b:c]</code>).</li><li>Choose the approach that best fits the problem and your need for intermediate results or clarity.</li></ul>
