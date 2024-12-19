@@ -42,11 +42,11 @@ a {
 
 code {
     @extend .hljs;
-    animation: fade-in 1s;
+    animation: fade-in 0.5s;
 }
 
 img {
-    animation: fade-in 2s;
+    animation: fade-in 0.5s;
 }
 
 @keyframes fade-in {

@@ -124,7 +124,11 @@ Based on the `T10Y3M` trend, it is likely it will return to positive in a month 
 
 With the help of ChatGPT, I found that economic turmoil and a recession could become more probable.
 
-In such a case, the unemployment rate could rise significantly, but let's hope that the FED will magically 
+In such a case, the unemployment rate could rise significantly, but let's hope that the FED will magically
 implement "soft landing" and not cause the inflation to return 🙏.
 
 Otherwise, it will be ordinary people who are impacted the most, and wealth inequality could widen even further.
+
+## 19.12.2024 Update
+
+On 13th of December, the `T10Y3M` uninverted to `0.06%`, indicating a heightened probability of a recession in 2025.
