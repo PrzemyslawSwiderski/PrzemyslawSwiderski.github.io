@@ -1,5 +1,6 @@
 package app.pages
 
+import app.ShareButtons
 import app.model.MdMetadata
 import react.FC
 import react.Props
@@ -22,6 +23,24 @@ val SinglePost = FC<SinglePostProps> { props ->
         hr { }
         InnerHtml {
             data = props.data
+        }
+        hr {}
+        ShareButtons {}
+        hr {}
+        Giscus {
+            id = "comments"
+            host = "blog.pswidersk.com"
+            repo = "PrzemyslawSwiderski/PrzemyslawSwiderski.github.io"
+            repoId = "MDEwOlJlcG9zaXRvcnk1MDYxNjEyNw=="
+            category = "General"
+            categoryId = "DIC_kwDOAwRXP84CltPW"
+            mapping = "pathname"
+            reactionsEnabled = "1"
+            emitMetadata = "0"
+            inputPosition = "bottom"
+            theme = "dark"
+            lang = "en"
+            loading = "lazy"
         }
     }
 }

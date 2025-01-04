@@ -15,6 +15,7 @@ npm-highlightjsCopyPlugin = "1.0.6"
 npm-loader-yaml = "0.8.1"
 npm-loader-css = "6.10.0"
 npm-loader-sass = "14.1.1"
+npm-giscus = "3.1.0"
 
 [libraries]
 kotlin-wrappers = { module = "org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom", version.ref = "kotlin-wrappers" }

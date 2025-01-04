@@ -1,6 +1,5 @@
 package app.pages
 
-import app.ShareButtons
 import app.model.MdMetadata
 import app.utils.withClasses
 import js.import.Module
@@ -11,7 +10,6 @@ import kotlinx.browser.window
 import react.FC
 import react.Props
 import react.dom.html.ReactHTML.div
-import react.dom.html.ReactHTML.hr
 import react.useEffect
 import react.useState
 
@@ -43,8 +41,6 @@ val InnerHtml = FC<InnerHtmlProps> { props ->
             __html = content.orEmpty()
         }
     }
-    hr {}
-    ShareButtons {}
 }
 
 private fun scrollToAnchor() {
