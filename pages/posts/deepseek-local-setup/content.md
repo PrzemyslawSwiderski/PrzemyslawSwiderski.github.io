@@ -63,4 +63,4 @@ You can notice it took 20 min for the model to respond. Probably because I used 
 ## Conclusion
 
 In about 2 hours I was able to start my private and limitless ChatGPT-like AI agent 😲.
-Pretty impressive and quite scary considering current OpenAI and NVIDIA values.
+Pretty impressive and quite scary considering current OpenAI and NVIDIA valuations.
