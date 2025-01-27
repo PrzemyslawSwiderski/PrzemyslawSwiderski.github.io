@@ -39,7 +39,7 @@ open-web-ui:
     - "../ai_data/:/app/backend/data"
 ```
 
-I skipped the GPU parameters for now and wanted to run it on CPU for the smoke test purpose.
+I skipped the GPU parameters because my integrated Intel GPU was either ways too weak.
 
 After hitting `docker compose up -d` on server, Docker started to build image.
 It took some time because it was about 3GB big.
@@ -59,27 +59,6 @@ To perform some test query I asked a simple question as belows:
 ![DeepSeek_query.png](DeepSeek_query.png)
 
 You can notice it took 20 min for the model to respond. Probably because I used the CPU only.
-
-## GPU setup
-
-IN_PROGRESS
-
-[//]: # (Fortunately, my little Dell server uses integrated Intel GPU chip 😎.)
-
-[//]: # ()
-[//]: # (Too bad Ollama does not support Intel chips out of the box but there is some trick to do it)
-
-[//]: # (which is described **[here]&#40;https://github.com/mattcurf/ollama-intel-gpu&#41;**.)
-
-[//]: # ()
-[//]: # (What I had to do was adding new `ollama-intel-gpu` service and additional `Dockerfile`.)
-
-[//]: # ()
-[//]: # (I was pretty surprised that during the Docker compose rebuild action, some Ubuntu layers were needed.)
-
-[//]: # (Since I am using Fedora on my server, it had to download additional ~10GB of data and lasted about 30 minutes.)
-
-
 
 ## Conclusion
 
