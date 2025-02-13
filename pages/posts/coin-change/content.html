@@ -1,0 +1,78 @@
+<h2>About <a id="about" href="/posts/coin-change#about" class="anchor-link">🔗</a></h2><p>Recently, I encountered some
+interesting <a href="https://www.hackerrank.com/challenges/coin-change/problem?isFullScreen=true">problem</a>
+on <a href="https://www.hackerrank.com/">HackerRank</a>
+platform.</p><p>The main task is to:</p><blockquote><p>Given an amount and the denominations of coins available, determine how many ways change can be made for amount.
+ There is a limitless supply of each coin type.</p></blockquote><p>I will try to explain possible solution to this problem.</p><h2>Solution <a id="solution" href="/posts/coin-change#solution" class="anchor-link">🔗</a></h2><p>I had some ideas how to solve it by using 2D helper arrays.
+When I tried to find a similar solution to validate my approach, I found even simpler one:</p><pre><code class="language-python">def get_ways(n, c):
+    count = [0] * (n + 1)
+    count[0] = 1
+    for coin in c:
+        for i in range(coin, n + 1):
+            count[i] += count[i - coin]
+    return count[n]
+</code></pre><p>It is quite impressive that we can solve this issue with only 6 lines of Python code.
+I decided to debug this code in order to have a better view about how it works.</p><p>So, assuming:</p><ul><li><code>n</code> -&gt; amount for which we will have to find number of <strong>ways</strong></li><li><code>c</code> -&gt; input array with denominations</li><li><code>count</code> -&gt; helper 1D array which will store <strong>ways</strong> number per specific amount</li></ul><p>for the input <code>n=6</code> and <code>c=[2,3]</code> we will get the following <code>count</code> content:</p><pre><code class="language-text">amount=0 ways=1
+amount=1 ways=0
+amount=2 ways=1
+amount=3 ways=1
+amount=4 ways=1
+amount=5 ways=1
+amount=6 ways=2
+</code></pre><p>As we can see above, for the <code>n=6</code> the change can be created in 2 ways.
+I am guessing those would be <code>[2,2,2]</code> and <code>[3,3]</code> but I improved code a little to print possible sets as well:</p><pre><code class="language-python">def get_ways(n, c):
+    counts = []
+    for i in range(n + 1):
+        counts.append({&quot;ways_count&quot;: 0, &quot;coin_sets&quot;: []})
+    counts[0][&quot;ways_count&quot;] = 1
+    counts[0][&quot;coin_sets&quot;] = [[]]
+    for coin in c:
+        for amount in range(coin, n + 1):
+            prev_count = counts[amount - coin]
+            counts[amount][&quot;ways_count&quot;] += prev_count[&quot;ways_count&quot;]
+            coin_sets = counts[amount][&quot;coin_sets&quot;]
+            for coins_set in prev_count[&quot;coin_sets&quot;]:
+                prev_extended = [*coins_set, coin]
+                coin_sets.append(prev_extended)
+
+    for amount, c in enumerate(counts):
+        ways = c[&quot;ways_count&quot;]
+        coin_sets = c[&quot;coin_sets&quot;]
+        print(f&quot;{amount=} {ways=} {coin_sets=}&quot;)
+
+    return counts[n][&quot;ways_count&quot;]
+</code></pre><p>The whole code can be found
+<strong><a href="https://github.com/PrzemyslawSwiderski/algorithms-playground/blob/main/problems/coin-change/script.py">here</a></strong>.</p><p>The important bits are <code>count[0]</code> initial case assignments. We are specifying the base for all coins. It will only be
+used in the first per coin iteration. <code>count[0][&quot;ways_count&quot;]</code> is having <code>1</code> value because when
+<code>amount = coin denomination</code> we can always return single coin as a change.</p><p>The <code>counts[0][&quot;coin_sets&quot;]</code> is being set to <code>[[]]</code> so that for the initial coin iteration it will be extended
+with the current coin value inside of <code>for coins_set in prev_count[&quot;coin_sets&quot;]:</code> loop.</p><p>New output:</p><pre><code class="language-text">amount=0 ways=1 coin_sets=[[]]
+amount=1 ways=0 coin_sets=[]
+amount=2 ways=1 coin_sets=[[2]]
+amount=3 ways=1 coin_sets=[[3]]
+amount=4 ways=1 coin_sets=[[2, 2]]
+amount=5 ways=1 coin_sets=[[2, 3]]
+amount=6 ways=2 coin_sets=[[2, 2, 2], [3, 3]]
+</code></pre><p>Now it looks cleaner as we have all change sets listed.</p><p>We can also notice that following amounts are using previous calculations.</p><p>For example for the coin <code>2</code>:</p><pre>
+amount=4 ways=1 coin_sets=[<b>[2, 2]</b>]
+(...)
+amount=6 ways=2 coin_sets=[[2, 2, <b>2</b>], (...)
+</pre>
+<p>We are extending previous change retrieved from <code>amount=4</code>.</p><p>Other interesting example:</p><p><code>n=10, c=[2,3,5]</code></p><pre><code class="language-text">amount=0 ways=1 coin_sets=[[]]
+amount=1 ways=0 coin_sets=[]
+amount=2 ways=1 coin_sets=[[2]]
+amount=3 ways=1 coin_sets=[[3]]
+amount=4 ways=1 coin_sets=[[2, 2]]
+amount=5 ways=2 coin_sets=[[2, 3], [5]]
+amount=6 ways=2 coin_sets=[[2, 2, 2], [3, 3]]
+amount=7 ways=2 coin_sets=[[2, 2, 3], [2, 5]]
+amount=8 ways=3 coin_sets=[[2, 2, 2, 2], [2, 3, 3], [3, 5]]
+amount=9 ways=3 coin_sets=[[2, 2, 2, 3], [3, 3, 3], [2, 2, 5]]
+amount=10 ways=4 coin_sets=[[2, 2, 2, 2, 2], [2, 2, 3, 3], [2, 3, 5], [5, 5]]
+</code></pre><p>Coin <code>5</code> result:</p><pre><code class="language-text">amount=5 ways=2 coin_sets=[[2, 3], [5]]
+</code></pre><p>uses:</p><pre><code class="language-text">amount=0 ways=1 coin_sets=[[]]
+</code></pre><p>and since there is <code>[[]]</code> array inside, <code>[5]</code> change set is added.</p><p>For the <code>amount=6</code>:</p><pre><code class="language-text">amount=6 ways=2 coin_sets=[[2, 2, 2], [3, 3]]
+</code></pre><p>the following is considered:</p><pre><code class="language-text">amount=1 ways=0 coin_sets=[]
+</code></pre><p>as a result no <code>5</code> coin is added to <code>coin_sets</code>.</p><p>For the <code>amount=7</code>:</p><pre><code class="language-text">amount=7 ways=2 coin_sets=[[2, 2, 3], [2, 5]]
+</code></pre><p>we are reusing:</p><pre><code class="language-text">amount=2 ways=1 coin_sets=[[2]]
+</code></pre><p>so that <code>[2, 5]</code> is appended</p><p>and so on...</p><h2>Summary <a id="summary" href="/posts/coin-change#summary" class="anchor-link">🔗</a></h2><p>Adding printing of the coin sets to the initial code helped me understand shorter solution.</p><p>Other problems solutions using <a href="https://en.wikipedia.org/wiki/Dynamic_programming">Dynamic Programming</a>
+or <a href="https://en.wikipedia.org/wiki/Memoization">Memoization</a> technique can also be reworked in a similar way
+so that they can be easier <em>consumed</em> by programmers 😄</p>
