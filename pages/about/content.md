@@ -23,7 +23,7 @@ Generally, I am trying to keep things simple, and as somebody once said:
 
 > "No code" is someone else's code
 
-In my free time, I like to work out, play the guitar, cook, travel, and track rockets.
+In my free time, I like to work out, play the guitar, cook, travel, or track the rockets 🙂.
 
 Socials:
 * <a target="_blank" href="https://github.com/PrzemyslawSwiderski"><img src="https://img.shields.io/github/followers/PrzemyslawSwiderski?style=social" /></a>
