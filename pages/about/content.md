@@ -8,24 +8,26 @@ created: 2024-08-10
 ## Something about me
 
 My name is Przemysław Świderski.
-The shortened form is Przemek [🔊](Przemek.mp3).
-I am from Poland and this is my blog 👋.
+You can call me Przemek [🔊](Przemek.mp3), and this is my blog! 👋.
 
-I have been writing some codes for a living since about 2016.
+I've been writing code professionally since around 2016, but for fun, much longer.
 
-My main tools to do the job are Java/Kotlin, but I also have experience with TypeScript and Python.
+My primary tools of choice are Java and Kotlin, though I also have experience with TypeScript and Python.
 
-Generally, I am trying to keep things simple, and as somebody once said:
+I strive to keep things simple. As someone once said:
 
-> The Best Code is No Code At All
+> The best code is no code at all.
 
-**but** always keeping in mind that:
+**However**, I always keep in mind that:
 
-> "No code" is someone else's code
+> "No code" is just someone else's code.
 
-In my free time, I like to work out, play the guitar, cook, travel, or track the rockets 🙂.
+In my free time, I enjoy working out, playing the guitar, cooking, traveling, and tracking rocket launches 🙂.
 
 Socials:
-* <a target="_blank" href="https://github.com/PrzemyslawSwiderski"><img src="https://img.shields.io/github/followers/PrzemyslawSwiderski?style=social" /></a>
-* <a target="_blank" href="https://x.com/przemswid"><img src="https://img.shields.io/twitter/follow/przemswid.svg?style=social" /></a>
-* <a target="_bland" href="https://linkedin.com/in/pswidersk/"><img src="https://img.shields.io/badge/linkedin-pswidersk-blue?style=social&logo=linkedin" /></a>
+
+[![GitHub User's followers](https://img.shields.io/github/followers/PrzemyslawSwiderski)](https://github.com/PrzemyslawSwiderski)
+
+[![X](https://img.shields.io/badge/X-%23000000.svg?logo=X&logoColor=white)](https://x.com/przemswid)
+
+[![LinkedIn](https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff)](https://pl.linkedin.com/in/pswidersk)
