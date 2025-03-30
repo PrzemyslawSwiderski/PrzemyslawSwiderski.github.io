@@ -17,6 +17,7 @@ blockquote {
     @include font-size($main-font-size);
     @extend .blockquote;
     text-align: center;
+    font-style: italic;
 }
 
 .markdown-img {
