@@ -27,7 +27,8 @@ Why?
 * Battery Case
 * Power Switch
 * Acrylic Platform
-* 4 x motors with wheels
+* 4 x Motors With Wheels
+* Cables, Screws And Other Accessories
 
 I bought parts from Allegro, Temu and [LAFVIN](https://lafvintech.com/) store.
 They provide learning kits and other stuff.
