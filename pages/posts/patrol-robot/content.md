@@ -66,6 +66,7 @@ The main features I added are as follows:
 * Sleep mode to save the battery power for the WiFi client mode.
 * PIR sensor movement detection and notifications sending.
 * Way to retrieve basic heap usage and clients connected from the web console.
+* Internet access.
 
 # Result
 
@@ -73,3 +74,27 @@ The main features I added are as follows:
 
 As you can see above, the robot is working fine.
 Responsiveness is pretty good, and the user is able to steer it by using a web HTML page on desktop or Android. 😎
+
+# AI Support Reflections
+
+I vividly recall the challenges of writing low-level code for embedded systems during my studies.
+To simplify the process this time, I turned to AI assistants for support.
+I primarily used [Grok](https://x.com/i/grok), with occasional help from ChatGPT and DeepSeek to cross-check answers.
+
+These tools significantly speeded up my implementation.
+Without AI assistance, I would have spent hours scouring GitHub or Google for code snippets.
+What took about a month with AI would have likely taken two to three times longer without it.
+
+The AI was particularly valuable for web console development.
+Using simple prompts, I generated a complete HTML site and, with minor tweaks,
+integrated it with my device via a WebSocket endpoint.
+
+One challenge I faced was that the generated code didn’t compile with `arduino-esp32` version 3.2.
+I had to manually adjust it to make it compatible, likely because version 3.x is relatively new,
+and the AI models had not fully adapted to its codebase.
+
+Despite this issue, the overall experience was excellent.
+Beyond generating functional code, the AI provided clear explanations of specific lines and features,
+eliminating the need to dig through documentation.
+The AI assistant drastically reduced the initial learning curve,
+making the process much smoother :smiley_cat:.
