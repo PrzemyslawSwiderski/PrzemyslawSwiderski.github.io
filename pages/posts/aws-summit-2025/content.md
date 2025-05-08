@@ -18,12 +18,77 @@ and highlights from the summit :slightly_smiling_face:.
 
 ## Venue
 
-## Challenges and games
+Compared to the event in Warsaw a year ago, I believe the venue and organization were significantly better.
+The main exhibition hall was very spacious, with no "traffic" congestion. In contrast, at the Warsaw event,
+the sponsor stands were spread across different floors, which sometimes led to crowded conditions.
 
-## Food and drinks
+The rooms where the sessions were held were also much more spacious.
+This was particularly true for the Keynote Hall and Auditorium,
+where everyone had a comfortable seat, and the speakers experienced
+no technical issues (at least none that I noticed 😊).
 
-TODO
+## Exhibitions and Games
 
+During the Summit, various AWS teams showcased engaging demos and exhibitions.
+
+### Free Kick Challenge
+
+![Free Kick Challenge](footballChallenge.gif)
+
+The challenge was to score a goal with the fastest dribbling time and shot speed possible.
+
+I tried my hand at it but would rather not share the details 😅.
+Essentially, I performed much worse than the person in the GIF.
+Out of three shots, one hit the post, and the others veered far from the goal 😊.
+
+It was an exhilarating and well-organized game.
+I even saw that someone on the leaderboard kicked the ball at a speed exceeding 90 km/h.
+
+### Dream City
+
+![Dream City](DREAMcity.gif)
+
+![Dream City Architecture](dreamCityArch.jpg)
+
+One team demonstrated a failsafe and load-balancing electricity mechanism for a small city.
+The city was powered by various electricity sources, such as solar panels and wind turbines.
+A volunteer could simulate a failure by, for example, placing dirt on a solar panel.
+When this happened, less power was supplied to city lights or the amusement park,
+but essential buildings, like the hospital, still received power.
+
+Preparing everything and ensuring it worked seamlessly undoubtedly required significant effort.
+
+### AWS BuilderCards
+
+![BuilderCards game](builderCards.jpg)
+
+Everyone could join others to play the BuilderCards game.
+This card game was well-prepared and highly educational.
+By playing, you could learn about real relationships between AWS services.
+It also included some humorous elements, and I highly recommend it 😺.
+
+### DeepRacer
+
+![DeepRacer rover](deepRacer.jpg)
+
+One exhibition presented the 4-wheeled rover which was able to recognize the track and keep the correct path
+autonomously.
+
+### Others
+
+![PinBall](pinball.jpg)
+
+Many other exhibitions and games were available at sponsor stands,
+including a Pinball game where you could win a LEGO Technic car set (I tried but had no luck).
+There was even a lottery with a PlayStation as the grand prize.
+
+## Food and beverages
+
+![My dessert](food.jpg)
+
+I have to say that the catering service was brilliant.
+Everyone could have a hot coffee, lemon juice or a piece of cake without a need to wait in a long queue.
+Breakfast and lunch were also tasty and new food was delivered constantly.
 
 ---
 
@@ -151,7 +216,9 @@ Practitioner (AIF-C01)** exam.
 There was also a fun trivia segment that tested our AWS knowledge. There were 12 questions, which as mentioned should be
 similar to an exam ones.
 
-I finished at **11** place (out of about 30), so it went much better than my penalty shooting game :smile:.
+I finished at **11** place (out of about 30), so it went much better than my free kick shooting game :smile:.
+
+![Trivia Results](triviaRes.jpg)
 
 This session was practical and engaging, offering clear guidance for certification prep.
 
@@ -228,7 +295,7 @@ innovations, the sessions showcased AWS’s leadership in AI, cloud, and cyberse
 development, the power of tools like **SageMaker** and **Amazon Q**, and the growing role of AI in cybersecurity left me
 inspired and eager to explore these technologies further.
 
-Additionally, the Summit provided an excellent opportunity to connect with like-minded individuals
+Additionally, the Summit provided an excellent opportunity to connect with like-minded individuals, see cool exhibitions
 and enjoy participating in engaging games organized by AWS and its sponsors.
 
 One drawback coming to my mind was that I missed one session by Cloudflare because I was a minute late and
