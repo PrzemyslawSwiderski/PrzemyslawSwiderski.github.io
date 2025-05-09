@@ -10,7 +10,7 @@ created: 2025-05-06
 # My Experience at the AWS Summit in Katowice
 
 This year, I was once again invited to an AWS event, this time held in Katowice. In this post, I'll share my experience
-and highlights from the summit :slightly_smiling_face:.
+and highlights from the summit.
 
 ---
 
@@ -98,7 +98,7 @@ The AWS Summit in Katowice was a whirlwind of insights, demos, and forward-think
 infrastructure, and cybersecurity. Below is a detailed recap of the sessions I attended. Each session offered unique
 perspectives on how AWS and its partners are shaping the future of technology.
 
-## 9:00 - Streamline RAG and Model Evaluation with Amazon Bedrock
+## 9:00 Streamline RAG and Model Evaluation with Amazon Bedrock
 
 The day kicked off with a session on **Amazon Bedrock**, a powerful tool for evaluating and selecting foundation models
 for AI applications. The speaker emphasized the importance of evaluation to balance **quality, cost, and latency**
@@ -123,7 +123,7 @@ or optimize model selection.
 
 ---
 
-## 10:15 - From RAG to Agents: 18 Months of an Enterprise AI Journey
+## 10:15 From RAG to Agents: 18 Months of an Enterprise AI Journey
 
 Presented by **Chaos Gears** (Karol Junde and Tomasz Dudek), this session chronicled an 18-month AI journey with their
 customer, **Clariant**, highlighting the evolution of their systems.
@@ -155,7 +155,7 @@ progress.
 
 ---
 
-## 11:00 - Keynote Session
+## 11:00 Keynote Session
 
 The keynote, led by **Andrzej Horawa** (AWS Poland Country Leader), was a high-energy overview of AWS’s impact in Poland
 and beyond. It highlighted the adoption of generative AI by **740,000+ Polish businesses**
@@ -185,7 +185,7 @@ The keynote underscored AWS’s deep commitment to Poland and its leadership in 
 
 ---
 
-## 12:45 - Future Forward: Cybersecurity and AI
+## 12:45 Future Forward: Cybersecurity and AI
 
 Presented by **Palo Alto Networks**, this session explored how AI enhances cybersecurity, using a real-world example of
 a **Disney** malware attack caused by a developer downloading malicious code from GitHub.
@@ -200,7 +200,7 @@ complex cloud environments.
 
 ---
 
-## 13:15 - Exam Prep: AWS Certified AI Practitioner
+## 13:15 Exam Prep: AWS Certified AI Practitioner
 
 Led by **Frank Spiess** (Senior Technical Trainer), this session prepared attendees for the **AWS Certified AI
 Practitioner (AIF-C01)** exam.
@@ -216,7 +216,7 @@ Practitioner (AIF-C01)** exam.
 There was also a fun trivia segment that tested our AWS knowledge. There were 12 questions, which as mentioned should be
 similar to an exam ones.
 
-I finished at **11** place (out of about 30), so it went much better than my free kick shooting game :smile:.
+I finished at **11** place (out of about 30), so it went much better than my free kick shooting game 😄.
 
 ![Trivia Results](triviaRes.jpg)
 
@@ -226,7 +226,7 @@ This session was practical and engaging, offering clear guidance for certificati
 
 ---
 
-## 14:15 - Securing Ryanair’s Skies: A Cloud Security Journey with Wiz
+## 14:15 Securing Ryanair’s Skies: A Cloud Security Journey with Wiz
 
 This **AWS Community** session detailed **Ryanair**’s cloud security strategy, serving its **190 million+ accounts**.
 Presented with insights from [**Wiz**](https://www.wiz.io/) tool, the session emphasized proactive cloud
@@ -235,7 +235,7 @@ protection.
 ### Key Points
 
 - **Threat Landscape**: Attackers target cloud environments, ignoring organizational structures.
-- **Tech Stack**: Ryanair uses a **graph database** with **AWS Neptune** and follows the "principle of the least
+- **Tech Stack**: Ryanair uses a **graph database** with **AWS Neptune** and follows the "principle of the fewest
   privileges."
 - **Wiz**: Centralizes AWS services with an **agentless architecture** for streamlined security.
 
@@ -243,7 +243,7 @@ This session showcased how Ryanair balances scale and security in a high-stakes 
 
 ---
 
-## 15:15 - Logs Talk to Me! Using Amazon Bedrock to Chat About Logs
+## 15:15 Logs Talk to Me! Using Amazon Bedrock to Chat About Logs
 
 Presented by **Michal Salanci** (AWS Community), this session explored how to make **AWS CloudTrail** more
 accessible using **Amazon Bedrock**.
@@ -271,7 +271,7 @@ challenges.
 
 ---
 
-## 16:15 - Next-Generation Amazon SageMaker: The Center for Data, Analytics & AI
+## 16:15 Next-Generation Amazon SageMaker: The Center for Data, Analytics & AI
 
 Presented by **Peter Rayner** (AWS Solutions Architect), this session positioned **Amazon SageMaker** as a unified
 platform for data, analytics, and AI.
