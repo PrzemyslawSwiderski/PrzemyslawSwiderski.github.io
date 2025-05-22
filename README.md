@@ -1,6 +1,6 @@
 # PrzemyslawSwiderski.github.io
 
-This is my blog 😸
+This is my **[blog](https://blog.pswidersk.com/)**.
 
 
 # Run
