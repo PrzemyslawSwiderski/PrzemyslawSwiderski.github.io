@@ -1,1 +1,1 @@
-"use strict";(this.webpackChunkpswidersk_page=this.webpackChunkpswidersk_page||[]).push([[4301],{6682:s=>{s.exports='{"version":3,"sources":[],"sourcesContent":[],"names":[],"mappings":";;;;;;;;;;;;;"}'}}]);
+"use strict";(globalThis.webpackChunkpswidersk_page=globalThis.webpackChunkpswidersk_page||[]).push([[4301],{6682:s=>{s.exports='{"version":3,"sources":[],"sourcesContent":[],"ignoreList":[],"x_google_ignoreList":[],"names":[],"mappings":";;;;;;;;;;;;;"}'}}]);
