@@ -4,6 +4,7 @@ import app.utils.asCol
 import app.utils.asRow
 import app.utils.withClasses
 import js.import.importAsync
+import js.promise.await
 import react.FC
 import react.dom.html.ReactHTML.a
 import react.dom.html.ReactHTML.div

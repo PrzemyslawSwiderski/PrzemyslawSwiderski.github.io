@@ -1,7 +1,5 @@
 package app.voronoi.graph
 
-import java.util.HashMap
-
 class BisectorMap {
 
     private val data: MutableMap<Bisector, Edge> = HashMap()
@@ -19,10 +17,10 @@ class BisectorMap {
     }
 
     data class Bisector(val a: Point, val b: Point) {
-        override fun equals(o: Any?): Boolean {
-            if (this === o) return true
-            if (o == null || javaClass != o.javaClass) return false
-            val bisector = o as Bisector
+        override fun equals(other: Any?): Boolean {
+            if (this === other) return true
+            if (other == null || javaClass != other.javaClass) return false
+            val bisector = other as Bisector
             return (a == bisector.a && b == bisector.b) || (a == bisector.b && b == bisector.a)
         }
 

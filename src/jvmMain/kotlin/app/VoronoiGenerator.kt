@@ -14,7 +14,7 @@ import kotlin.random.Random
 
 private val OUTPUT_DIR by System.getenv()
 
-private const val SEED = 7777
+private const val SEED = 77777
 private const val SVG_HEIGHT = 1500.0
 private const val SVG_WIDTH = 200.0
 private const val CANVAS_HEIGHT = 1500.0

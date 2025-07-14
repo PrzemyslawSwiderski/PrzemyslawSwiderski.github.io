@@ -6,10 +6,6 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
 }
 
-repositories {
-    mavenCentral()
-}
-
 plugins.withType<YarnPlugin> {
     configure<YarnRootExtension> {
         yarnLockAutoReplace = true
@@ -51,10 +47,11 @@ kotlin {
 
         jsMain {
             dependencies {
-                implementation(dependencies.platform(libs.kotlin.wrappers))
-                implementation("org.jetbrains.kotlin-wrappers:kotlin-react")
-                implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom")
-                implementation("org.jetbrains.kotlin-wrappers:kotlin-react-router-dom")
+                implementation(kotlinWrappers.react)
+                implementation(kotlinWrappers.reactDom)
+                implementation(kotlinWrappers.reactRouter)
+                implementation(kotlinWrappers.js)
+                implementation(kotlinWrappers.jsCore)
                 implementation(npm("bootstrap", libs.versions.npm.bootstrap.get()))
                 implementation(npm("yaml-loader", libs.versions.npm.loader.yaml.get()))
                 implementation(npm("css-loader", libs.versions.npm.loader.css.get()))

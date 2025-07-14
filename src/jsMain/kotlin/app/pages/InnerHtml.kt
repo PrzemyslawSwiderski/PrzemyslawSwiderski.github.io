@@ -2,9 +2,9 @@ package app.pages
 
 import app.model.MdMetadata
 import app.utils.withClasses
-import js.import.Module
 import js.import.importAsync
-import js.objects.jso
+import js.objects.unsafeJso
+import js.promise.await
 import kotlinx.browser.document
 import kotlinx.browser.window
 import react.FC
@@ -24,7 +24,7 @@ val InnerHtml = FC<InnerHtmlProps> { props ->
         importAsync<dynamic>(props.data.path + "?raw")
             .then { content = it.default.unsafeCast<String>() }
             .await()
-        importAsync<Module<HighlightJS>>("highlight.js")
+        importAsync<HighlightJSModule>("highlight.js")
             .then {
                 val copyPlugin = CopyButtonPlugin()
                 copyPlugin.autohide = true
@@ -37,7 +37,7 @@ val InnerHtml = FC<InnerHtmlProps> { props ->
 
     div {
         withClasses("mb-5")
-        dangerouslySetInnerHTML = jso {
+        dangerouslySetInnerHTML = unsafeJso {
             __html = content.orEmpty()
         }
     }
@@ -46,6 +46,10 @@ val InnerHtml = FC<InnerHtmlProps> { props ->
 private fun scrollToAnchor() {
     val anchor = window.location.hash.substringAfter("#")
     document.getElementById(anchor)?.scrollIntoView()
+}
+
+external class HighlightJSModule {
+    var default: HighlightJS
 }
 
 external class HighlightJS {
