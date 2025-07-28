@@ -97,4 +97,4 @@ Despite this issue, the overall experience was excellent.
 Beyond generating functional code, the AI provided clear explanations of specific lines and features,
 eliminating the need to dig through documentation.
 The AI assistant drastically reduced the initial learning curve,
-making the process much smoother :smiley_cat:.
+making the process much smoother 😺.
