@@ -42,9 +42,9 @@ print(result)  # Output: [1, 3]
 # Or directly combine
 result = lst[1:5][::2]  # [1, 3]
 print(result)  # Output: [1, 3]
-</code></pre><hr /><h3>Important Notes <a id="important-notes" href="/posts/slicing-in-python#important-notes" class="anchor-link">🔗</a></h3><ol><li><p><strong>Intermediate Sequence</strong>: Each slicing creates a new sequence. The second slicing operates on the new sequence, not
-   the original.</p><ul><li><code>lst[1:5]</code> creates <code>[1, 2, 3, 4]</code>.</li><li>Then <code>[::2]</code> operates on <code>[1, 2, 3, 4]</code>.</li></ul></li><li><p><strong>Efficiency</strong>: While combining slices is syntactically valid, performing multiple slicing operations can be less
-   efficient for large sequences because intermediate sequences are created.</p></li></ol><hr /><h3>Alternative: Combine Slicing Logic <a id="alternative-combine-slicing-logic" href="/posts/slicing-in-python#alternative-combine-slicing-logic" class="anchor-link">🔗</a></h3><p>If possible, calculate the combined slicing logic to avoid intermediate steps.</p><p><strong>Example:</strong></p><pre><code class="language-python">lst = [0, 1, 2, 3, 4, 5, 6]
+</code></pre><hr /><h3>Important Notes <a id="important-notes" href="/posts/slicing-in-python#important-notes" class="anchor-link">🔗</a></h3><ol><li><strong>Intermediate Sequence</strong>: Each slicing creates a new sequence. The second slicing operates on the new sequence, not
+   the original.</li></ol><ul><li><code>lst[1:5]</code> creates <code>[1, 2, 3, 4]</code>,</li><li>then <code>[::2]</code> operates on <code>[1, 2, 3, 4]</code>.</li></ul><ol start="2"><li><strong>Efficiency</strong>: While combining slices is syntactically valid, performing multiple slicing operations can be less
+   efficient for large sequences because intermediate sequences are created.</li></ol><hr /><h3>Alternative: Combine Slicing Logic <a id="alternative-combine-slicing-logic" href="/posts/slicing-in-python#alternative-combine-slicing-logic" class="anchor-link">🔗</a></h3><p>If possible, calculate the combined slicing logic to avoid intermediate steps.</p><p><strong>Example:</strong></p><pre><code class="language-python">lst = [0, 1, 2, 3, 4, 5, 6]
 # Combining logic
 result = lst[1:5:2]  # [1, 3]
 print(result)  # Output: [1, 3]
