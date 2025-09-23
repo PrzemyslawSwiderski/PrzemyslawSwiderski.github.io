@@ -172,8 +172,9 @@ print(result)  # Output: [1, 3]
 
 1. **Intermediate Sequence**: Each slicing creates a new sequence. The second slicing operates on the new sequence, not
    the original.
-    - `lst[1:5]` creates `[1, 2, 3, 4]`.
-    - Then `[::2]` operates on `[1, 2, 3, 4]`.
+
+- `lst[1:5]` creates `[1, 2, 3, 4]`,
+- then `[::2]` operates on `[1, 2, 3, 4]`.
 
 2. **Efficiency**: While combining slices is syntactically valid, performing multiple slicing operations can be less
    efficient for large sequences because intermediate sequences are created.

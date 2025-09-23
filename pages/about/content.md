@@ -24,7 +24,7 @@ I strive to keep things simple. As someone once said:
 
 In my free time, I enjoy working out, playing the guitar, cooking, traveling, and tracking rocket launches 🙂.
 
-Socials:
+<br/>
 
 [![GitHub User's followers](https://img.shields.io/github/followers/PrzemyslawSwiderski)](https://github.com/PrzemyslawSwiderski)
 
