@@ -1,11 +1,10 @@
 [versions]
-kotlin = "2.2.0"
-kotlin-wrappers = "2025.7.3"
+kotlin = "2.2.20"
 kotlinx-serialization = "1.9.0"
 kotlinx-datetime = "0.7.1"
 markdown = "0.7.3"
 jfree = "5.0.7"
-kaml = "0.83.0"
+kaml = "0.98.0"
 npm-bootstrap = "5.3.3"
 npm-sass = "1.72.0"
 npm-minicss = "2.9.0"
@@ -16,9 +15,9 @@ npm-loader-yaml = "0.8.1"
 npm-loader-css = "6.10.0"
 npm-loader-sass = "14.1.1"
 npm-giscus = "3.1.0"
+versions = "0.53.0"
 
 [libraries]
-kotlin-wrappers = { module = "org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom", version.ref = "kotlin-wrappers" }
 markdown-jvm = { module = "org.jetbrains:markdown-jvm", version.ref = "markdown" }
 kaml-jvm = { module = "com.charleskorn.kaml:kaml-jvm", version.ref = "kaml" }
 jfree-svg = { module = "org.jfree:org.jfree.svg", version.ref = "jfree" }
@@ -34,3 +33,4 @@ version.ref = "kotlinx-datetime"
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+versions-plugin = { id = "com.github.ben-manes.versions", version.ref = "versions" }
