@@ -18,10 +18,6 @@ I strive to keep things simple. As someone once said:
 
 > The best code is no code at all.
 
-**However**, I always keep in mind that:
-
-> "No code" is just someone else's code.
-
 In my free time, I enjoy working out, playing the guitar, cooking, traveling, and tracking rocket launches 🙂.
 
 <br/>

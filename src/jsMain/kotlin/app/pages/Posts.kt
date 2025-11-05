@@ -14,31 +14,17 @@ import react.dom.html.ReactHTML.div
 import react.router.dom.Link
 
 val Posts = FC {
-    div {
-        asRow()
-        div {
-            asCol()
-            centered()
-            b {
-                +"Created:"
-            }
-        }
-        div {
-            asCol()
-            centered()
-            b {
-                +"Post:"
-            }
-        }
-    }
     state.posts.sortedByDescending { it.created }.forEach { entry ->
         div {
             asRow()
             div {
                 asCol()
                 centered()
-                +entry.created.format(LocalDate.Formats.ISO)
+                +entry.created.format(LocalDate.Formats.ISO).plus(" ↓")
             }
+        }
+        div {
+            asRow()
             Link {
                 asCol()
                 withClasses("btn btn-outline-light btn-lg")

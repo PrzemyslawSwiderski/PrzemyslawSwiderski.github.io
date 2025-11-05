@@ -20,7 +20,7 @@ fun PropsWithClassName.asCol() {
 }
 
 fun PropsWithClassName.centered() {
-    withClasses("d-flex align-items-center justify-content-center")
+    withClasses("align-items-center justify-content-center text-center")
 }
 
 fun PropsWithClassName.asNavItem() {
