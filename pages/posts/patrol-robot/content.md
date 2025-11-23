@@ -1,6 +1,7 @@
 ---
 title: "Own Patrolling Robot"
 created: 2025-04-27
+readTime: "20 min"
 ---
 
 {toc.placeholder}

@@ -1,6 +1,7 @@
 ---
 title: "SDK-Import 2024.2+ update"
 created: 2024-09-10
+readTime: "15 min"
 ---
 
 {toc.placeholder}

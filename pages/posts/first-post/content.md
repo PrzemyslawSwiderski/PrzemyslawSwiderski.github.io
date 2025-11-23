@@ -1,6 +1,7 @@
 ---
 title: "My First Test Post"
 created: 2024-08-07
+readTime: "7 days"
 ---
 
 {toc.placeholder}

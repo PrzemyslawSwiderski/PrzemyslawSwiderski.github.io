@@ -1,6 +1,7 @@
 ---
 title: "DeepSeek Homelab Setup"
 created: 2025-01-26
+readTime: "7 mins"
 ---
 
 {toc.placeholder}

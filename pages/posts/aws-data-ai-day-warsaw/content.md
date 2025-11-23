@@ -1,6 +1,7 @@
 ---
 title: "AWS Data & AI Day Warsaw 2025"
 created: 2025-10-17
+readTime: "10 mins"
 ---
 
 <img class="markdown-img col-6 col-md-3 col-lg-3 p-2" src="awsWarsaw0.jpg" alt="Selfie" />

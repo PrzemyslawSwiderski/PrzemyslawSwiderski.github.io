@@ -1,6 +1,7 @@
 ---
 title: "How was this blog created"
 created: 2024-08-13
+readTime: "25 mins"
 ---
 
 {toc.placeholder}

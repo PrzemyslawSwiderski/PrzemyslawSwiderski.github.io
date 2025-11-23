@@ -1,6 +1,7 @@
 ---
 title: "My Ubuntu Experience"
 created: 2025-09-23
+readTime: "7 min"
 ---
 
 {toc.placeholder}

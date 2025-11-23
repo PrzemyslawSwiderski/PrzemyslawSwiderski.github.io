@@ -1,6 +1,7 @@
 ---
 title: "AWS Summit Katowice"
 created: 2025-05-06
+readTime: "12 mins"
 ---
 
 ![Katowice](aws-summit.jpg)

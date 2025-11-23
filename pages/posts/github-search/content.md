@@ -1,6 +1,7 @@
 ---
 title: "GitHub Search feature"
 created: 2024-09-13
+readTime: "1 min"
 ---
 
 GitHub has this cool feature that lets the developer search the code by some criteria.
