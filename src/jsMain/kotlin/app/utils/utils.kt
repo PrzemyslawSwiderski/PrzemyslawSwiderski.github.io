@@ -19,10 +19,6 @@ fun PropsWithClassName.asCol() {
     withClasses("col my-3 mx-2")
 }
 
-fun PropsWithClassName.centered() {
-    withClasses("align-items-center justify-content-center text-center")
-}
-
 fun PropsWithClassName.asNavItem() {
     this.className = ClassName("nav-item")
 }
