@@ -15,7 +15,6 @@ npm-loader-yaml = "0.8.1"
 npm-loader-css = "6.10.0"
 npm-loader-sass = "14.1.1"
 npm-giscus = "3.1.0"
-versions = "0.53.0"
 
 [libraries]
 markdown-jvm = { module = "org.jetbrains:markdown-jvm", version.ref = "markdown" }
@@ -33,4 +32,3 @@ version.ref = "kotlinx-datetime"
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-versions-plugin = { id = "com.github.ben-manes.versions", version.ref = "versions" }
