@@ -12,7 +12,7 @@ fun PropsWithClassName.withClasses(value: String) {
 }
 
 fun PropsWithClassName.asRow() {
-    withClasses("row")
+    withClasses("row mb-3")
 }
 
 fun PropsWithClassName.asCol() {

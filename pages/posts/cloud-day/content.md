@@ -1,6 +1,7 @@
 ---
 title: "AWS Cloud Day Warsaw"
 created: 2024-09-19
+readTime: "4 mins"
 ---
 
 ![Warsaw](AWS-cloud-day.png)

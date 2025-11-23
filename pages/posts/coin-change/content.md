@@ -1,6 +1,7 @@
 ---
 title: "Coin Change Problem"
 created: 2025-02-14
+readTime: "14 mins"
 ---
 
 ## About

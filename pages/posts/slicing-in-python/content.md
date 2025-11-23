@@ -1,6 +1,7 @@
 ---
 title: "Slicing in Python"
 created: 2024-11-30
+readTime: "7 mins"
 ---
 
 ## About

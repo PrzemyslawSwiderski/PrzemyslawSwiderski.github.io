@@ -1,6 +1,7 @@
 ---
 title: "Giscus comments in KoltinJS"
 created: 2025-01-04
+readTime: "6 mins"
 ---
 
 {toc.placeholder}
