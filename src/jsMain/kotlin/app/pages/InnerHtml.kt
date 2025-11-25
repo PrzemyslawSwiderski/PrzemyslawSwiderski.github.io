@@ -3,15 +3,16 @@ package app.pages
 import app.model.MdMetadata
 import app.utils.withClasses
 import js.import.importAsync
-import js.objects.unsafeJso
 import js.promise.await
 import kotlinx.browser.document
 import kotlinx.browser.window
 import react.FC
 import react.Props
+import react.dom.DangerouslySetInnerHTML
 import react.dom.html.ReactHTML.div
 import react.useEffect
 import react.useState
+import web.html.HtmlSource
 
 external interface InnerHtmlProps : Props {
     var data: MdMetadata
@@ -37,9 +38,10 @@ val InnerHtml = FC<InnerHtmlProps> { props ->
 
     div {
         withClasses("mb-5")
-        dangerouslySetInnerHTML = unsafeJso {
-            __html = content.orEmpty()
-        }
+
+        dangerouslySetInnerHTML = DangerouslySetInnerHTML(
+            HtmlSource(content.orEmpty())
+        )
     }
 }
 
