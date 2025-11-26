@@ -1,61 +1,84 @@
 #root {
-    font-family: 'JetBrains Mono', sans-serif;
-    @include font-size($main-font-size);
+  font-family: 'JetBrains Mono', sans-serif;
+  @include font-size($main-font-size);
 }
 
 .blurred-bg {
-    backdrop-filter: blur(4px);
-    border-radius: 1em;
-    border: 2px solid $secondary;
+  backdrop-filter: blur(12px);
+  border-radius: 1.5em;
+  border: 2px solid $secondary;
+  // Glowing effects
+  box-shadow:
+    0 0 20px 4px rgba($secondary, 0.6), // soft outer glow
+    0 0 40px 8px rgba($secondary, 0.3), // wider subtle glow
+    inset 0 0 20px rgba($secondary, 0.1); // optional inner glow
 }
 
 .navbar {
-    @include font-size($nav-font-size);
-    padding-left: 1em;
+  @include font-size($nav-font-size);
+  padding-left: 1em;
+}
+
+.container {
+  padding: 2.0em;
 }
 
 blockquote {
-    @include font-size($main-font-size);
-    @extend .blockquote;
-    text-align: center;
-    font-style: italic;
+  @include font-size($main-font-size);
+  @extend .blockquote;
+  text-align: center;
+  font-style: italic;
 }
 
 .markdown-img {
-    max-width: 90%;
-    height: auto;
-    display: block;
+  max-width: 90%;
+  height: auto;
+  display: block;
 }
 
 .me-img {
-    max-height: 400px;
+  max-height: 400px;
 }
 
 a {
-    text-decoration: none;
-    color: $link-color;
+  text-decoration: none;
+  color: $link-color;
 }
 
 .anchor-link {
-    text-decoration: none;
-    color: var(--bs-heading-color);
-    font-size: 0.7rem;
+  text-decoration: none;
+  color: var(--bs-heading-color);
+  font-size: 0.7rem;
 }
 
 code {
-    @extend .hljs;
-    animation: fade-in 0.5s;
+  @extend .hljs;
+  animation: fade-in 0.5s;
 }
 
 img {
-    animation: fade-in 0.5s;
+  animation: fade-in 0.5s;
 }
 
 @keyframes fade-in {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 2rem;
+  /* or any value you prefer */
+}
+
+h1:first-of-type,
+h2:first-of-type,
+h3:first-of-type {
+  margin-top: 0;
 }

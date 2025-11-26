@@ -1,0 +1,85 @@
+<h2>Problem <a id="problem" href="/posts/central-repo#problem" class="anchor-link">🔗</a></h2><p>At the time of writing this post, I have 62 GitHub repositories.<br />
+With monorepos gaining popularity,
+I've noticed that the common practice is to create a new repository for each new project instead of nesting it within an
+existing collective one. Most of my repositories are, of course, no longer active 😅.
+Nevertheless, there are still 8 projects I want to actively maintain.</p><p>I wanted to find a generic solution that requires as little manual effort as possible 🙂.</p><p>The solution should primarily do three things:</p><ol><li>Use common configuration and workflow files stored in a single place.</li><li>Automatically update dependencies.</li><li>Auto releases new versions periodically.</li></ol><p>Below, I'll describe how I achieved this.</p><h2>Central source of configuration and workflow files <a id="central-source-of-configuration-and-workflow-files" href="/posts/central-repo#central-source-of-configuration-and-workflow-files" class="anchor-link">🔗</a></h2><p>To have a single source of 'truth' I found a very cool files sync
+GitHub <a href="https://github.com/wadackel/files-sync-action">action</a>.
+It basically synchronizes files across multiple repositories based on a YAML configuration file.
+By synchronizing, I mean, that it can create PRs and merge them automatically.</p><p>In order to use it and apply to my case, I created a
+central repository in <strong><a href="https://github.com/PrzemyslawSwiderski/central-repo/tree/main">here</a></strong>.
+It contains the action workflow, files-sync config files and of course the files I want to reuse across the projects.
+For my Gradle plugin projects I have the following <code>files-sync-config.yaml</code>:</p><pre><code class="language-yml">settings:
+  pull_request:
+    labels:
+      - &quot;files-sync&quot; # Labels to add for the PRs
+    merge:
+      mode: auto # auto merge PRs once required checks pass
+      strategy: squash # squash before merging
+      delete_branch: true # always remove the branch
+
+patterns:
+  - files:
+      - from: commons/.github
+        to: .github
+      - from: gradle-plugins
+        to: ./
+        exclude:
+          - files-sync-config.yaml
+      - from: gradle-plugins/.github # dotfiles needs to be specified explicitly (https://github.com/wadackel/files-sync-action/issues/215)
+        to: .github
+    repositories: # repositories which will be synchronized
+      - PrzemyslawSwiderski/python-gradle-plugin
+      - PrzemyslawSwiderski/python-uv-gradle-plugin
+      - PrzemyslawSwiderski/terraform-gradle-plugin
+      - PrzemyslawSwiderski/helm-gradle-plugin
+      - PrzemyslawSwiderski/yaml-secrets-gradle-plugin
+</code></pre><p>Important to mention is that for the auto merging to work, it is required to allow it in each repository settings.
+Same applies to squash and delete branch.</p><p>Now, if for instance I change <code>commons/.github/release-drafter.yml</code> file in <code>main</code> branch, action will be invoked.
+Progress of it can be checked in &quot;Actions&quot; tab.
+The logs of the action can indicate whether the synchronization was successful or not.
+They are pretty descriptive and look like this:</p><pre><code class="language-log">&gt; Run wadackel/files-sync-action@v3
+	
+Synchronize 6 files:
+	
+           Repository: PrzemyslawSwiderski/python-gradle-plugin
+               Branch: files-sync/PrzemyslawSwiderski-central-repo-0
+           Branch SHA: 00adb0a998cb799f08d2e54ee8fec198c52bca3e
+           Commit SHA: 3fbc93bd44fbb7fd925ea049a5b17ac348b9ba56
+               Commit: &quot;chore: sync files with `PrzemyslawSwiderski/central-repo`&quot;
+        Changed Files: 1
+         Pull Request: https://github.com/PrzemyslawSwiderski/python-gradle-plugin/pull/67
+               Labels: files-sync
+            Reviewers: None
+            Assignees: None
+   Pull Request Merge: The pull request was set to auto-merge.
+               Status: Complete
+
+(...)	
+</code></pre><h2>Dependencies management <a id="dependencies-management" href="/posts/central-repo#dependencies-management" class="anchor-link">🔗</a></h2><p>My first thought was to use GitHub's
+native <a href="https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide">Dependabot</a>.
+After exploring <a href="https://github.com/renovatebot/renovate">Renovate</a>, however, I decided to go with the latter.</p><p>The main advantages of Renovate over Dependabot are:</p><ol><li>Open source 🥰.</li><li>Rich dashboard with better observability.</li><li>Significantly more powerful and capable
+   (it even updates plugin versions for examples in my <code>settings.gradle.kts</code> files!)</li><li>Can group updates into a single PR.</li><li>Highly <a href="https://docs.renovatebot.com/config-overview/">configurable</a> via <code>renovate.json</code> with presets.</li><li>Better scheduled auto merging.</li><li>Is platform-agnostic, can work on GitLab, Bitbucket and more.</li></ol><p>Because Renovate is pretty versatile and supports <a href="https://docs.renovatebot.com/key-concepts/presets/">presets</a>,
+the <code>renovate.json</code> for my 5 Gradle plugins can look like that:</p><pre><code class="language-json">{
+  &quot;$schema&quot;: &quot;https://docs.renovatebot.com/renovate-schema.json&quot;,
+  &quot;extends&quot;: [
+    &quot;:dependencyDashboard&quot;,
+    &quot;:semanticPrefixFixDepsChoreOthers&quot;,
+    &quot;:ignoreModulesAndTests&quot;,
+    &quot;group:monorepos&quot;,
+    &quot;group:recommended&quot;,
+    &quot;mergeConfidence:age-confidence-badges&quot;,
+    &quot;replacements:all&quot;,
+    &quot;workarounds:all&quot;,
+    &quot;:automergeAll&quot;,
+    &quot;:automergeRequireAllStatusChecks&quot;
+  ],
+  &quot;github-actions&quot;: {
+    &quot;enabled&quot;: false
+  },
+  &quot;ignorePaths&quot;: [
+    &quot;examples/**&quot;
+  ],
+  &quot;minimumReleaseAge&quot;: &quot;2 days&quot;,
+  &quot;prCreation&quot;: &quot;not-pending&quot;
+}
+</code></pre><h2>Auto release <a id="auto-release" href="/posts/central-repo#auto-release" class="anchor-link">🔗</a></h2><p>IN_PROGRESS</p><h2>Summary <a id="summary" href="/posts/central-repo#summary" class="anchor-link">🔗</a></h2><p>IN_PROGRESS</p>

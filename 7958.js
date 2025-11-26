@@ -1,1 +1,1 @@
-"use strict";(globalThis.webpackChunkpswidersk_page=globalThis.webpackChunkpswidersk_page||[]).push([[7958],{7958:o=>{o.exports="#root {\n    min-height: 100vh;\n    background-image: url('../voronoi.svg');\n    background-color: #{$primary};\n    background-size: cover;\n}\n"}}]);
+"use strict";(globalThis.webpackChunkpswidersk_page=globalThis.webpackChunkpswidersk_page||[]).push([[7958],{7958:o=>{o.exports="#root {\n  min-height: 100vh;\n  background-image: url('../voronoi.svg');\n  background-color: #{$primary};\n  background-size: cover;\n}\n"}}]);
