@@ -42,12 +42,9 @@ val Posts = FC {
                         +entry.title
                     }
                     div {
-                        withClasses("mt-3 text-muted")
+                        withClasses("mt-3")
                         sub {
-                            +entry.created.format(LocalDate.Formats.ISO)
-                        }
-                        sub {
-                            +" - ${entry.readTime}"
+                            +"${entry.created.format(LocalDate.Formats.ISO)} - ${entry.readTime}"
                         }
                     }
                 }

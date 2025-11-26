@@ -2,6 +2,8 @@ package app.pages
 
 import app.ShareButtons
 import app.model.MdMetadata
+import kotlinx.datetime.LocalDate
+import kotlinx.datetime.format
 import react.FC
 import react.Props
 import react.dom.html.ReactHTML.div
@@ -19,7 +21,7 @@ val SinglePost = FC<SinglePostProps> { props ->
         h1 {
             +props.data.title
         }
-        small { +props.data.created.toString() }
+        small { +"${props.data.created.format(LocalDate.Formats.ISO)} - ${props.data.readTime}" }
         hr { }
         InnerHtml {
             data = props.data

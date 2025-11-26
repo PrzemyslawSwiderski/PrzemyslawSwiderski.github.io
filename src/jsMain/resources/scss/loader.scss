@@ -1,25 +1,25 @@
 .center-screen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
 }
 
 .loader {
-    @extend .center-screen;
-    font-weight: bold;
-    font-size: 8vw;
-    animation: l1 1s linear infinite alternate;
-    background-color: $dark-green;
+  @extend .center-screen;
+  font-weight: bold;
+  font-size: 8vw;
+  animation: l1 1s linear infinite alternate;
+  background-color: $dark-green;
 }
 
 .loader:before {
-    content: "Loading..."
+  content: "Loading..."
 }
 
 @keyframes l1 {
-    to {
-        opacity: 0
-    }
+  to {
+    opacity: 0
+  }
 }
