@@ -137,10 +137,28 @@ the `renovate.json` for my 5 Gradle plugins can look like that:
 }
 ```
 
+I also added `minimumReleaseAge` and `prCreation` fields to not create a PRs for the dependencies newer than 2 days.
+It is to make sure the probability of no quick fixes is higher.
+
 ## Auto release
 
-IN_PROGRESS
+For the auto releasing I am using the [Release Drafter](https://github.com/marketplace/actions/release-drafter) action
+and custom
+[release](https://github.com/PrzemyslawSwiderski/central-repo/blob/main/gradle-plugins/.github/workflows/auto-release.yml)
+job workflow.
+
+Release Drafter is pretty useful for the changelog creation. It also bumps the semantic versions based on the PR labels
+or branch names. It is fully configurable with `release-drafter.yml` file which can also be common for all repos due to
+my central repo setup.
+
+The release workflow is configured to eun every Tuesday or manually if needed.
+It basically finds the last draft release, builds it and publishes to remote.
 
 ## Summary
 
-IN_PROGRESS
+The central repository approach saves me a lot of time. I no longer need to manually commit common files to each repo. I
+can simply modify a single **central** repo.  
+Updating dependencies and releasing new versions is fully automated, and manual work is required only when a PR's checks
+fail.
+
+The entire setup has been running successfully for about two weeks, and I'm pretty happy with it 🐱.
