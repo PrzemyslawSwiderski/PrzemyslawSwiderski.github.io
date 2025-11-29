@@ -18,7 +18,7 @@ import react.useState
 private const val PAGE_SIZE = 7
 
 val Posts = FC {
-    val posts = state.posts
+    val posts = state.posts.filter { !it.hidden }
     val (currentPage, setCurrentPage) = useState(1)
 
     val totalPages = (posts.size + PAGE_SIZE - 1) / PAGE_SIZE // ceiling division
