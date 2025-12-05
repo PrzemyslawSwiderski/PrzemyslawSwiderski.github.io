@@ -2,7 +2,7 @@
 title: "Clean update branch in Git"
 created: 2025-12-01
 readTime: "8 mins"
-hidden: true
+hidden: false
 ---
 
 {toc.placeholder}
