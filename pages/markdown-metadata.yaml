@@ -53,7 +53,7 @@
   readTime: "8 mins"
   path: "./pages/posts/git-branch-update/content.html"
   location: "posts/git-branch-update"
-  hidden: true
+  hidden: false
 - id: "how-it-was-created"
   title: "How was this blog created"
   created: "2024-08-13"
