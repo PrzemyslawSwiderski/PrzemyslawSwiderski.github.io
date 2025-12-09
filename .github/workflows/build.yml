@@ -30,7 +30,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v5
 
       - name: Build and Test with Gradle
-        run: ./gradlew --no-daemon --continue build
+        run: ./gradlew --no-daemon --continue kotlinUpgradeYarnLock build
 
       - name: Upload Test Results
         if: (!cancelled())
