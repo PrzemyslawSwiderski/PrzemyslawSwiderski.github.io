@@ -49,7 +49,7 @@ kotlin {
             dependencies {
                 implementation(kotlinWrappers.react)
                 implementation(kotlinWrappers.reactDom)
-                implementation(kotlinWrappers.reactRouter)
+                implementation(kotlinWrappers.reactRouterDomLegacy)
                 implementation(kotlinWrappers.js)
                 implementation(kotlinWrappers.jsCore)
                 implementation(npm("bootstrap", libs.versions.npm.bootstrap.get()))
