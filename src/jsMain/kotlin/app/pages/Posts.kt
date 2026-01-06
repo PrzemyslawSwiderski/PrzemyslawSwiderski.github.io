@@ -12,8 +12,9 @@ import react.dom.html.ReactHTML.button
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.span
 import react.dom.html.ReactHTML.sub
-import react.router.dom.Link
 import react.useState
+import tanstack.react.router.Link
+import tanstack.router.core.RoutePath
 
 private const val PAGE_SIZE = 7
 
@@ -35,7 +36,7 @@ val Posts = FC {
             Link {
                 asCol()
                 withClasses("btn btn-outline-light btn-lg")
-                to = "/posts/${entry.id}"
+                to = RoutePath("/posts/${entry.id}")
 
                 span {
                     div {
