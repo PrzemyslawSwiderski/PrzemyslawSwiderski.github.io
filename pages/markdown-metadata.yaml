@@ -19,6 +19,13 @@
   path: "./pages/posts/first-post/content.html"
   location: "posts/first-post"
   hidden: false
+- id: "la-guitarra"
+  title: "La Guitarra"
+  created: "2026-01-06"
+  readTime: "3 min"
+  path: "./pages/posts/la-guitarra/content.html"
+  location: "posts/la-guitarra"
+  hidden: false
 - id: "cloud-day"
   title: "AWS Cloud Day Warsaw"
   created: "2024-09-19"
