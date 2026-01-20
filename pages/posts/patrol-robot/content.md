@@ -34,6 +34,9 @@ Why?
 I bought parts from Allegro, Temu and [LAFVIN](https://lafvintech.com/) store.
 They provide learning kits and other stuff.
 
+The base was named "ESP32 Camera 4WD Robot Car". Tutorial files like schematics and user manual can be found
+[here](https://lafvintech.com/pages/tutorials).
+
 Everything costed me 210PLN (~55$).
 
 # Software

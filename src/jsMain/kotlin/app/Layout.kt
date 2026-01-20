@@ -5,7 +5,7 @@ import app.utils.asRow
 import app.utils.withClasses
 import react.FC
 import react.dom.html.ReactHTML.div
-import react.router.Outlet
+import tanstack.react.router.Outlet
 
 
 val Layout = FC {
@@ -16,7 +16,8 @@ val Layout = FC {
             asRow()
             div {
                 asCol()
-                Outlet()
+                Outlet {
+                }
             }
         }
     }
