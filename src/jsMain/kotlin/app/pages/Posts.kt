@@ -1,5 +1,6 @@
 package app.pages
 
+import app.POST_PATH
 import app.state.posts
 import app.state.state
 import app.utils.asCol
@@ -14,7 +15,6 @@ import react.dom.html.ReactHTML.span
 import react.dom.html.ReactHTML.sub
 import react.useState
 import tanstack.react.router.Link
-import tanstack.router.core.RoutePath
 
 private const val PAGE_SIZE = 7
 
@@ -36,7 +36,7 @@ val Posts = FC {
             Link {
                 asCol()
                 withClasses("btn btn-outline-light btn-lg")
-                to = RoutePath("/posts/${entry.id}")
+                to = POST_PATH(entry.id)
 
                 span {
                     div {

@@ -20,6 +20,9 @@ kotlin {
 
             }
         }
+        compilerOptions {
+            useEsModules()
+        }
         binaries.executable()
     }
 
@@ -50,7 +53,6 @@ kotlin {
                 implementation(kotlinWrappers.react)
                 implementation(kotlinWrappers.reactDom)
                 implementation(kotlinWrappers.reactUse)
-//                implementation(kotlinWrappers.reactRouterDomLegacy)
                 implementation(kotlinWrappers.tanstack.reactRouter)
                 implementation(kotlinWrappers.js)
                 implementation(kotlinWrappers.jsCore)

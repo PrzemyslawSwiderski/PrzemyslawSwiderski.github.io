@@ -8,48 +8,16 @@ import app.state.state
 import react.FC
 import react.Props
 import tanstack.react.router.*
-import tanstack.router.core.RoutePath
-
-//
-//val Router = createBrowserRouter(
-//    arrayOf(
-//        RouteObject(
-//            path = "/",
-//            Component = Layout,
-//            children = arrayOf(
-//                RouteObject(
-//                    index = true,
-//                    Component = About,
-//                ),
-//                RouteObject(
-//                    path = "*",
-//                    Component = About,
-//                ),
-//                RouteObject(
-//                    path = "posts",
-//                    Component = Posts,
-//                ),
-//            ) + state.posts.map { entry ->
-//                RouteObject(
-//                    path = "posts/" + entry.id,
-//                    element = SinglePost.create {
-//                        data = entry
-//                    },
-//                )
-//            }.toTypedArray()
-//        )
-//    )
-//)
 
 fun createAppRouter(): Router {
     val rootRoute = createRootRoute(
-//        options = RootRouteOptions(component = Layout)
+        options = RootRouteOptions(component = Layout)
     )
 
     val indexRoute = createRoute(
         options = RouteOptions(
             getParentRoute = { rootRoute },
-            path = RoutePath("/"),
+            path = INDEX_PATH,
             component = About,
         ),
     )
@@ -57,7 +25,7 @@ fun createAppRouter(): Router {
     val aboutRoute = createRoute(
         options = RouteOptions(
             getParentRoute = { rootRoute },
-            path = RoutePath("*"),
+            path = ALL_OTHERS_PATH,
             component = About,
         ),
     )
@@ -65,7 +33,7 @@ fun createAppRouter(): Router {
     val postsRoute = createRoute(
         options = RouteOptions(
             getParentRoute = { rootRoute },
-            path = RoutePath("posts"),
+            path = POSTS_PATH,
             component = Posts,
         ),
     )
@@ -79,21 +47,21 @@ fun createAppRouter(): Router {
             }
             createRoute(
                 options = RouteOptions(
-                    getParentRoute = { postsRoute },
-                    path = RoutePath(entry.id),
+                    getParentRoute = { rootRoute },
+                    path = POST_PATH(entry.id),
                     component = postComponent
                 ),
             )
         }.toTypedArray()
     )
 
-//    rootRoute.addChildren(
-//        arrayOf(
-//            indexRoute,
-//            aboutRoute,
-//            postsRoute
-//        ),
-//    )
+    rootRoute.addChildren(
+        arrayOf(
+            indexRoute,
+            aboutRoute,
+            postsRoute
+        ),
+    )
 
     return createRouter(
         options = RouterOptions(

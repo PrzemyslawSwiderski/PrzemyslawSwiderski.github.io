@@ -3,7 +3,7 @@ title: "About"
 created: 2024-08-10
 ---
 
-<img class="markdown-img me-img rounded-5 float-end p-4" src="me.png" alt="me" />
+<img class="markdown-img me-img rounded-5 float-end p-4" src="cyberMe.png" alt="Cyber Me :)" />
 
 ## Something about me
 
@@ -18,7 +18,7 @@ I strive to keep things simple. As someone once said:
 
 > The best code is no code at all.
 
-In my free time, I enjoy working out, playing the guitar, cooking, traveling, and tracking rocket launches 🙂.
+In my free time, I enjoy working out, playing the guitar, dancing, cooking, traveling or tracking rocket launches 🙂.
 
 <br/>
 

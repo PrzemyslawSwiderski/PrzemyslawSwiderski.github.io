@@ -6,8 +6,8 @@ import react.create
 import react.dom.client.createRoot
 import react.use.useConstant
 import tanstack.react.router.RouterProvider
+import web.dom.ElementId
 import web.dom.document
-import web.html.HtmlTagName.div
 
 val App = FC {
     val appRouter = useConstant(::createAppRouter)
@@ -19,9 +19,7 @@ val App = FC {
 
 suspend fun main() {
     initState()
-//    val container = document.getElementById(ElementId("root")) ?: error("Couldn't find root container!")
-
-    val container = document.createElement(div)
+    val container = document.getElementById(ElementId("root")) ?: error("Couldn't find root container!")
     document.body.appendChild(container)
     createRoot(container)
         .render(App.create())

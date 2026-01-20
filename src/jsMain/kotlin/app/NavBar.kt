@@ -7,7 +7,6 @@ import react.dom.html.ReactHTML.li
 import react.dom.html.ReactHTML.nav
 import react.dom.html.ReactHTML.ul
 import tanstack.react.router.Link
-import tanstack.router.core.RoutePath
 
 val NavBar = FC {
     nav {
@@ -18,7 +17,7 @@ val NavBar = FC {
                 asNavItem()
                 Link {
                     withClasses("nav-link")
-                    to = RoutePath("/")
+                    to = INDEX_PATH
                     +"About"
                 }
             }
@@ -26,7 +25,7 @@ val NavBar = FC {
                 asNavItem()
                 Link {
                     withClasses("nav-link")
-                    to = RoutePath("/posts")
+                    to = POSTS_PATH
                     +"Posts"
                 }
             }
