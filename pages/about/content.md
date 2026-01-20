@@ -18,7 +18,8 @@ I strive to keep things simple. As someone once said:
 
 > The best code is no code at all.
 
-In my free time, I enjoy working out, playing the guitar, dancing, cooking, traveling or tracking rocket launches 🙂.
+In my free time, I enjoy working out, flying drones, playing the guitar, dancing, cooking, traveling or tracking rocket
+launches 🙂.
 
 <br/>
 
