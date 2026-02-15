@@ -9,6 +9,7 @@ import app.utils.withClasses
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.format
 import react.FC
+import react.Key
 import react.dom.html.ReactHTML.button
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.span
@@ -29,7 +30,7 @@ val Posts = FC {
 
     paginatedPosts.forEach { entry ->
         div {
-            key = entry.id
+            key = Key(entry.id)
             asRow()
             withClasses("mb-4") // optional spacing
 
