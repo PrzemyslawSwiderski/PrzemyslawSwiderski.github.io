@@ -20,7 +20,7 @@
   location: "posts/first-post"
   hidden: false
 - id: "la-guitarra"
-  title: "La Guitarra"
+  title: "🎸🎶 La Guitarra"
   created: "2026-01-06"
   readTime: "3 min"
   path: "./pages/posts/la-guitarra/content.html"
@@ -116,6 +116,13 @@
   readTime: "20 min"
   path: "./pages/posts/patrol-robot/content.html"
   location: "posts/patrol-robot"
+  hidden: false
+- id: "cyber-eye"
+  title: "👁️ Cyber Eye"
+  created: "2026-02-22"
+  readTime: "10 min"
+  path: "./pages/posts/cyber-eye/content.html"
+  location: "posts/cyber-eye"
   hidden: false
 - id: "central-repo"
   title: "Maintaining multiple GitHub repos at once"
