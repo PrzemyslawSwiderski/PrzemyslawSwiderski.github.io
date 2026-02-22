@@ -1,5 +1,5 @@
 ---
-title: "La Guitarra"
+title: "🎸🎶 La Guitarra"
 created: 2026-01-06
 readTime: "3 min"
 ---
