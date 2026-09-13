@@ -1,1 +1,1 @@
-"use strict";(globalThis.webpackChunkpswidersk_page=globalThis.webpackChunkpswidersk_page||[]).push([[7358],{7358:e=>{e.exports="//region block: pre-declaration\n//endregion\n\n"}}]);
+"use strict";(globalThis.webpackChunkpswidersk_page=globalThis.webpackChunkpswidersk_page||[]).push([[7358],{7358(e){e.exports="//region block: pre-declaration\n//endregion\n\n"}}]);

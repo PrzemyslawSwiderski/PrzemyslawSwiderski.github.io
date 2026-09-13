@@ -1,1 +1,1 @@
-"use strict";(globalThis.webpackChunkpswidersk_page=globalThis.webpackChunkpswidersk_page||[]).push([[2408],{2408:e=>{e.exports="// extracted by mini-css-extract-plugin\nexport {};"}}]);
+"use strict";(globalThis.webpackChunkpswidersk_page=globalThis.webpackChunkpswidersk_page||[]).push([[2408],{2408(e){e.exports="// extracted by mini-css-extract-plugin\nexport {};"}}]);
