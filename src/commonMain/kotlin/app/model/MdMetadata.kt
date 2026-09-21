@@ -7,7 +7,6 @@ import kotlinx.serialization.Serializable
 import kotlin.time.Clock
 import kotlin.time.ExperimentalTime
 
-@OptIn(ExperimentalTime::class)
 @Serializable
 data class MdMetadata(
     val id: String = "ID",

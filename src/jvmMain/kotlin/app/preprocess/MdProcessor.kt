@@ -3,6 +3,6 @@ package app.preprocess
 
 fun interface MdProcessor {
 
-    fun process(input: MdProcessorDto): String
+    fun process(input: MdProcessorDto): CharSequence
 
 }

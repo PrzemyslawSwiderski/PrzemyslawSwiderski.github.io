@@ -1,15 +1,6 @@
-import org.jetbrains.kotlin.gradle.targets.js.yarn.YarnPlugin
-import org.jetbrains.kotlin.gradle.targets.js.yarn.YarnRootExtension
-
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.kotlin.serialization)
-}
-
-plugins.withType<YarnPlugin> {
-    configure<YarnRootExtension> {
-        yarnLockAutoReplace = true
-    }
 }
 
 kotlin {
@@ -29,8 +20,7 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                implementation(libs.kotlinx.serialization.json)
-                implementation(libs.kotlinx.datetime)
+                implementation(libs.bundles.kotlinx)
             }
         }
 
@@ -72,11 +62,12 @@ kotlin {
 }
 
 tasks {
-    val jvmRuntimeClasspath by configurations
+    val jvmRuntimeClasspath = configurations.getByName("jvmRuntimeClasspath")
     val kotlinClasspath = layout.buildDirectory.files("classes/kotlin/jvm/main") + jvmRuntimeClasspath
     val jsResourcesPath = layout.buildDirectory.file("processedResources/js/main")
 
-    val generateHtmlFiles by registering(JavaExec::class) {
+    val generateHtmlFiles = register<JavaExec>("generateHtmlFiles") {
+        description = "generate html files"
         val inputDir = "pages"
         group = "run"
         mainClass = "app.MdToHtmlConverterKt"
@@ -91,7 +82,8 @@ tasks {
         dependsOn("compileKotlinJvm")
     }
 
-    val generateVoronoi by registering(JavaExec::class) {
+    val generateVoronoi = register<JavaExec>("generateVoronoi") {
+        description = "generat voronoi mozaic"
         group = "run"
         mainClass = "app.VoronoiGeneratorKt"
         classpath = kotlinClasspath

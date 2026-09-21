@@ -20,14 +20,11 @@ npm-giscus = "3.1.0"
 markdown-jvm = { module = "org.jetbrains:markdown-jvm", version.ref = "markdown" }
 kaml-jvm = { module = "com.charleskorn.kaml:kaml-jvm", version.ref = "kaml" }
 jfree-svg = { module = "org.jfree:org.jfree.svg", version.ref = "jfree" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
 
-[libraries.kotlinx-serialization-json]
-module = "org.jetbrains.kotlinx:kotlinx-serialization-json"
-version.ref = "kotlinx-serialization"
-
-[libraries.kotlinx-datetime]
-module = "org.jetbrains.kotlinx:kotlinx-datetime"
-version.ref = "kotlinx-datetime"
+[bundles]
+kotlinx = ["kotlinx-serialization-json", "kotlinx-datetime"]
 
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }

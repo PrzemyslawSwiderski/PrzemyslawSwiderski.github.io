@@ -10,6 +10,7 @@ import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import org.intellij.markdown.flavours.gfm.GFMFlavourDescriptor
 import org.intellij.markdown.html.HtmlGenerator
+import org.intellij.markdown.parser.CancellationToken
 import org.intellij.markdown.parser.MarkdownParser
 import java.io.File
 
@@ -26,8 +27,12 @@ private fun File.isMarkdown(): Boolean = this.extension == "md"
 
 private fun generateHtml(mdString: String, location: String): String {
     val processedString = MdCompositeProcessor.process(MdProcessorDto(mdString, location))
-    val parsedTree = MarkdownParser(FLAVOUR).buildMarkdownTreeFromString(processedString)
-    return HtmlGenerator(processedString, parsedTree, FLAVOUR)
+    val parsedTree =
+        MarkdownParser(FLAVOUR, cancellationToken = CancellationToken.NonCancellable)
+            .buildMarkdownTreeFromString(
+                processedString
+            )
+    return HtmlGenerator(processedString as String, parsedTree, FLAVOUR)
         .generateHtml(CustomTagRenderer)
         .let { HtmlCompositeProcessor.process(HtmlProcessorDto(it, location)) }
 }

@@ -4,17 +4,16 @@ import app.preprocess.MdProcessor
 import app.preprocess.MdProcessorDto
 import app.toc.model.ModifyModel
 import app.toc.utils.Utils
-import java.util.ArrayList
 
 /**
  * Ported to kotlin form [MarkdownTocGenerator](https://github.com/YuraAAA/Markdown-Toc-Generator/)
  */
 object TocProcessor : MdProcessor {
 
-    override fun process(input: MdProcessorDto): String {
+    override fun process(input: MdProcessorDto): CharSequence {
         val (content, location) = input
-        val rootModels: MutableList<ModifyModel> = ArrayList<ModifyModel>()
-        val outputLines: MutableList<String> = ArrayList<String>()
+        val rootModels: MutableList<ModifyModel> = ArrayList()
+        val outputLines: MutableList<String> = ArrayList()
         var inCodeBlock = false
 
         for (line in content.lines()) {
@@ -25,13 +24,13 @@ object TocProcessor : MdProcessor {
                 }
 
                 !inCodeBlock && outputLine.trim().startsWith(DEFAULT_HEADER_CHAR) -> {
-                    outputLine = addAnchorLink(outputLine, location, rootModels)
+                    outputLine = addAnchorLink(outputLine, location as String, rootModels)
                 }
             }
             outputLines.add(outputLine)
         }
 
-        val tocSection = rootModels.map { it.create() }.joinToString(separator = LINE_SEP)
+        val tocSection = rootModels.joinToString(separator = LINE_SEP) { it.create() }
 
         return outputLines.joinToString(separator = LINE_SEP).replace(TOC_PLACEHOLDER, tocSection)
     }
