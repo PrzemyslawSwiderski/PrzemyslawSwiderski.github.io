@@ -6,6 +6,7 @@ import kotlinx.datetime.LocalDate
 import kotlinx.datetime.format
 import react.FC
 import react.Props
+import react.dom.html.ReactHTML.br
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h1
 import react.dom.html.ReactHTML.hr
@@ -21,7 +22,14 @@ val SinglePost = FC<SinglePostProps> { props ->
         h1 {
             +props.data.title
         }
-        small { +"${props.data.created.format(LocalDate.Formats.ISO)} - ${props.data.readTime}" }
+        small { +"Created: ${props.data.created.format(LocalDate.Formats.ISO)}" }
+        br {}
+        if (props.data.updated != null) {
+            small { +"Updated: ${props.data.updated!!.format(LocalDate.Formats.ISO)}" }
+            br {}
+        }
+        small { +"Read time: ~${props.data.readTime}" }
+        br {}
         hr { }
         InnerHtml {
             data = props.data

@@ -1,6 +1,7 @@
 ---
 title: "👁️ Cyber Eye"
 created: 2026-02-22
+updated: 2026-09-22
 readTime: "10 min"
 ---
 
@@ -20,13 +21,32 @@ Reasons for the creation of my very own IP camera:
 
 # Hardware
 
-ESP32-P4 Development Board with speaker and OV5647 camera.
-
-https://www.waveshare.com/esp32-p4-nano.htm?sku=29027
+* Luckfox Pico Mini B
+* LuckFox Pico Camera SC3336 3MP
+* LB-Link M8812EU2 WiFi module
+* 9V → 5V Step-down Converter
+* 2 x IPEX 5G 4 dBi antenna
 
 # Software
 
 **[Repository](https://github.com/PrzemyslawSwiderski/cyber-eye)**
+
+# Schematics
+
+```text
+Drone Camera 9V socket GND -> Step Down Converter IN-
+Drone Camera 9V socket V+ -> Step Down Converter IN+
+Step Down Converter OUT+ -> WiFi module IN+
+Step Down Converter OUT- -> WiFi module GND
+WiFi module IN+ -> 
+Luckfox IN+
+
+```
+
+# Results
+
+<video src="cyber-eye-result.mp4" class="markdown-img" controls>Cyber Eye Result Video</video>
+
 
 # Conclusion
 
