@@ -1,8 +1,21 @@
-<p><strong>POST_IN_PROGRESS</strong></p><ul><li><a href="/posts/cyber-eye#introduction"> Introduction</a></li><li><a href="/posts/cyber-eye#hardware"> Hardware</a></li><li><a href="/posts/cyber-eye#software"> Software</a></li><li><a href="/posts/cyber-eye#schematics"> Schematics</a></li><li><a href="/posts/cyber-eye#results"> Results</a></li><li><a href="/posts/cyber-eye#conclusion"> Conclusion</a></li></ul><h1>Introduction <a id="introduction" href="/posts/cyber-eye#introduction" class="anchor-link">🔗</a></h1><p>Reasons for the creation of my very own IP camera:</p><ul><li>open source, so the software can be shared with others</li><li>prevent connection to shady remote servers</li><li>cheaper price</li><li>browser based Web UI</li><li>possibility to mount the camera as VTX for drone </li></ul><h1>Hardware <a id="hardware" href="/posts/cyber-eye#hardware" class="anchor-link">🔗</a></h1><ul><li>Luckfox Pico Mini B</li><li>LuckFox Pico Camera SC3336 3MP</li><li>LB-Link M8812EU2 WiFi module</li><li>9V → 5V Step-down Converter</li><li>2 x IPEX 5G 4 dBi antenna</li></ul><h1>Software <a id="software" href="/posts/cyber-eye#software" class="anchor-link">🔗</a></h1><p><strong><a href="https://github.com/PrzemyslawSwiderski/cyber-eye">Repository</a></strong></p><h1>Schematics <a id="schematics" href="/posts/cyber-eye#schematics" class="anchor-link">🔗</a></h1><pre><code class="language-text">Drone Camera 9V socket GND -&gt; Step Down Converter IN-
-Drone Camera 9V socket V+ -&gt; Step Down Converter IN+
-Step Down Converter OUT+ -&gt; WiFi module IN+
-Step Down Converter OUT- -&gt; WiFi module GND
-WiFi module IN+ -&gt; 
-Luckfox IN+
+<p><strong>POST_IN_PROGRESS</strong></p><ul><li><a href="/posts/cyber-eye#introduction"> Introduction</a></li><li><a href="/posts/cyber-eye#hardware"> Hardware</a></li><li><a href="/posts/cyber-eye#software"> Software</a></li><li><a href="/posts/cyber-eye#schematics"> Schematics</a></li><li><a href="/posts/cyber-eye#results"> Results</a></li><li><a href="/posts/cyber-eye#conclusion"> Conclusion</a></li></ul><h1>Introduction <a id="introduction" href="/posts/cyber-eye#introduction" class="anchor-link">🔗</a></h1><p>Reasons for the creation of my very own IP camera:</p><ul><li>open source, so the software can be shared with others</li><li>prevent connection to shady remote servers</li><li>cheaper price</li><li>browser based Web UI</li><li>possibility to mount the camera as VTX for drone </li></ul><h1>Hardware <a id="hardware" href="/posts/cyber-eye#hardware" class="anchor-link">🔗</a></h1><ul><li>Drone BETAFPV Pavo20 Pro ELRS 2.4G</li><li>Luckfox Pico Mini B</li><li>SC3336 Camera 3MP</li><li>LB-Link M8812EU2 WiFi module</li><li>9V → 5V Step-down Converter</li><li>2 x IPEX 5G 4 dBi antenna</li></ul><h1>Software <a id="software" href="/posts/cyber-eye#software" class="anchor-link">🔗</a></h1><p><strong><a href="https://github.com/PrzemyslawSwiderski/cyber-eye">Repository</a></strong></p><h1>Schematics <a id="schematics" href="/posts/cyber-eye#schematics" class="anchor-link">🔗</a></h1><p><img src="/pages/posts/cyber-eye/wiring-schematic.svg" alt="Schematics" class="markdown-img" /></p><pre><code class="language-text">drone = Drone BETAFPV Pavo20 Pro ELRS 2.4G
+stepdown = 9V → 5V Step-down Converter
+luckfox = Luckfox Pico Mini B
+camera = SC3336 Camera 3MP
+wifimod = LB-Link M8812EU2 WiFi module
+antenna = IPEX 5G 4 dBi antenna
 
+drone Camera socket GND -&gt; stepdown IN-
+drone Camera socket 9V V+ -&gt; stepdown IN+
+stepdown OUT+ -&gt; wifimod VDD5.0 Power Supply
+stepdown OUT- -&gt; wifimod GND
+wifimod USB connections (GND, VDD5.0, USB2.0+DP, USB2.0+DM) -&gt; luckfox USB
+luckfox CAM Ribbon cable -&gt; camera input socket
+wifimod 1. antenna socket -&gt; 1. antenna vertical set
+wifimod 2. antenna socket -&gt; 2. antenna vertical set rotated 90 degrees 
+
+Developer connects to Luckfox Pico Mini by:
+ * SSH in WiFi network
+ * directly by USB once WiFi module is disconnected
+ * UART pins  
 </code></pre><h1>Results <a id="results" href="/posts/cyber-eye#results" class="anchor-link">🔗</a></h1><p><video src="/pages/posts/cyber-eye/cyber-eye-result.mp4" class="markdown-img" controls>Cyber Eye Result Video</video></p><h1>Conclusion <a id="conclusion" href="/posts/cyber-eye#conclusion" class="anchor-link">🔗</a></h1>

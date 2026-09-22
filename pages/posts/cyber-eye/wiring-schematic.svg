@@ -1,0 +1,184 @@
+<svg viewBox="0 0 680 614" xmlns="http://www.w3.org/2000/svg">
+    <title style="fill:#000;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+        FPV drone onboard companion computer wiring schematic
+    </title>
+    <desc style="fill:#000;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+        Power flows from the drone camera socket through a 9V to 5V step-down converter into a WiFi module, which powers
+        a Luckfox Pico Mini B connected to a camera via ribbon cable and to two antennas. Three developer access paths
+        (SSH, USB, UART) connect to the Luckfox board.
+    </desc>
+    <defs>
+        <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6"
+                orient="auto-start-reverse">
+            <path d="m2 1 6 4-6 4" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round"/>
+        </marker>
+    </defs>
+    <g style="fill:#000;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+        <rect x="40" y="40" width="220" height="56" rx="8" stroke-width=".5"
+              style="fill:#faece7;stroke:#993c1d;color:#0b0b0b;stroke-width:.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+        <text x="150" y="58" text-anchor="middle" dominant-baseline="central"
+              style="fill:#712b13;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">
+            BETAFPV Pavo20 Pro
+        </text>
+        <text x="150" y="76" text-anchor="middle" dominant-baseline="central"
+              style="fill:#993c1d;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">
+            Camera socket: 9V, GND
+        </text>
+    </g>
+    <path marker-end="url(#a)"
+          style="fill:none;stroke:#898781;color:#0b0b0b;stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"
+          d="M150 96v36"/>
+    <text x="165" y="118"
+          style="fill:#dee2e6;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+        9V
+    </text>
+    <g style="fill:#000;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+        <rect x="40" y="136" width="220" height="56" rx="8" stroke-width=".5"
+              style="fill:#faece7;stroke:#993c1d;color:#0b0b0b;stroke-width:.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+        <text x="150" y="154" text-anchor="middle" dominant-baseline="central"
+              style="fill:#712b13;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">
+            Step-down converter
+        </text>
+        <text x="150" y="172" text-anchor="middle" dominant-baseline="central"
+              style="fill:#993c1d;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">
+            9V to 5V output
+        </text>
+    </g>
+    <path marker-end="url(#a)"
+          style="fill:none;stroke:#898781;color:#0b0b0b;stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"
+          d="M150 192v36"/>
+    <text x="165" y="214"
+          style="fill:#dee2e6;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+        5V
+    </text>
+    <g style="fill:#000;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+        <rect x="40" y="232" width="220" height="56" rx="8" stroke-width=".5"
+              style="fill:#eeedfe;stroke:#534ab7;color:#0b0b0b;stroke-width:.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+        <text x="150" y="250" text-anchor="middle" dominant-baseline="central"
+              style="fill:#3c3489;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">
+            LB-Link M8812EU2
+        </text>
+        <text x="150" y="268" text-anchor="middle" dominant-baseline="central"
+              style="fill:#534ab7;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">
+            WiFi module
+        </text>
+    </g>
+    <path marker-end="url(#a)"
+          style="fill:none;stroke:#898781;color:#0b0b0b;stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"
+          d="M150 288v36"/>
+    <text x="165" y="310"
+          style="fill:#dee2e6;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+        USB, 4 wires
+    </text>
+    <path marker-end="url(#a)"
+          style="fill:none;stroke:#898781;color:#0b0b0b;stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"
+          d="m260 248 158-120"/>
+    <path marker-end="url(#a)"
+          style="fill:none;stroke:#898781;color:#0b0b0b;stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"
+          d="m260 272 158 -66"/>
+    <g style="fill:#000;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+        <rect x="420" y="100" width="200" height="56" rx="8" stroke-width=".5"
+              style="fill:#eeedfe;stroke:#534ab7;color:#0b0b0b;stroke-width:.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+        <text x="520" y="118" text-anchor="middle" dominant-baseline="central"
+              style="fill:#3c3489;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">
+            IPEX 5G 4 dBi antenna
+        </text>
+        <text x="520" y="136" text-anchor="middle" dominant-baseline="central"
+              style="fill:#534ab7;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">
+            Vertical
+        </text>
+    </g>
+    <g style="fill:#000;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+        <rect x="420" y="180" width="200" height="56" rx="8" stroke-width=".5"
+              style="fill:#eeedfe;stroke:#534ab7;color:#0b0b0b;stroke-width:.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+        <text x="520" y="198" text-anchor="middle" dominant-baseline="central"
+              style="fill:#3c3489;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">
+            IPEX 5G 4 dBi antenna
+        </text>
+        <text x="520" y="216" text-anchor="middle" dominant-baseline="central"
+              style="fill:#534ab7;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">
+            Vertical, rotated 90°
+        </text>
+    </g>
+    <g style="fill:#000;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+        <rect x="40" y="328" width="220" height="56" rx="8" stroke-width=".5"
+              style="fill:#e1f5ee;stroke:#0f6e56;color:#0b0b0b;stroke-width:.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+        <text x="150" y="346" text-anchor="middle" dominant-baseline="central"
+              style="fill:#085041;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">
+            Luckfox Pico Mini B
+        </text>
+        <text x="150" y="364" text-anchor="middle" dominant-baseline="central"
+              style="fill:#0f6e56;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">
+            USB, CAM ribbon, UART
+        </text>
+    </g>
+    <path marker-end="url(#a)"
+          style="fill:none;stroke:#898781;color:#0b0b0b;stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"
+          d="M150 384v36"/>
+    <text x="165" y="406"
+          style="fill:#dee2e6;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+        Ribbon cable
+    </text>
+    <g style="fill:#000;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+        <rect x="40" y="424" width="220" height="56" rx="8" stroke-width=".5"
+              style="fill:#e1f5ee;stroke:#0f6e56;color:#0b0b0b;stroke-width:.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+        <text x="150" y="442" text-anchor="middle" dominant-baseline="central"
+              style="fill:#085041;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">
+            SC3336 camera 3MP
+        </text>
+        <text x="150" y="460" text-anchor="middle" dominant-baseline="central"
+              style="fill:#0f6e56;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">
+            Connected via ribbon cable
+        </text>
+    </g>
+    <text x="420" y="352"
+          style="fill:#dee2e6;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+        Developer access to Luckfox
+    </text>
+    <path marker-end="url(#a)"
+          style="fill:none;stroke:#898781;color:#0b0b0b;stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"
+          d="m420 394-158-50"/>
+    <g style="fill:#000;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+        <rect x="420" y="366" width="200" height="56" rx="8" stroke-width=".5"
+              style="fill:#f1efe8;stroke:#5f5e5a;color:#0b0b0b;stroke-width:.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+        <text x="520" y="384" text-anchor="middle" dominant-baseline="central"
+              style="fill:#444441;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">
+            SSH
+        </text>
+        <text x="520" y="402" text-anchor="middle" dominant-baseline="central"
+              style="fill:#5f5e5a;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">
+            Over WiFi network
+        </text>
+    </g>
+    <path marker-end="url(#a)"
+          style="fill:none;stroke:#898781;color:#0b0b0b;stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"
+          d="M420 470 262 360"/>
+    <g style="fill:#000;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+        <rect x="420" y="442" width="200" height="56" rx="8" stroke-width=".5"
+              style="fill:#f1efe8;stroke:#5f5e5a;color:#0b0b0b;stroke-width:.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+        <text x="520" y="460" text-anchor="middle" dominant-baseline="central"
+              style="fill:#444441;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">
+            USB
+        </text>
+        <text x="520" y="478" text-anchor="middle" dominant-baseline="central"
+              style="fill:#5f5e5a;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">
+            Direct, WiFi module off
+        </text>
+    </g>
+    <path marker-end="url(#a)"
+          style="fill:none;stroke:#898781;color:#0b0b0b;stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"
+          d="M420 546 262 376"/>
+    <g style="fill:#000;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+        <rect x="420" y="518" width="200" height="56" rx="8" stroke-width=".5"
+              style="fill:#f1efe8;stroke:#5f5e5a;color:#0b0b0b;stroke-width:.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+        <text x="520" y="536" text-anchor="middle" dominant-baseline="central"
+              style="fill:#444441;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">
+            UART
+        </text>
+        <text x="520" y="554" text-anchor="middle" dominant-baseline="central"
+              style="fill:#5f5e5a;stroke:none;color:#0b0b0b;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;anthropic-sans&quot;,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">
+            Console Pins
+        </text>
+    </g>
+</svg>
