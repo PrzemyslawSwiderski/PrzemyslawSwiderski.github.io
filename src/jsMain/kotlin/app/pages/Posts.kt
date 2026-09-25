@@ -4,10 +4,9 @@ import app.POST_PATH
 import app.state.posts
 import app.state.state
 import app.utils.asCol
+import app.utils.asIso
 import app.utils.asRow
 import app.utils.withClasses
-import kotlinx.datetime.LocalDate
-import kotlinx.datetime.format
 import react.FC
 import react.Key
 import react.dom.html.ReactHTML.button
@@ -26,7 +25,7 @@ val Posts = FC {
     val totalPages = (posts.size + PAGE_SIZE - 1) / PAGE_SIZE // ceiling division
     val startIndex = (currentPage - 1) * PAGE_SIZE
     val endIndex = (startIndex + PAGE_SIZE).coerceAtMost(posts.size)
-    val paginatedPosts = posts.sortedByDescending { it.created }.subList(startIndex, endIndex)
+    val paginatedPosts = posts.sortedByDescending { it.getLastModifiedOrCreated() }.subList(startIndex, endIndex)
 
     paginatedPosts.forEach { entry ->
         div {
@@ -46,7 +45,7 @@ val Posts = FC {
                     div {
                         withClasses("mt-3")
                         sub {
-                            +"${entry.created.format(LocalDate.Formats.ISO)} - ${entry.readTime}"
+                            +"${entry.getLastModifiedOrCreated().asIso()} - ${entry.readTime}"
                         }
                     }
                 }

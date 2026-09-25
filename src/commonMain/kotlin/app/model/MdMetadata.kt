@@ -16,4 +16,9 @@ data class MdMetadata(
     val path: String = "",
     val location: String = "",
     val hidden: Boolean = false
-)
+) {
+    fun getLastModifiedOrCreated(): LocalDate {
+        return updated ?: created
+    }
+}
+

@@ -2,8 +2,7 @@ package app.pages
 
 import app.ShareButtons
 import app.model.MdMetadata
-import kotlinx.datetime.LocalDate
-import kotlinx.datetime.format
+import app.utils.asIso
 import react.FC
 import react.Props
 import react.dom.html.ReactHTML.br
@@ -22,10 +21,10 @@ val SinglePost = FC<SinglePostProps> { props ->
         h1 {
             +props.data.title
         }
-        small { +"Created: ${props.data.created.format(LocalDate.Formats.ISO)}" }
+        small { +"Created: ${props.data.created.asIso()}" }
         br {}
         if (props.data.updated != null) {
-            small { +"Updated: ${props.data.updated!!.format(LocalDate.Formats.ISO)}" }
+            small { +"Last modified: ${props.data.updated!!.asIso()}" }
             br {}
         }
         small { +"Read time: ~${props.data.readTime}" }

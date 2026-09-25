@@ -1,5 +1,7 @@
 package app.utils
 
+import kotlinx.datetime.LocalDate
+import kotlinx.datetime.format
 import react.PropsWithClassName
 import web.cssom.ClassName
 
@@ -21,4 +23,8 @@ fun PropsWithClassName.asCol() {
 
 fun PropsWithClassName.asNavItem() {
     this.className = ClassName("nav-item")
+}
+
+fun LocalDate.asIso(): String {
+    return this.format(LocalDate.Formats.ISO)
 }
