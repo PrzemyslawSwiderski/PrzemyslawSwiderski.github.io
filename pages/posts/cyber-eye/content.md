@@ -11,26 +11,43 @@ readTime: "10 min"
 
 # Introduction
 
-Reasons for the creation of my very own IP camera:
+Some time ago, I bought a Pavo20 Pro drone. To keep it simple and cost-effective, I chose the version without a VTX
+(video transmission device). After flying it for a while, I decided to build my own budget-friendly VTX setup. The main
+reasons for this project were:
 
-* open source, so the software can be shared with others
-* prevent connection to shady remote servers
-* cheaper price
-* browser based Web UI
-* possibility to mount the camera as VTX for drone 
+* Existing commercial VTX kits are quite expensive, such as Walksnail ($305) or DJI ($360).
+* Popular off-the-shelf solutions are closed-source, making them difficult to customize on the software side.
+* I wanted to stream video directly to my smartphone via Wi-Fi, but I couldn't find any affordable kits that offered
+  this feature.
+* The receiving device needed to be versatile enough to double as a regular IP camera.
 
 # Hardware
 
+Initially, I tried building the project with an ESP32-P4. After running into poor Wi-Fi range from the built-in antenna,
+I pivoted to a Luckfox board and an external LB-Link Wi-Fi module for better performance.
+
+The final parts used for the camera only were:
+
+* Linux based Luckfox Pico Mini B \$17
+* SC3336 Camera 3MP \$10
+* LB-Link M8812EU2 WiFi module \$20
+* 9V → 5V Step-down Converter \$3
+* 2 x IPEX 5G 4 dBi antenna \$6
+
+Total cost: **\$56**
+
+Additionally I used:
+
 * Drone BETAFPV Pavo20 Pro ELRS 2.4G
-* Luckfox Pico Mini B
-* SC3336 Camera 3MP
-* LB-Link M8812EU2 WiFi module
-* 9V → 5V Step-down Converter
-* 2 x IPEX 5G 4 dBi antenna
+* RadioMaster Pocket ELRS device to control the drone
+* Xiaomi 17 to receive the video and basic telemetry signals
 
 # Software
 
-**[Repository](https://github.com/PrzemyslawSwiderski/cyber-eye)**
+* **[Repository](https://github.com/PrzemyslawSwiderski/cyber-eye)**
+* **[Custom Luckfox firmaware fork](https://github.com/PrzemyslawSwiderski/luckfox-pico)**
+
+
 
 # Schematics
 
@@ -62,7 +79,6 @@ Developer connects to Luckfox Pico Mini by:
 # Results
 
 <video src="cyber-eye-result.mp4" class="markdown-img" controls>Cyber Eye Result Video</video>
-
 
 # Conclusion
 
