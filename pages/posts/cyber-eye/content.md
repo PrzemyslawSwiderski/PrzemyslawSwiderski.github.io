@@ -36,7 +36,7 @@ The final parts used for the camera only were:
 
 Total cost: **\$56**
 
-Additionally I used:
+Additionally, I used:
 
 * Drone BETAFPV Pavo20 Pro ELRS 2.4G
 * RadioMaster Pocket ELRS device to control the drone
