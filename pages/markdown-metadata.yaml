@@ -110,6 +110,14 @@
   path: "./pages/posts/central-repo/content.html"
   location: "posts/central-repo"
   hidden: false
+- id: "cv-as-a-code"
+  title: "CV as a Code"
+  created: "2026-11-04"
+  updated: null
+  readTime: "3 mins"
+  path: "./pages/posts/cv-as-a-code/content.html"
+  location: "posts/cv-as-a-code"
+  hidden: false
 - id: "sdk-import-plugin-update"
   title: "SDK-Import 2024.2+ update"
   created: "2024-09-10"

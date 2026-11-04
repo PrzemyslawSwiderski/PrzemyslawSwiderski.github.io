@@ -1,0 +1,16 @@
+<p>For a long time I was thinking about how to create my CV in a way that it can be easily maintained and updated.
+I also wanted to have it in a LaTeX format to look professional and be able to generate a PDF version of it.
+For this purpose I created a repository on GitHub
+called <a href="https://github.com/PrzemyslawSwiderski/pswidersk-cv">pswidersk-cv</a>.</p><p>It contains a Gradle project that generates the output CV files by using Python and <a href="https://pandoc.org/">Pandoc</a> tool.
+Build file is written in Gradle Kotlin DSL and contains a
+<a href="https://github.com/PrzemyslawSwiderski/python-uv-gradle-plugin"><code>python-uv-plugin</code></a> which takes care
+of the entire Python and virtual environment setup.
+All is required is a JRE and the user can generate output files by running the <code>pandocRun</code> Gradle task:</p><pre><code class="language-bash">./gradlew pandocRun
+</code></pre><p>The input files are written in Markdown format and the output files are generated in PDF, DOCX, and other formats.
+I also created a GitHub Action that automatically (on commit) generates the CV files and uploads them as the latest
+repository's release artifacts.
+The PDF version of the CV can be downloaded from the following
+<strong><a href="https://github.com/PrzemyslawSwiderski/pswidersk-cv/releases/download/latest/Przemyslaw_Swiderski_CV.pdf">link</a></strong>.</p><p>This way I can easily maintain and update my CV by simply modifying the input files in the repository and committing the
+changes.
+If you would like to create your own CV in a similar way, feel free to fork the repository and modify the input files to
+your liking ❤️.</p>
